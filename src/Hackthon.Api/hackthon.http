@@ -1,0 +1,30 @@
+@base = http://127.0.0.1:5088
+@token = cole-o-jwt
+
+### Saúde
+GET {{base}}/api/saude
+
+### Entrar como ADM (senha de desenvolvimento)
+POST {{base}}/api/auth/entrar
+Content-Type: application/json
+
+{
+  "email": "helena.borges@hackthon.dev",
+  "senha": "Adm@2026"
+}
+
+### Quem sou
+GET {{base}}/api/auth/eu
+Authorization: Bearer {{token}}
+
+### Criar analista
+POST {{base}}/api/usuarios
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "nome": "Lívia Nunes",
+  "email": "livia.nunes@hackthon.dev",
+  "senha": "Analista@2026",
+  "papel": "Analista"
+}
