@@ -31,7 +31,7 @@ public sealed class AlterarPapelServico : IAlterarPapel
     public async Task<Resultado<UsuarioResumo>> ExecutarAsync(AlterarPapelComando comando, CancellationToken ct)
     {
         if (!Cadastro.TentarPapel(comando.Papel, out var papel))
-            return Resultado<UsuarioResumo>.Falha(400, "Papel inválido", "Escolha Proponente, Analista ou ADM.");
+            return Resultado<UsuarioResumo>.Falha(400, "Papel inválido", "Escolha Proponente, Assistente, Analista ou ADM.");
 
         var usuario = await _usuarios.ObterPorIdAsync(comando.UsuarioId, ct);
         if (usuario is null)

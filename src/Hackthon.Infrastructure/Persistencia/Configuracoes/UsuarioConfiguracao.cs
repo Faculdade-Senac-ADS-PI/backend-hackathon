@@ -13,6 +13,8 @@ public sealed class UsuarioConfiguracao : IEntityTypeConfiguration<Usuario>
         builder.Property(usuario => usuario.Nome).HasMaxLength(160).IsRequired();
         builder.Property(usuario => usuario.Email).HasMaxLength(180).IsRequired();
         builder.HasIndex(usuario => usuario.Email).IsUnique();
+        builder.Property(usuario => usuario.CpfCnpj).HasMaxLength(14).IsRequired();
+        builder.HasIndex(usuario => usuario.CpfCnpj).IsUnique();
         builder.Property(usuario => usuario.SenhaHash).HasMaxLength(500).IsRequired();
         builder.Property(usuario => usuario.Papel).HasConversion<string>().HasMaxLength(20).IsRequired();
         builder.Property(usuario => usuario.Ativo).IsRequired();

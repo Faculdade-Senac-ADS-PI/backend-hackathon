@@ -15,28 +15,33 @@ public sealed class AuthController : ControllerBase
     [HttpPost("registrar")]
     public async Task<IActionResult> Registrar(
         [FromBody] RegistrarRequest? pedido,
-        [FromServices] IRegistrarProponente caso,
+        [FromServices] IRegistrarUsuario caso,
         CancellationToken ct)
     {
         if (pedido is null)
             return ProblemaVazio();
 
-        if (!string.IsNullOrWhiteSpace(pedido.Papel)
-            && !pedido.Papel.Trim().Equals("Proponente", StringComparison.OrdinalIgnoreCase))
+        if (!string.IsNullOrWhiteSpace(pedido.Papel))
         {
-            return new ObjectResult(new ProblemDetails
+            var papelLimpo = pedido.Papel.Trim();
+            if (papelLimpo.Equals("Adm", StringComparison.OrdinalIgnoreCase)
+                || papelLimpo.Equals("Administrador", StringComparison.OrdinalIgnoreCase)
+                || papelLimpo.Equals("Analista", StringComparison.OrdinalIgnoreCase))
             {
-                Status = StatusCodes.Status403Forbidden,
-                Title = "Cadastro recusado",
-                Detail = "Analista e ADM não se cadastram sozinhos. A conta nasce com a administração."
-            })
-            {
-                StatusCode = StatusCodes.Status403Forbidden
-            };
+                return new ObjectResult(new ProblemDetails
+                {
+                    Status = StatusCodes.Status403Forbidden,
+                    Title = "Cadastro recusado",
+                    Detail = "Apenas Proponente e Assistente podem se cadastrar publicamente. Analista e ADM nascem com a administração."
+                })
+                {
+                    StatusCode = StatusCodes.Status403Forbidden
+                };
+            }
         }
 
         var resultado = await caso.ExecutarAsync(
-            new RegistrarProponenteComando(pedido.Nome, pedido.Email, pedido.Senha),
+            new RegistrarUsuarioComando(pedido.Nome, pedido.Email, pedido.CpfCnpj, pedido.Senha, pedido.Papel),
             ct);
         if (!resultado.Sucesso || resultado.Valor is null)
             return ResultadoHttp.Problema(resultado);

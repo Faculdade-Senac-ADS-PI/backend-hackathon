@@ -9,9 +9,10 @@ public static class SemeadorDesenvolvimento
 {
     public static readonly IReadOnlyList<ContaSemente> Contas =
     [
-        new("Marina Costa", "marina.costa@hackthon.dev", "Proponente@2026", Papel.Proponente),
-        new("Rafael Duarte", "rafael.duarte@hackthon.dev", "Analista@2026", Papel.Analista),
-        new("Helena Borges", "helena.borges@hackthon.dev", "Adm@2026", Papel.Adm)
+        new("Marina Costa", "marina.costa@hackthon.dev", "11144477735", "Proponente@2026", Papel.Proponente),
+        new("Rafael Duarte", "rafael.duarte@hackthon.dev", "22255588846", "Analista@2026", Papel.Analista),
+        new("Helena Borges", "helena.borges@hackthon.dev", "33366699957", "Adm@2026", Papel.Adm),
+        new("Carlos Souza", "carlos.souza@hackthon.dev", "44477700083", "Assistente@2026", Papel.Assistente)
     ];
 
     public static async Task SemearAsync(HackthonDbContext db, ISenhaHasher senhas, CancellationToken ct)
@@ -23,7 +24,7 @@ public static class SemeadorDesenvolvimento
         var usuarios = new List<Usuario>();
         foreach (var conta in Contas)
         {
-            usuarios.Add(Usuario.Criar(conta.Nome, conta.Email, senhas.GerarHash(conta.Senha), conta.Papel, agora));
+            usuarios.Add(Usuario.Criar(conta.Nome, conta.Email, conta.CpfCnpj, senhas.GerarHash(conta.Senha), conta.Papel, agora));
         }
 
         await using var transacao = await db.Database.BeginTransactionAsync(ct);
@@ -35,5 +36,5 @@ public static class SemeadorDesenvolvimento
         await transacao.CommitAsync(ct);
     }
 
-    public sealed record ContaSemente(string Nome, string Email, string Senha, Papel Papel);
+    public sealed record ContaSemente(string Nome, string Email, string CpfCnpj, string Senha, Papel Papel);
 }

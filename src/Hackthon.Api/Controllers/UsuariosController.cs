@@ -31,7 +31,7 @@ public sealed class UsuariosController : ControllerBase
             return Unauthorized();
 
         var resultado = await caso.ExecutarAsync(
-            new CriarUsuarioComando(pedido.Nome, pedido.Email, pedido.Senha, pedido.Papel, atorId),
+            new CriarUsuarioComando(pedido.Nome, pedido.Email, pedido.CpfCnpj, pedido.Senha, pedido.Papel, atorId),
             ct);
         if (!resultado.Sucesso || resultado.Valor is null)
             return ResultadoHttp.Problema(resultado);

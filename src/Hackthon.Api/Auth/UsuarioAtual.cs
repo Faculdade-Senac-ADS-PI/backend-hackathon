@@ -12,7 +12,8 @@ public static class UsuarioAtual
 {
     public static bool TentarId(ClaimsPrincipal principal, out Guid id)
     {
-        var valor = principal.FindFirstValue(JwtRegisteredClaimNames.Sub);
+        var valor = principal.FindFirstValue(JwtRegisteredClaimNames.Sub)
+            ?? principal.FindFirstValue(ClaimTypes.NameIdentifier);
         return Guid.TryParse(valor, out id);
     }
 }

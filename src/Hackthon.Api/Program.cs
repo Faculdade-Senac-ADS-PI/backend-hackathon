@@ -68,7 +68,9 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddInfraestrutura(builder.Configuration);
-builder.Services.AddScoped<IRegistrarProponente, RegistrarProponenteServico>();
+builder.Services.AddScoped<RegistrarUsuarioServico>();
+builder.Services.AddScoped<IRegistrarUsuario>(sp => sp.GetRequiredService<RegistrarUsuarioServico>());
+builder.Services.AddScoped<IRegistrarProponente>(sp => sp.GetRequiredService<RegistrarUsuarioServico>());
 builder.Services.AddScoped<IEntrar, EntrarServico>();
 builder.Services.AddScoped<IObterPerfil, ObterPerfilServico>();
 builder.Services.AddScoped<IListarUsuarios, ListarUsuariosServico>();
@@ -142,7 +144,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 builder.Services.AddAuthorization(opcoes =>
 {
     opcoes.AddPolicy(Politicas.SomenteAdm, politica => politica.RequireRole("Adm"));
-    opcoes.AddPolicy(Politicas.AnalistaOuAdm, politica => politica.RequireRole("Analista", "Adm"));
+    opcoes.AddPolicy(Politicas.AnalistaOuAdm, politica => politica.RequireRole("Analista", "Assistente", "Adm"));
 });
 
 var origens = builder.Configuration.GetSection("Cors:Origens").Get<string[]>() ?? [];
@@ -153,7 +155,7 @@ builder.Services.AddCors(opcoes =>
         if (origens.Length == 0)
             politica.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
         else
-            politica.WithOrigins(origens).AllowAnyHeader().AllowAnyMethod();
+            politica.WithOrigins(origens).AllowAnyHeader().AllowAnyMethod().AllowCredentials();
     });
 });
 

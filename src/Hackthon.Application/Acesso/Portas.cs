@@ -6,6 +6,7 @@ namespace Hackthon.Application.Acesso;
 public interface IUsuarioRepositorio
 {
     Task<Usuario?> ObterPorEmailAsync(string email, CancellationToken ct);
+    Task<Usuario?> ObterPorCpfCnpjAsync(string cpfCnpj, CancellationToken ct);
     Task<Usuario?> ObterPorIdAsync(Guid id, CancellationToken ct);
     Task<IReadOnlyList<Usuario>> ListarAsync(CancellationToken ct);
     Task AdicionarAsync(Usuario usuario, CancellationToken ct);

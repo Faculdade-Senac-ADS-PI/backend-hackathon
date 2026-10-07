@@ -20,8 +20,11 @@ public sealed class UnidadeDeTrabalho : IUnidadeDeTrabalho
         {
             await _db.SaveChangesAsync(ct);
         }
-        catch (DbUpdateException ex) when (EmailDuplicado(ex))
+        catch (DbUpdateException ex) when (ConflitoUnico(ex, out var tipo))
         {
+            if (tipo == TipoConflitoUnico.CpfCnpj)
+                throw new ConflitoDeCpfCnpjException();
+
             throw new ConflitoDeEmailException();
         }
     }
@@ -42,7 +45,23 @@ public sealed class UnidadeDeTrabalho : IUnidadeDeTrabalho
         }
     }
 
-    private static bool EmailDuplicado(DbUpdateException ex) =>
-        ex.InnerException is PostgresException postgres
-        && postgres.SqlState == PostgresErrorCodes.UniqueViolation;
+    private enum TipoConflitoUnico { Email, CpfCnpj }
+
+    private static bool ConflitoUnico(DbUpdateException ex, out TipoConflitoUnico tipo)
+    {
+        tipo = TipoConflitoUnico.Email;
+        if (ex.InnerException is not PostgresException postgres
+            || postgres.SqlState != PostgresErrorCodes.UniqueViolation)
+        {
+            return false;
+        }
+
+        if (postgres.ConstraintName?.Contains("CpfCnpj", StringComparison.OrdinalIgnoreCase) == true
+            || postgres.ConstraintName?.Contains("cpf_cnpj", StringComparison.OrdinalIgnoreCase) == true)
+        {
+            tipo = TipoConflitoUnico.CpfCnpj;
+        }
+
+        return true;
+    }
 }

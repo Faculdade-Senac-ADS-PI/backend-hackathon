@@ -4,6 +4,30 @@
 ### Saúde
 GET {{base}}/api/saude
 
+### Cadastrar Usuário Proponente (Público)
+POST {{base}}/api/auth/registrar
+Content-Type: application/json
+
+{
+  "nome": "Marina Costa",
+  "email": "marina.proponente@hackthon.dev",
+  "cpfCnpj": "11144477735",
+  "senha": "Proponente@2026",
+  "papel": "Proponente"
+}
+
+### Cadastrar Usuário Assistente (Público)
+POST {{base}}/api/auth/registrar
+Content-Type: application/json
+
+{
+  "nome": "Carlos Souza",
+  "email": "carlos.assistente@hackthon.dev",
+  "cpfCnpj": "44477700083",
+  "senha": "Assistente@2026",
+  "papel": "Assistente"
+}
+
 ### Entrar como ADM (senha de desenvolvimento)
 POST {{base}}/api/auth/entrar
 Content-Type: application/json
@@ -17,7 +41,7 @@ Content-Type: application/json
 GET {{base}}/api/auth/eu
 Authorization: Bearer {{token}}
 
-### Criar analista
+### Criar usuário interno como ADM
 POST {{base}}/api/usuarios
 Authorization: Bearer {{token}}
 Content-Type: application/json
@@ -25,6 +49,7 @@ Content-Type: application/json
 {
   "nome": "Lívia Nunes",
   "email": "livia.nunes@hackthon.dev",
+  "cpfCnpj": "22255588846",
   "senha": "Analista@2026",
   "papel": "Analista"
 }

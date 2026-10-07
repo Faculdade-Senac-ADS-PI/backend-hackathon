@@ -65,6 +65,11 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                     b.Property<DateTimeOffset>("AtualizadoEm")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<string>("CpfCnpj")
+                        .IsRequired()
+                        .HasMaxLength(14)
+                        .HasColumnType("character varying(14)");
+
                     b.Property<DateTimeOffset>("CriadoEm")
                         .HasColumnType("timestamp with time zone");
 
@@ -89,6 +94,9 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                         .HasColumnType("character varying(500)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CpfCnpj")
+                        .IsUnique();
 
                     b.HasIndex("Email")
                         .IsUnique();

@@ -17,6 +17,9 @@ public sealed class UsuarioRepositorio : IUsuarioRepositorio
     public Task<Usuario?> ObterPorEmailAsync(string email, CancellationToken ct) =>
         _db.Usuarios.FirstOrDefaultAsync(usuario => usuario.Email == email, ct);
 
+    public Task<Usuario?> ObterPorCpfCnpjAsync(string cpfCnpj, CancellationToken ct) =>
+        _db.Usuarios.FirstOrDefaultAsync(usuario => usuario.CpfCnpj == cpfCnpj, ct);
+
     public Task<Usuario?> ObterPorIdAsync(Guid id, CancellationToken ct) =>
         _db.Usuarios.FirstOrDefaultAsync(usuario => usuario.Id == id, ct);
 
