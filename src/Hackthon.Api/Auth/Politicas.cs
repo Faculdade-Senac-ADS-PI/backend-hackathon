@@ -4,4 +4,5 @@ public static class Politicas
 {
     public const string SomenteAdm = "SomenteAdm";
     public const string AnalistaOuAdm = "AnalistaOuAdm";
+    public const string SomenteProponente = "SomenteProponente";
 }

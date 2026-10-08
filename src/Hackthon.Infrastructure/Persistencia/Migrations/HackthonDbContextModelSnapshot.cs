@@ -53,6 +53,125 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                     b.ToTable("registros_acesso", (string)null);
                 });
 
+            modelBuilder.Entity("Hackthon.Domain.Projetos.Projeto", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTimeOffset?>("AnalisadoEm")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid?>("AnalistaId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTimeOffset>("AtualizadoEm")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("CaminhoArquivo")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<DateTimeOffset>("CriadoEm")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTimeOffset?>("DecididoEm")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("JustificativaAnalista")
+                        .HasMaxLength(4000)
+                        .HasColumnType("character varying(4000)");
+
+                    b.Property<string>("JustificativasIaJson")
+                        .HasColumnType("jsonb");
+
+                    b.Property<string>("NomeArquivoOriginal")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<int?>("NotaCriatividade")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("NotaIa")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("NotaIncerteza")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("NotaNovidade")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("NotaSistematico")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("NotaTransferibilidade")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("OrigemAnaliseIa")
+                        .HasMaxLength(120)
+                        .HasColumnType("character varying(120)");
+
+                    b.Property<string>("ParecerIa")
+                        .HasColumnType("text");
+
+                    b.Property<Guid>("ProponenteId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Protocolo")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("character varying(30)");
+
+                    b.Property<string>("RecomendacaoIa")
+                        .HasMaxLength(60)
+                        .HasColumnType("character varying(60)");
+
+                    b.Property<string>("ResumoIa")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Setor")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("character varying(30)");
+
+                    b.Property<long>("TamanhoBytes")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("TextoExtraido")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<int>("VersaoEnvio")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasDefaultValue(1);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AnalistaId");
+
+                    b.HasIndex("ProponenteId");
+
+                    b.HasIndex("Protocolo")
+                        .IsUnique();
+
+                    b.HasIndex("Status");
+
+                    b.ToTable("projetos", (string)null);
+                });
+
             modelBuilder.Entity("Hackthon.Domain.Usuarios.Usuario", b =>
                 {
                     b.Property<Guid>("Id")
@@ -110,6 +229,20 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                         .WithMany()
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Restrict);
+                });
+
+            modelBuilder.Entity("Hackthon.Domain.Projetos.Projeto", b =>
+                {
+                    b.HasOne("Hackthon.Domain.Usuarios.Usuario", null)
+                        .WithMany()
+                        .HasForeignKey("AnalistaId")
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("Hackthon.Domain.Usuarios.Usuario", null)
+                        .WithMany()
+                        .HasForeignKey("ProponenteId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

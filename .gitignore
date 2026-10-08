@@ -68,3 +68,7 @@ coverage/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Storage / Uploads
+uploads/
+scratch/

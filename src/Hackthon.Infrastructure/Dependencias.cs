@@ -1,7 +1,9 @@
 using Hackthon.Application.Acesso;
 using Hackthon.Application.Agente;
 using Hackthon.Application.Comum;
+using Hackthon.Application.Projetos;
 using Hackthon.Infrastructure.Agente;
+using Hackthon.Infrastructure.Arquivos;
 using Hackthon.Infrastructure.Auth;
 using Hackthon.Infrastructure.Persistencia;
 using Microsoft.EntityFrameworkCore;
@@ -22,14 +24,31 @@ public static class Dependencias
         }
 
         services.Configure<JwtOpcoes>(configuration.GetSection(JwtOpcoes.Secao));
+        services.Configure<ArmazenamentoOpcoes>(configuration.GetSection(ArmazenamentoOpcoes.Secao));
+        services.Configure<AgenteIaOpcoes>(configuration.GetSection(AgenteIaOpcoes.Secao));
+
         services.AddDbContext<HackthonDbContext>(opcoes => opcoes.UseNpgsql(conexao));
         services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
         services.AddScoped<IRegistroAcessoRepositorio, RegistroAcessoRepositorio>();
+        services.AddScoped<IProjetoRepositorio, ProjetoRepositorio>();
         services.AddScoped<IUnidadeDeTrabalho, UnidadeDeTrabalho>();
         services.AddSingleton<ISenhaHasher, SenhaHasher>();
         services.AddSingleton<IRelogio, RelogioSistema>();
         services.AddSingleton<IEmissorToken, EmissorToken>();
+
+        // Armazenamento de arquivos e extração de PDF
+        services.AddSingleton<IArmazenamentoArquivos, ArmazenamentoLocalArquivos>();
+        services.AddSingleton<IExtratorTextoPdf, ExtratorTextoPdfPig>();
+
+        // Agente de IA para avaliação dos 5 critérios Frascati / Lei do Bem
+        services.AddHttpClient();
+        services.AddSingleton<AnalisadorElegibilidadeHeuristico>();
+        services.AddScoped<AnalisadorElegibilidadeLlm>();
+        services.AddScoped<IAnalisadorElegibilidade, AnalisadorElegibilidadeLlm>();
+
+        // Agente legado para compatibilidade de endpoints anteriores
         services.AddSingleton<IAgenteElegibilidade, AgenteElegibilidadeNaoConfigurado>();
+
         return services;
     }
 }

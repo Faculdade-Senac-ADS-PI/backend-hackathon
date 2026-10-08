@@ -2,6 +2,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using Hackthon.Api.Auth;
 using Hackthon.Application.Acesso;
+using Hackthon.Application.Projetos;
 using Hackthon.Infrastructure;
 using Hackthon.Infrastructure.Auth;
 using Hackthon.Infrastructure.Persistencia;
@@ -77,6 +78,9 @@ builder.Services.AddScoped<IListarUsuarios, ListarUsuariosServico>();
 builder.Services.AddScoped<ICriarUsuario, CriarUsuarioServico>();
 builder.Services.AddScoped<IAlterarPapel, AlterarPapelServico>();
 builder.Services.AddScoped<IAlterarAtivacao, AlterarAtivacaoServico>();
+builder.Services.AddScoped<IEnviarProposta, EnviarPropostaServico>();
+builder.Services.AddScoped<IConsultarProjetos, ConsultarProjetosServico>();
+builder.Services.AddScoped<IDeliberarProjeto, DeliberarProjetoServico>();
 
 var jwt = builder.Configuration.GetSection(JwtOpcoes.Secao).Get<JwtOpcoes>() ?? new JwtOpcoes();
 if (string.IsNullOrWhiteSpace(jwt.Secret) || jwt.Secret.Length < 32)
@@ -145,6 +149,7 @@ builder.Services.AddAuthorization(opcoes =>
 {
     opcoes.AddPolicy(Politicas.SomenteAdm, politica => politica.RequireRole("Adm"));
     opcoes.AddPolicy(Politicas.AnalistaOuAdm, politica => politica.RequireRole("Analista", "Assistente", "Adm"));
+    opcoes.AddPolicy(Politicas.SomenteProponente, politica => politica.RequireRole("Proponente"));
 });
 
 var origens = builder.Configuration.GetSection("Cors:Origens").Get<string[]>() ?? [];

@@ -1,0 +1,84 @@
+using System.Text.Json;
+using Hackthon.Domain.Projetos;
+using Hackthon.Domain.Usuarios;
+
+namespace Hackthon.Application.Projetos;
+
+internal static class MapeadorProjetos
+{
+    public static ProjetoProponenteResposta ParaProponente(Projeto projeto) =>
+        new(
+            projeto.Id,
+            projeto.Protocolo,
+            projeto.Titulo,
+            projeto.Setor,
+            projeto.NomeArquivoOriginal,
+            projeto.VersaoEnvio,
+            projeto.Status,
+            projeto.JustificativaAnalista,
+            projeto.CriadoEm,
+            projeto.AtualizadoEm,
+            projeto.DecididoEm);
+
+    public static ProjetoAnaliseResposta ParaAnalise(Projeto projeto, Usuario? proponente, Usuario? analista)
+    {
+        var justificativas = LerJustificativas(projeto.JustificativasIaJson);
+        var notas = new Dictionary<string, int?>
+        {
+            [CriteriosFrascati.Novidade] = projeto.NotaNovidade,
+            [CriteriosFrascati.Criatividade] = projeto.NotaCriatividade,
+            [CriteriosFrascati.Sistematico] = projeto.NotaSistematico,
+            [CriteriosFrascati.Transferibilidade] = projeto.NotaTransferibilidade,
+            [CriteriosFrascati.Incerteza] = projeto.NotaIncerteza
+        };
+
+        var criterios = CriteriosFrascati.Todos
+            .Select(c => new CriterioAvaliadoResposta(
+                c.Chave,
+                c.Nome,
+                c.Descricao,
+                notas[c.Chave],
+                CriteriosFrascati.NotaMaximaPorCriterio,
+                justificativas.GetValueOrDefault(c.Chave)))
+            .ToList();
+
+        return new ProjetoAnaliseResposta(
+            projeto.Id,
+            projeto.Protocolo,
+            projeto.Titulo,
+            projeto.Setor,
+            projeto.Status,
+            projeto.VersaoEnvio,
+            projeto.ProponenteId,
+            proponente?.Nome ?? "Proponente removido",
+            proponente?.Email ?? string.Empty,
+            projeto.NomeArquivoOriginal,
+            projeto.TamanhoBytes,
+            projeto.NotaIa,
+            projeto.RecomendacaoIa,
+            projeto.ResumoIa,
+            projeto.ParecerIa,
+            projeto.OrigemAnaliseIa,
+            projeto.AnalisadoEm,
+            criterios,
+            projeto.JustificativaAnalista,
+            analista?.Nome,
+            projeto.DecididoEm,
+            projeto.CriadoEm,
+            projeto.AtualizadoEm);
+    }
+
+    private static Dictionary<string, string> LerJustificativas(string? json)
+    {
+        if (string.IsNullOrWhiteSpace(json))
+            return new Dictionary<string, string>();
+        try
+        {
+            return JsonSerializer.Deserialize<Dictionary<string, string>>(json) ?? new Dictionary<string, string>();
+        }
+        catch (JsonException)
+        {
+            return new Dictionary<string, string>();
+        }
+    }
+}

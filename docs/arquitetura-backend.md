@@ -44,14 +44,19 @@ A aplicação adota **Clean Architecture (Onion/Hexagonal)** com dependência or
 - **Entidades:**
   - `Usuario`: Representa os usuários do sistema. Protege mutações de estado através de métodos ricos (`AlterarPapel`, `Desativar`, `Reativar`).
   - `RegistroAcesso`: Registro imutável de auditoria que rastreia ações de acesso (criação, login, troca de papel, ativação).
+  - `Projeto`: Proposta técnica de inovação tecnológica (Lei do Bem). Encapsula validação Frascati, regras de dispêndio e cálculo de benefício fiscal (~34%).
 - **Enums:**
-  - `Papel`: `Proponente` (1), `Analista` (2), `Adm` (3).
+  - `Papel`: `Proponente` (1), `Analista` (2), `Adm` (3), `Assistente` (4).
+  - `StatusProjeto`: `Triagem` (1), `EmAnalise` (2), `Elegivel` (3), `Diligencia` (4), `Inelegivel` (5).
   - `AcaoAcesso`: `Registro` (1), `Criacao` (2), `AlteracaoPapel` (3), `Desativacao` (4), `Reativacao` (5), `Login` (6).
 
 ### 2.2. Application (`Hackthon.Application`)
 - **Padrão Caso de Uso (One Service per Use Case):**
   - Cada operação possui uma interface e implementação única:
-    - `IRegistrarProponente` / `RegistrarProponenteServico`
+    - `IRegistrarProponente` / `RegistrarUsuarioServico`
+    - `ISubmeterProjeto` / `SubmeterProjetoServico` (Validação de cadastro ativo de Proponente e geração de protocolo)
+    - `IListarProjetosDoProponente` / `ConsultarProjetosServico`
+    - `IObterProjetoPorId` / `ConsultarProjetosServico`
     - `IEntrar` / `EntrarServico`
     - `IObterPerfil` / `ObterPerfilServico`
     - `IListarUsuarios` / `ListarUsuariosServico`
@@ -60,6 +65,7 @@ A aplicação adota **Clean Architecture (Onion/Hexagonal)** com dependência or
     - `IAlterarAtivacao` / `AlterarAtivacaoServico`
 - **Portas de Infraestrutura (DIP - Dependency Inversion Principle):**
   - `IUsuarioRepositorio`: Acesso e persistência a dados de usuários.
+  - `IProjetoRepositorio`: Persistência, consulta e unicidade de protocolos de projetos.
   - `IRegistroAcessoRepositorio`: Inserção de trilhas de auditoria.
   - `IUnidadeDeTrabalho`: Controle transacional e gravação em lote.
   - `ISenhaHasher`: Contrato de hash e verificação de senhas.
@@ -82,7 +88,8 @@ A aplicação adota **Clean Architecture (Onion/Hexagonal)** com dependência or
 - **Autenticação Dupla:** Tokens JWT são lidos automaticamente do cabeçalho `Authorization: Bearer <token>` ou do cookie `hackthon_token`.
 - **Políticas de Autorização:**
   - `SomenteAdm`: Exige role `Adm`.
-  - `AnalistaOuAdm`: Exige role `Analista` ou `Adm`.
+  - `AnalistaOuAdm`: Exige role `Analista`, `Assistente` ou `Adm`.
+  - `SomenteProponente`: Exige role `Proponente` autenticado.
 
 ---
 

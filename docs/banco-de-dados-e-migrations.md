@@ -37,7 +37,33 @@ Diário de auditoria imutável que registra todas as alterações de conta e log
 | `Detalhe` | `character varying(500)` | NULLABLE | Descrição textual da ação |
 | `CriadoEm` | `timestamp with time zone` | NOT NULL | Carimbo UTC do evento de auditoria |
 
-> **Nota:** A chave estrangeira `FK_registros_acesso_usuarios_UsuarioId` possui `ON DELETE RESTRICT` para impedir a exclusão física de usuários que possuem histórico de auditoria.
+### 1.3. Tabela `projetos`
+
+Armazena as propostas e formulários de ideias de projetos de inovação tecnológica (Lei do Bem) submetidos exclusivamente por proponentes válidos e ativos.
+
+| Coluna | Tipo | Restrições | Descrição |
+| :--- | :--- | :--- | :--- |
+| `Id` | `uuid` | PK | Identificador único da proposta |
+| `Protocolo` | `character varying(30)` | NOT NULL, UNIQUE (`IX_projetos_Protocolo`) | Código legível de rastreamento (ex: `PROP-2026-1042`) |
+| `Titulo` | `character varying(200)` | NOT NULL | Título descritivo do projeto de P&D |
+| `Area` | `character varying(100)` | NOT NULL | Área tecnológica (Software & IA, Biotecnologia, etc.) |
+| `AnoBase` | `character varying(10)` | NOT NULL | Exercício fiscal da apuração (ex: `2026`) |
+| `IncertezaTecnica`| `character varying(4000)`| NOT NULL | Descrição da barreira técnica (Manual de Frascati) |
+| `Metodologia` | `character varying(4000)`| NULLABLE | Hipóteses, delineamento experimental e testes |
+| `DispendioEquipe` | `numeric(18,2)` | NOT NULL | Gastos com equipe técnica interna |
+| `DispendioMateriais` | `numeric(18,2)` | NOT NULL | Gastos com materiais e reagentes |
+| `DispendioTerceiros` | `numeric(18,2)` | NOT NULL | Gastos com serviços técnicos especializados |
+| `DispendioTotal` | `numeric(18,2)` | NOT NULL | Investimento total orçado em P&D |
+| `BeneficioEstimado`| `numeric(18,2)` | NOT NULL | Dedução estimada (~34% no Lucro Real) |
+| `LucroReal` | `boolean` | NOT NULL | Declaração de operação no Lucro Real |
+| `CndAtiva` | `boolean` | NOT NULL | Declaração de Certidão Negativa ativa |
+| `Status` | `character varying(30)` | NOT NULL, INDEX (`IX_projetos_Status`) | `Triagem`, `EmAnalise`, `Elegivel`, `Diligencia`, `Inelegivel` |
+| `ParecerAnalista`| `character varying(4000)`| NULLABLE | Parecer técnico emitido pelo analista de P&D |
+| `ProponenteId` | `uuid` | NOT NULL, FK (`usuarios.Id`), INDEX | Chave estrangeira para o usuário proponente |
+| `CriadoEm` | `timestamp with time zone` | NOT NULL | Carimbo UTC da submissão inicial |
+| `AtualizadoEm` | `timestamp with time zone` | NOT NULL | Carimbo UTC da última modificação |
+
+> **Nota:** A chave estrangeira `FK_projetos_usuarios_ProponenteId` possui `ON DELETE RESTRICT` para assegurar integridade histórica e impedir remoção física de proponentes com projetos vinculados.
 
 ---
 

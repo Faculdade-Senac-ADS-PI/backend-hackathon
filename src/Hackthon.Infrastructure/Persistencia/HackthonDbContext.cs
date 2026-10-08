@@ -1,4 +1,5 @@
 using Hackthon.Domain.Acesso;
+using Hackthon.Domain.Projetos;
 using Hackthon.Domain.Usuarios;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,7 @@ public sealed class HackthonDbContext : DbContext
 
     public DbSet<Usuario> Usuarios => Set<Usuario>();
     public DbSet<RegistroAcesso> RegistrosAcesso => Set<RegistroAcesso>();
+    public DbSet<Projeto> Projetos => Set<Projeto>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
