@@ -24,5 +24,19 @@ public sealed record ReenviarPropostaUploadRequest(
     IFormFile? Arquivo,
     List<IFormFile>? Arquivos);
 
-/// <summary>Deliberação do analista (Aprovado, Reprovado ou Reanalise).</summary>
-public sealed record DeliberarProjetoRequest(string? Decisao, string? Justificativa);
+/// <summary>
+/// Deliberação do analista: uma das 4 classes do desafio (Elegivel, ComRessalvas,
+/// NaoElegivel, EvidenciaInsuficiente) ou Reanalise, com campos de rastreabilidade.
+/// </summary>
+public sealed record DeliberarProjetoRequest(
+    string? Decisao,
+    string? Justificativa,
+    string? RecorteSustentado,
+    string? LimitacaoTecnica,
+    string? EvidenciaNecessaria,
+    string? EloAusente,
+    string? EvidenciasAdicionais,
+    string? EvidenciasUtilizadas,
+    string? EvidenciasContrarias,
+    string? Lacunas,
+    string? RegraAplicada);

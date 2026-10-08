@@ -32,11 +32,21 @@ public sealed record ReenviarPropostaComando(
     Guid ProponenteId,
     IReadOnlyList<ArquivoEntradaComando> Arquivos);
 
+/// <summary>Deliberação do analista: uma das 4 classes do desafio + campos de rastreabilidade.</summary>
 public sealed record DeliberarProjetoComando(
     Guid ProjetoId,
     Guid AnalistaId,
     string? Decisao,
-    string? Justificativa);
+    string? Justificativa,
+    string? RecorteSustentado,
+    string? LimitacaoTecnica,
+    string? EvidenciaNecessaria,
+    string? EloAusente,
+    string? EvidenciasAdicionais,
+    string? EvidenciasUtilizadas,
+    string? EvidenciasContrarias,
+    string? Lacunas,
+    string? RegraAplicada);
 
 /// <summary>Visão do proponente: confirmação de envio, status e arquivos.</summary>
 public sealed record ProjetoProponenteResposta(
@@ -85,7 +95,25 @@ public sealed record ProjetoAnaliseResposta(
     string? JustificativaAnalista,
     string? AnalistaNome,
     DateTimeOffset? DecididoEm,
+    string? RecorteSustentado,
+    string? LimitacaoTecnica,
+    string? EvidenciaNecessaria,
+    string? EloAusente,
+    string? EvidenciasAdicionais,
+    string? EvidenciasUtilizadas,
+    string? EvidenciasContrarias,
+    string? Lacunas,
+    string? RegraAplicada,
     DateTimeOffset CriadoEm,
     DateTimeOffset AtualizadoEm);
+
+/// <summary>Parecer rastreável gerado pelo sistema para a classificação do projeto (documento defendível).</summary>
+public sealed record ParecerResposta(
+    Guid ProjetoId,
+    string Protocolo,
+    string Titulo,
+    string Classificacao,
+    string Markdown,
+    DateTimeOffset GeradoEm);
 
 public sealed record ArquivoProjeto(Stream Conteudo, string NomeArquivo, string TipoMime);

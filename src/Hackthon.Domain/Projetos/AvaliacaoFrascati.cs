@@ -51,12 +51,16 @@ public sealed record AvaliacaoFrascati
         Origem = string.IsNullOrWhiteSpace(origem) ? "desconhecida" : origem.Trim();
     }
 
-    /// <summary>Faixas de referência: ≥75 alta, 50–74 parcial, &lt;50 risco de inelegibilidade.</summary>
+    /// <summary>
+    /// Faixas de referência mapeadas para as quatro classes oficiais do desafio:
+    /// ≥75 Elegível · 50–74 Com ressalvas · &lt;50 Não elegível.
+    /// "Evidência insuficiente" é decidido pelo analisador quando faltar material para concluir.
+    /// </summary>
     public static string ClassificarPorNota(int notaTotal) => notaTotal switch
     {
-        >= 75 => "Alta elegibilidade",
-        >= 50 => "Elegibilidade parcial",
-        _ => "Risco de inelegibilidade"
+        >= 75 => "Elegível",
+        >= 50 => "Com ressalvas",
+        _ => "Não elegível"
     };
 
     private static int Validar(int nota, string campo)

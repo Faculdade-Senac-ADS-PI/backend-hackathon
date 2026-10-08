@@ -66,3 +66,9 @@ public interface IDeliberarProjeto
 {
     Task<Resultado<ProjetoAnaliseResposta>> ExecutarAsync(DeliberarProjetoComando comando, CancellationToken ct);
 }
+
+/// <summary>Gera o parecer rastreável (documento defendível) a partir da classificação registrada.</summary>
+public interface IGerarParecer
+{
+    Task<Resultado<ParecerResposta>> ExecutarAsync(Guid projetoId, CancellationToken ct);
+}

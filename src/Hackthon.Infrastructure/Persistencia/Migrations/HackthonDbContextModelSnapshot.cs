@@ -116,12 +116,33 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                     b.Property<DateTimeOffset?>("DecididoEm")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<string>("EloAusente")
+                        .HasColumnType("text");
+
+                    b.Property<string>("EvidenciaNecessaria")
+                        .HasColumnType("text");
+
+                    b.Property<string>("EvidenciasAdicionais")
+                        .HasColumnType("text");
+
+                    b.Property<string>("EvidenciasContrarias")
+                        .HasColumnType("text");
+
+                    b.Property<string>("EvidenciasUtilizadas")
+                        .HasColumnType("text");
+
                     b.Property<string>("JustificativaAnalista")
                         .HasMaxLength(4000)
                         .HasColumnType("character varying(4000)");
 
                     b.Property<string>("JustificativasIaJson")
                         .HasColumnType("jsonb");
+
+                    b.Property<string>("Lacunas")
+                        .HasColumnType("text");
+
+                    b.Property<string>("LimitacaoTecnica")
+                        .HasColumnType("text");
 
                     b.Property<string>("NomeArquivoOriginal")
                         .IsRequired()
@@ -164,6 +185,12 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                     b.Property<string>("RecomendacaoIa")
                         .HasMaxLength(60)
                         .HasColumnType("character varying(60)");
+
+                    b.Property<string>("RecorteSustentado")
+                        .HasColumnType("text");
+
+                    b.Property<string>("RegraAplicada")
+                        .HasColumnType("text");
 
                     b.Property<string>("ResumoIa")
                         .HasColumnType("text");

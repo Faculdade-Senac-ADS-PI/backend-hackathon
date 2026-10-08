@@ -76,6 +76,15 @@ internal static class MapeadorProjetos
             projeto.JustificativaAnalista,
             analista?.Nome,
             projeto.DecididoEm,
+            projeto.RecorteSustentado,
+            projeto.LimitacaoTecnica,
+            projeto.EvidenciaNecessaria,
+            projeto.EloAusente,
+            projeto.EvidenciasAdicionais,
+            projeto.EvidenciasUtilizadas,
+            projeto.EvidenciasContrarias,
+            projeto.Lacunas,
+            projeto.RegraAplicada,
             projeto.CriadoEm,
             projeto.AtualizadoEm);
     }

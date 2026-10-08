@@ -39,10 +39,37 @@ public sealed class Projeto
     public string? OrigemAnaliseIa { get; private set; }
     public DateTimeOffset? AnalisadoEm { get; private set; }
 
-    // Deliberação do analista
+    // Deliberação do analista (classificação + rastreabilidade — 4 classes do desafio)
     public string? JustificativaAnalista { get; private set; }
     public Guid? AnalistaId { get; private set; }
     public DateTimeOffset? DecididoEm { get; private set; }
+
+    /// <summary>Com ressalvas: o que as evidências sustentam dentro do escopo pretendido.</summary>
+    public string? RecorteSustentado { get; private set; }
+
+    /// <summary>Com ressalvas: a limitação técnica ou de validação concreta.</summary>
+    public string? LimitacaoTecnica { get; private set; }
+
+    /// <summary>Com ressalvas: a evidência necessária para resolver a ressalva.</summary>
+    public string? EvidenciaNecessaria { get; private set; }
+
+    /// <summary>Evidência insuficiente: o elo ausente que impede a conclusão.</summary>
+    public string? EloAusente { get; private set; }
+
+    /// <summary>Evidência insuficiente: evidências adicionais a solicitar.</summary>
+    public string? EvidenciasAdicionais { get; private set; }
+
+    /// <summary>Evidências utilizadas na conclusão, identificadas por ID (uma por linha/vírgula).</summary>
+    public string? EvidenciasUtilizadas { get; private set; }
+
+    /// <summary>Evidências contrárias ou contraditórias, incluindo divergências entre depoimento e documento.</summary>
+    public string? EvidenciasContrarias { get; private set; }
+
+    /// <summary>Lacunas identificadas no dossiê.</summary>
+    public string? Lacunas { get; private set; }
+
+    /// <summary>Regra/critério aplicado para decidir (rastreabilidade: "qual regra foi usada").</summary>
+    public string? RegraAplicada { get; private set; }
 
     public DateTimeOffset CriadoEm { get; private set; }
     public DateTimeOffset AtualizadoEm { get; private set; }
@@ -109,24 +136,88 @@ public sealed class Projeto
         AtualizadoEm = agora;
     }
 
-    /// <summary>Decisão humana do analista: Aprovado, Reprovado ou Reanalise.</summary>
-    public void Deliberar(StatusProjeto decisao, string? justificativa, Guid analistaId, DateTimeOffset agora)
+    /// <summary>
+    /// Decisão humana do analista: uma das quatro classes do desafio
+    /// (Elegível, Com ressalvas, Não elegível, Evidência insuficiente) ou pedido de Reanálise.
+    /// </summary>
+    public void Deliberar(StatusProjeto decisao, DeliberacaoAnalista dados, Guid analistaId, DateTimeOffset agora)
     {
-        if (decisao is not (StatusProjeto.Aprovado or StatusProjeto.Reprovado or StatusProjeto.Reanalise))
-            throw new ArgumentException("A decisão deve ser Aprovado, Reprovado ou Reanalise.", nameof(decisao));
+        ArgumentNullException.ThrowIfNull(dados);
+        if (decisao is not (StatusProjeto.Elegivel or StatusProjeto.ComRessalvas
+            or StatusProjeto.NaoElegivel or StatusProjeto.EvidenciaInsuficiente or StatusProjeto.Reanalise))
+            throw new ArgumentException(
+                "A decisão deve ser Elegível, Com ressalvas, Não elegível, Evidência insuficiente ou Reanalise.",
+                nameof(decisao));
         if (Status != StatusProjeto.AguardandoAnalista)
             throw new InvalidOperationException("Só é possível deliberar projetos que aguardam o analista.");
-        if (decisao != StatusProjeto.Aprovado && string.IsNullOrWhiteSpace(justificativa))
-            throw new ArgumentException("Explique o motivo da reprovação ou o que precisa ser complementado.", nameof(justificativa));
+
+        var justificativa = dados.Justificativa?.Trim();
+        if (string.IsNullOrWhiteSpace(justificativa))
+            throw new ArgumentException(
+                "A justificativa da conclusão é obrigatória: registre o motivo da decisão com fontes.",
+                nameof(dados));
         if (analistaId == Guid.Empty)
             throw new ArgumentException("O analista responsável é obrigatório.", nameof(analistaId));
 
+        // Guardas de domínio por classe (a camada de aplicação devolve 400 amigável antes de chegar aqui).
+        if (decisao != StatusProjeto.Reanalise)
+        {
+            if (decisao == StatusProjeto.ComRessalvas &&
+                (string.IsNullOrWhiteSpace(dados.RecorteSustentado) ||
+                 string.IsNullOrWhiteSpace(dados.LimitacaoTecnica) ||
+                 string.IsNullOrWhiteSpace(dados.EvidenciaNecessaria)))
+                throw new ArgumentException(
+                    "Com ressalvas exige recorte sustentado, limitação específica e evidência necessária.",
+                    nameof(dados));
+
+            if (decisao == StatusProjeto.EvidenciaInsuficiente &&
+                (string.IsNullOrWhiteSpace(dados.EloAusente) ||
+                 string.IsNullOrWhiteSpace(dados.EvidenciasAdicionais)))
+                throw new ArgumentException(
+                    "Evidência insuficiente exige o elo ausente e as evidências adicionais a solicitar.",
+                    nameof(dados));
+
+            if (string.IsNullOrWhiteSpace(dados.EvidenciasUtilizadas))
+                throw new ArgumentException(
+                    "Informe as evidências utilizadas na conclusão, identificadas por ID.",
+                    nameof(dados));
+        }
+
+        if (decisao == StatusProjeto.Reanalise)
+        {
+            // Reanálise é estado de fluxo, não classificação: os campos de classe ficam vazios
+            // até que o proponente envie a nova versão e o analista classifique.
+            RecorteSustentado = null;
+            LimitacaoTecnica = null;
+            EvidenciaNecessaria = null;
+            EloAusente = null;
+            EvidenciasAdicionais = null;
+            EvidenciasUtilizadas = null;
+            EvidenciasContrarias = null;
+            Lacunas = null;
+        }
+        else
+        {
+            RecorteSustentado = Normalizar(dados.RecorteSustentado);
+            LimitacaoTecnica = Normalizar(dados.LimitacaoTecnica);
+            EvidenciaNecessaria = Normalizar(dados.EvidenciaNecessaria);
+            EloAusente = Normalizar(dados.EloAusente);
+            EvidenciasAdicionais = Normalizar(dados.EvidenciasAdicionais);
+            EvidenciasUtilizadas = Normalizar(dados.EvidenciasUtilizadas);
+            EvidenciasContrarias = Normalizar(dados.EvidenciasContrarias);
+            Lacunas = Normalizar(dados.Lacunas);
+        }
+
+        RegraAplicada = Normalizar(dados.RegraAplicada);
         Status = decisao;
-        JustificativaAnalista = string.IsNullOrWhiteSpace(justificativa) ? null : justificativa.Trim();
+        JustificativaAnalista = justificativa;
         AnalistaId = analistaId;
         DecididoEm = agora;
         AtualizadoEm = agora;
     }
+
+    private static string? Normalizar(string? valor) =>
+        string.IsNullOrWhiteSpace(valor) ? null : valor.Trim();
 
     /// <summary>Após um pedido de reanálise, o proponente envia uma nova versão dos documentos.</summary>
     public void SubstituirDocumentos(IReadOnlyList<DocumentoProposta> documentos, DateTimeOffset agora)

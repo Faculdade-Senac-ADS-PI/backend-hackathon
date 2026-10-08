@@ -238,7 +238,10 @@ public sealed class ProjetosController : ControllerBase
         return File(resultado.Valor.Conteudo, resultado.Valor.TipoMime, resultado.Valor.NomeArquivo);
     }
 
-    /// <summary>Deliberação do analista humano sobre a proposta (Aprovar, Reprovar ou Reanálise).</summary>
+    /// <summary>
+    /// Deliberação do analista humano: classificação com uma das 4 classes do desafio
+    /// (Elegível, Com ressalvas, Não elegível, Evidência insuficiente) ou Reanalise.
+    /// </summary>
     [HttpPost("{id:guid}/deliberar")]
     [Authorize(Policy = Politicas.AnalistaOuAdm)]
     public async Task<IActionResult> Deliberar(
@@ -253,7 +256,7 @@ public sealed class ProjetosController : ControllerBase
             {
                 Status = StatusCodes.Status400BadRequest,
                 Title = "Decisão ausente",
-                Detail = "Informe a decisão: Aprovado, Reprovado ou Reanalise."
+                Detail = "Informe a classificação: Elegível, Com ressalvas, Não elegível, Evidência insuficiente ou Reanalise."
             });
         }
 
@@ -264,9 +267,36 @@ public sealed class ProjetosController : ControllerBase
             ProjetoId: id,
             AnalistaId: analistaId,
             Decisao: pedido.Decisao,
-            Justificativa: pedido.Justificativa);
+            Justificativa: pedido.Justificativa,
+            RecorteSustentado: pedido.RecorteSustentado,
+            LimitacaoTecnica: pedido.LimitacaoTecnica,
+            EvidenciaNecessaria: pedido.EvidenciaNecessaria,
+            EloAusente: pedido.EloAusente,
+            EvidenciasAdicionais: pedido.EvidenciasAdicionais,
+            EvidenciasUtilizadas: pedido.EvidenciasUtilizadas,
+            EvidenciasContrarias: pedido.EvidenciasContrarias,
+            Lacunas: pedido.Lacunas,
+            RegraAplicada: pedido.RegraAplicada);
 
         var resultado = await caso.ExecutarAsync(comando, ct);
+        if (!resultado.Sucesso || resultado.Valor is null)
+            return ResultadoHttp.Problema(resultado);
+
+        return Ok(resultado.Valor);
+    }
+
+    /// <summary>
+    /// Parecer preliminar rastreável (Markdown) gerado a partir da classificação registrada:
+    /// documento defendível com regra aplicada, evidências por ID, quem decidiu e quando.
+    /// </summary>
+    [HttpGet("{id:guid}/parecer")]
+    [Authorize(Policy = Politicas.AnalistaOuAdm)]
+    public async Task<IActionResult> Parecer(
+        Guid id,
+        [FromServices] IGerarParecer caso,
+        CancellationToken ct)
+    {
+        var resultado = await caso.ExecutarAsync(id, ct);
         if (!resultado.Sucesso || resultado.Valor is null)
             return ResultadoHttp.Problema(resultado);
 

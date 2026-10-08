@@ -35,6 +35,18 @@ public sealed class ProjetoConfiguracao : IEntityTypeConfiguration<Projeto>
 
         // Deliberação do analista
         builder.Property(projeto => projeto.JustificativaAnalista).HasMaxLength(4000);
+
+        // Rastreabilidade da classificação (4 classes do desafio)
+        builder.Property(projeto => projeto.RecorteSustentado).HasColumnType("text");
+        builder.Property(projeto => projeto.LimitacaoTecnica).HasColumnType("text");
+        builder.Property(projeto => projeto.EvidenciaNecessaria).HasColumnType("text");
+        builder.Property(projeto => projeto.EloAusente).HasColumnType("text");
+        builder.Property(projeto => projeto.EvidenciasAdicionais).HasColumnType("text");
+        builder.Property(projeto => projeto.EvidenciasUtilizadas).HasColumnType("text");
+        builder.Property(projeto => projeto.EvidenciasContrarias).HasColumnType("text");
+        builder.Property(projeto => projeto.Lacunas).HasColumnType("text");
+        builder.Property(projeto => projeto.RegraAplicada).HasColumnType("text");
+
         builder.HasOne<Usuario>()
             .WithMany()
             .HasForeignKey(projeto => projeto.AnalistaId)

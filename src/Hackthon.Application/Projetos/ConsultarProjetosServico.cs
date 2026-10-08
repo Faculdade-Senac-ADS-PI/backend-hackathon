@@ -37,7 +37,7 @@ public sealed class ConsultarProjetosServico : IConsultarProjetos
                 return Resultado<IReadOnlyList<ProjetoAnaliseResposta>>.Falha(
                     400,
                     "Filtro inválido",
-                    "Use ProcessandoIa, AguardandoAnalista, Aprovado, Reprovado ou Reanalise.");
+                    "Use ProcessandoIa, AguardandoAnalista, Elegivel, ComRessalvas, NaoElegivel, EvidenciaInsuficiente ou Reanalise.");
             }
 
             filtro = convertido;
