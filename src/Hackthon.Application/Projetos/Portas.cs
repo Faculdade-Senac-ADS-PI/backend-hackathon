@@ -59,6 +59,7 @@ public interface IConsultarProjetos
     Task<Resultado<ProjetoProponenteResposta>> ObterParaProponenteAsync(Guid id, Guid proponenteId, CancellationToken ct);
     Task<Resultado<ProjetoAnaliseResposta>> ObterParaAnalistaAsync(Guid id, CancellationToken ct);
     Task<Resultado<ArquivoProjeto>> AbrirArquivoAsync(Guid id, Guid solicitanteId, bool ehAnalista, CancellationToken ct);
+    Task<Resultado<ArquivoProjeto>> AbrirArquivoItemAsync(Guid projetoId, Guid arquivoId, Guid solicitanteId, bool ehAnalista, CancellationToken ct);
 }
 
 public interface IDeliberarProjeto

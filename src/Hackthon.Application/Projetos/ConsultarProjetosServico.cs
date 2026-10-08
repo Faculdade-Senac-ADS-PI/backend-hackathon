@@ -87,10 +87,46 @@ public sealed class ConsultarProjetosServico : IConsultarProjetos
         if (projeto is null || (!ehAnalista && projeto.ProponenteId != solicitanteId))
             return Resultado<ArquivoProjeto>.Falha(404, "Projeto não encontrado", "O projeto solicitado não existe.");
 
-        var conteudo = _armazenamento.AbrirLeitura(projeto.CaminhoArquivo);
-        if (conteudo is null)
-            return Resultado<ArquivoProjeto>.Falha(404, "Arquivo indisponível", "O PDF desta proposta não está mais no armazenamento.");
+        // Se tiver arquivos na coleção, pega o primeiro
+        var primeiroArquivo = projeto.Arquivos.FirstOrDefault();
+        var caminho = primeiroArquivo?.Caminho ?? projeto.CaminhoArquivo;
+        var nome = primeiroArquivo?.NomeOriginal ?? projeto.NomeArquivoOriginal;
+        var extensao = primeiroArquivo?.Extensao ?? Path.GetExtension(nome);
 
-        return Resultado<ArquivoProjeto>.Ok(new ArquivoProjeto(conteudo, projeto.NomeArquivoOriginal));
+        var conteudo = _armazenamento.AbrirLeitura(caminho);
+        if (conteudo is null)
+            return Resultado<ArquivoProjeto>.Falha(404, "Arquivo indisponível", "O arquivo desta proposta não está mais no armazenamento.");
+
+        var mime = ObterMimeType(extensao);
+        return Resultado<ArquivoProjeto>.Ok(new ArquivoProjeto(conteudo, nome, mime));
+    }
+
+    public async Task<Resultado<ArquivoProjeto>> AbrirArquivoItemAsync(Guid projetoId, Guid arquivoId, Guid solicitanteId, bool ehAnalista, CancellationToken ct)
+    {
+        var projeto = await _projetos.ObterPorIdAsync(projetoId, ct);
+        if (projeto is null || (!ehAnalista && projeto.ProponenteId != solicitanteId))
+            return Resultado<ArquivoProjeto>.Falha(404, "Projeto não encontrado", "O projeto solicitado não existe.");
+
+        var arquivo = projeto.Arquivos.FirstOrDefault(a => a.Id == arquivoId);
+        if (arquivo is null)
+            return Resultado<ArquivoProjeto>.Falha(404, "Arquivo não encontrado", "O anexo solicitado não pertence a esta proposta.");
+
+        var conteudo = _armazenamento.AbrirLeitura(arquivo.Caminho);
+        if (conteudo is null)
+            return Resultado<ArquivoProjeto>.Falha(404, "Arquivo indisponível", "O anexo desta proposta não está mais no armazenamento.");
+
+        var mime = ObterMimeType(arquivo.Extensao);
+        return Resultado<ArquivoProjeto>.Ok(new ArquivoProjeto(conteudo, arquivo.NomeOriginal, mime));
+    }
+
+    private static string ObterMimeType(string extensao)
+    {
+        var ext = extensao.ToLowerInvariant().Trim();
+        return ext switch
+        {
+            ".pdf" => "application/pdf",
+            ".csv" => "text/csv; charset=utf-8",
+            _ => "application/octet-stream"
+        };
     }
 }

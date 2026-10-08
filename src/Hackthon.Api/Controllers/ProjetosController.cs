@@ -12,7 +12,7 @@ namespace Hackthon.Api.Controllers;
 [Route("api/projetos")]
 public sealed class ProjetosController : ControllerBase
 {
-    /// <summary>Submissão inicial de proposta em PDF pelo proponente.</summary>
+    /// <summary>Submissão inicial de proposta pelo proponente (aceita um ou múltiplos arquivos PDF/CSV).</summary>
     [HttpPost("upload")]
     [HttpPost]
     [Authorize(Policy = Politicas.SomenteProponente)]
@@ -22,17 +22,18 @@ public sealed class ProjetosController : ControllerBase
         [FromServices] IEnviarProposta caso,
         CancellationToken ct)
     {
-        if (pedido is null || pedido.Arquivo is null || pedido.Arquivo.Length == 0)
+        var formFiles = ExtrairArquivos(pedido?.Arquivo, pedido?.Arquivos);
+        if (formFiles.Count == 0)
         {
             return BadRequest(new ProblemDetails
             {
                 Status = StatusCodes.Status400BadRequest,
                 Title = "Arquivo ausente",
-                Detail = "Envie o arquivo PDF com a proposta de inovação."
+                Detail = "Envie pelo menos um arquivo PDF ou CSV com a proposta e dados do projeto."
             });
         }
 
-        if (string.IsNullOrWhiteSpace(pedido.Titulo))
+        if (string.IsNullOrWhiteSpace(pedido?.Titulo))
         {
             return BadRequest(new ProblemDetails
             {
@@ -42,7 +43,7 @@ public sealed class ProjetosController : ControllerBase
             });
         }
 
-        if (string.IsNullOrWhiteSpace(pedido.Setor))
+        if (string.IsNullOrWhiteSpace(pedido?.Setor))
         {
             return BadRequest(new ProblemDetails
             {
@@ -55,20 +56,36 @@ public sealed class ProjetosController : ControllerBase
         if (!UsuarioAtual.TentarId(User, out var proponenteId))
             return Unauthorized();
 
-        await using var stream = pedido.Arquivo.OpenReadStream();
-        var comando = new EnviarPropostaComando(
-            ProponenteId: proponenteId,
-            Titulo: pedido.Titulo,
-            Setor: pedido.Setor,
-            NomeArquivo: pedido.Arquivo.FileName,
-            TamanhoBytes: pedido.Arquivo.Length,
-            Conteudo: stream);
+        var entradas = new List<ArquivoEntradaComando>();
+        var streams = new List<Stream>();
+        try
+        {
+            foreach (var formFile in formFiles)
+            {
+                var stream = formFile.OpenReadStream();
+                streams.Add(stream);
+                entradas.Add(new ArquivoEntradaComando(formFile.FileName, formFile.Length, stream));
+            }
 
-        var resultado = await caso.EnviarAsync(comando, ct);
-        if (!resultado.Sucesso || resultado.Valor is null)
-            return ResultadoHttp.Problema(resultado);
+            var comando = new EnviarPropostaComando(
+                ProponenteId: proponenteId,
+                Titulo: pedido.Titulo,
+                Setor: pedido.Setor,
+                Arquivos: entradas);
 
-        return Created($"/api/projetos/{resultado.Valor.Id}", resultado.Valor);
+            var resultado = await caso.EnviarAsync(comando, ct);
+            if (!resultado.Sucesso || resultado.Valor is null)
+                return ResultadoHttp.Problema(resultado);
+
+            return Created($"/api/projetos/{resultado.Valor.Id}", resultado.Valor);
+        }
+        finally
+        {
+            foreach (var s in streams)
+            {
+                await s.DisposeAsync();
+            }
+        }
     }
 
     /// <summary>Reenvio de proposta após o analista solicitar reanálise.</summary>
@@ -81,32 +98,49 @@ public sealed class ProjetosController : ControllerBase
         [FromServices] IEnviarProposta caso,
         CancellationToken ct)
     {
-        if (pedido is null || pedido.Arquivo is null || pedido.Arquivo.Length == 0)
+        var formFiles = ExtrairArquivos(pedido?.Arquivo, pedido?.Arquivos);
+        if (formFiles.Count == 0)
         {
             return BadRequest(new ProblemDetails
             {
                 Status = StatusCodes.Status400BadRequest,
                 Title = "Arquivo ausente",
-                Detail = "Envie o arquivo PDF revisado da proposta."
+                Detail = "Envie pelo menos um arquivo PDF ou CSV revisado da proposta."
             });
         }
 
         if (!UsuarioAtual.TentarId(User, out var proponenteId))
             return Unauthorized();
 
-        await using var stream = pedido.Arquivo.OpenReadStream();
-        var comando = new ReenviarPropostaComando(
-            ProjetoId: id,
-            ProponenteId: proponenteId,
-            NomeArquivo: pedido.Arquivo.FileName,
-            TamanhoBytes: pedido.Arquivo.Length,
-            Conteudo: stream);
+        var entradas = new List<ArquivoEntradaComando>();
+        var streams = new List<Stream>();
+        try
+        {
+            foreach (var formFile in formFiles)
+            {
+                var stream = formFile.OpenReadStream();
+                streams.Add(stream);
+                entradas.Add(new ArquivoEntradaComando(formFile.FileName, formFile.Length, stream));
+            }
 
-        var resultado = await caso.ReenviarAsync(comando, ct);
-        if (!resultado.Sucesso || resultado.Valor is null)
-            return ResultadoHttp.Problema(resultado);
+            var comando = new ReenviarPropostaComando(
+                ProjetoId: id,
+                ProponenteId: proponenteId,
+                Arquivos: entradas);
 
-        return Ok(resultado.Valor);
+            var resultado = await caso.ReenviarAsync(comando, ct);
+            if (!resultado.Sucesso || resultado.Valor is null)
+                return ResultadoHttp.Problema(resultado);
+
+            return Ok(resultado.Valor);
+        }
+        finally
+        {
+            foreach (var s in streams)
+            {
+                await s.DisposeAsync();
+            }
+        }
     }
 
     /// <summary>Lista de propostas do proponente autenticado (visão limpa).</summary>
@@ -167,7 +201,7 @@ public sealed class ProjetosController : ControllerBase
         }
     }
 
-    /// <summary>Download do PDF original armazenado da proposta.</summary>
+    /// <summary>Download do arquivo principal da proposta.</summary>
     [HttpGet("{id:guid}/arquivo")]
     public async Task<IActionResult> BaixarArquivo(
         Guid id,
@@ -182,7 +216,26 @@ public sealed class ProjetosController : ControllerBase
         if (!resultado.Sucesso || resultado.Valor is null)
             return ResultadoHttp.Problema(resultado);
 
-        return File(resultado.Valor.Conteudo, "application/pdf", resultado.Valor.NomeArquivo);
+        return File(resultado.Valor.Conteudo, resultado.Valor.TipoMime, resultado.Valor.NomeArquivo);
+    }
+
+    /// <summary>Download de um arquivo específico da proposta por Id do anexo.</summary>
+    [HttpGet("{id:guid}/arquivos/{arquivoId:guid}")]
+    public async Task<IActionResult> BaixarArquivoItem(
+        Guid id,
+        Guid arquivoId,
+        [FromServices] IConsultarProjetos caso,
+        CancellationToken ct)
+    {
+        if (!UsuarioAtual.TentarId(User, out var solicitanteId))
+            return Unauthorized();
+
+        var ehAnalistaOuAdm = User.IsInRole("Analista") || User.IsInRole("Adm") || User.IsInRole("Assistente");
+        var resultado = await caso.AbrirArquivoItemAsync(id, arquivoId, solicitanteId, ehAnalistaOuAdm, ct);
+        if (!resultado.Sucesso || resultado.Valor is null)
+            return ResultadoHttp.Problema(resultado);
+
+        return File(resultado.Valor.Conteudo, resultado.Valor.TipoMime, resultado.Valor.NomeArquivo);
     }
 
     /// <summary>Deliberação do analista humano sobre a proposta (Aprovar, Reprovar ou Reanálise).</summary>
@@ -218,5 +271,24 @@ public sealed class ProjetosController : ControllerBase
             return ResultadoHttp.Problema(resultado);
 
         return Ok(resultado.Valor);
+    }
+
+    private static List<IFormFile> ExtrairArquivos(IFormFile? arquivoUnico, List<IFormFile>? multiplos)
+    {
+        var lista = new List<IFormFile>();
+        if (multiplos is not null && multiplos.Count > 0)
+        {
+            foreach (var f in multiplos)
+            {
+                if (f.Length > 0) lista.Add(f);
+            }
+        }
+
+        if (arquivoUnico is not null && arquivoUnico.Length > 0 && !lista.Contains(arquivoUnico))
+        {
+            lista.Add(arquivoUnico);
+        }
+
+        return lista;
     }
 }

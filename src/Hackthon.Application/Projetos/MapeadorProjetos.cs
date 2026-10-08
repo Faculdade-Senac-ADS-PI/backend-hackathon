@@ -6,19 +6,26 @@ namespace Hackthon.Application.Projetos;
 
 internal static class MapeadorProjetos
 {
-    public static ProjetoProponenteResposta ParaProponente(Projeto projeto) =>
-        new(
+    public static ProjetoProponenteResposta ParaProponente(Projeto projeto)
+    {
+        var arquivos = projeto.Arquivos
+            .Select(a => new ArquivoItemResposta(a.Id, a.NomeOriginal, a.TamanhoBytes, a.Extensao, a.CriadoEm))
+            .ToList();
+
+        return new ProjetoProponenteResposta(
             projeto.Id,
             projeto.Protocolo,
             projeto.Titulo,
             projeto.Setor,
             projeto.NomeArquivoOriginal,
+            arquivos,
             projeto.VersaoEnvio,
             projeto.Status,
             projeto.JustificativaAnalista,
             projeto.CriadoEm,
             projeto.AtualizadoEm,
             projeto.DecididoEm);
+    }
 
     public static ProjetoAnaliseResposta ParaAnalise(Projeto projeto, Usuario? proponente, Usuario? analista)
     {
@@ -42,6 +49,10 @@ internal static class MapeadorProjetos
                 justificativas.GetValueOrDefault(c.Chave)))
             .ToList();
 
+        var arquivos = projeto.Arquivos
+            .Select(a => new ArquivoItemResposta(a.Id, a.NomeOriginal, a.TamanhoBytes, a.Extensao, a.CriadoEm))
+            .ToList();
+
         return new ProjetoAnaliseResposta(
             projeto.Id,
             projeto.Protocolo,
@@ -54,6 +65,7 @@ internal static class MapeadorProjetos
             proponente?.Email ?? string.Empty,
             projeto.NomeArquivoOriginal,
             projeto.TamanhoBytes,
+            arquivos,
             projeto.NotaIa,
             projeto.RecomendacaoIa,
             projeto.ResumoIa,

@@ -63,7 +63,7 @@ public class AvaliacaoFrascatiTestes
             titulo: "Projeto Teste P&D",
             setor: "Engenharia de Software",
             proponenteId: proponenteId,
-            documento: documento,
+            documentos: new[] { documento },
             agora: agora);
 
         Assert.Equal(StatusProjeto.ProcessandoIa, projeto.Status);

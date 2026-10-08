@@ -1,11 +1,13 @@
 namespace Hackthon.Domain.Projetos;
 
 /// <summary>
-/// Proposta de projeto enviada em PDF por um colaborador (proponente) para apuração de
+/// Proposta de projeto enviada em PDF e/ou CSV por um colaborador (proponente) para apuração de
 /// elegibilidade na Lei do Bem. A IA avalia os 5 critérios de Frascati e o analista delibera.
 /// </summary>
 public sealed class Projeto
 {
+    private readonly List<ArquivoProjetoItem> _arquivos = new();
+
     public Guid Id { get; private set; }
     public string Protocolo { get; private set; } = null!;
     public string Titulo { get; private set; } = null!;
@@ -14,11 +16,14 @@ public sealed class Projeto
     public Guid ProponenteId { get; private set; }
     public int VersaoEnvio { get; private set; }
 
-    // Documento enviado
+    // Documento principal/resumo (compatibilidade retroativa)
     public string NomeArquivoOriginal { get; private set; } = null!;
     public string CaminhoArquivo { get; private set; } = null!;
     public long TamanhoBytes { get; private set; }
     public string TextoExtraido { get; private set; } = null!;
+
+    // Coleção de múltiplos arquivos anexados (PDFs e/ou CSVs)
+    public IReadOnlyCollection<ArquivoProjetoItem> Arquivos => _arquivos.AsReadOnly();
 
     // Avaliação do agente de IA (5 critérios de Frascati)
     public int? NotaIa { get; private set; }
@@ -51,7 +56,7 @@ public sealed class Projeto
         string titulo,
         string setor,
         Guid proponenteId,
-        DocumentoProposta documento,
+        IReadOnlyList<DocumentoProposta> documentos,
         DateTimeOffset agora)
     {
         if (string.IsNullOrWhiteSpace(protocolo))
@@ -62,7 +67,8 @@ public sealed class Projeto
             throw new ArgumentException("O setor é obrigatório.", nameof(setor));
         if (proponenteId == Guid.Empty)
             throw new ArgumentException("O proponente responsável é obrigatório.", nameof(proponenteId));
-        ArgumentNullException.ThrowIfNull(documento);
+        if (documentos is null || documentos.Count == 0)
+            throw new ArgumentException("Ao menos um documento deve ser fornecido.", nameof(documentos));
 
         var projeto = new Projeto
         {
@@ -76,7 +82,7 @@ public sealed class Projeto
             CriadoEm = agora,
             AtualizadoEm = agora
         };
-        projeto.AplicarDocumento(documento);
+        projeto.AplicarDocumentos(documentos, agora);
         return projeto;
     }
 
@@ -122,14 +128,15 @@ public sealed class Projeto
         AtualizadoEm = agora;
     }
 
-    /// <summary>Após um pedido de reanálise, o proponente envia uma nova versão do PDF.</summary>
-    public void SubstituirDocumento(DocumentoProposta documento, DateTimeOffset agora)
+    /// <summary>Após um pedido de reanálise, o proponente envia uma nova versão dos documentos.</summary>
+    public void SubstituirDocumentos(IReadOnlyList<DocumentoProposta> documentos, DateTimeOffset agora)
     {
-        ArgumentNullException.ThrowIfNull(documento);
+        if (documentos is null || documentos.Count == 0)
+            throw new ArgumentException("Ao menos um documento deve ser fornecido.", nameof(documentos));
         if (Status != StatusProjeto.Reanalise)
             throw new InvalidOperationException("Só é possível reenviar o documento quando o analista solicita reanálise.");
 
-        AplicarDocumento(documento);
+        AplicarDocumentos(documentos, agora);
         VersaoEnvio++;
         NotaIa = NotaNovidade = NotaCriatividade = NotaSistematico = NotaTransferibilidade = NotaIncerteza = null;
         ResumoIa = ParecerIa = RecomendacaoIa = JustificativasIaJson = OrigemAnaliseIa = null;
@@ -138,16 +145,43 @@ public sealed class Projeto
         AtualizadoEm = agora;
     }
 
-    private void AplicarDocumento(DocumentoProposta documento)
+    private void AplicarDocumentos(IReadOnlyList<DocumentoProposta> documentos, DateTimeOffset agora)
     {
-        NomeArquivoOriginal = documento.NomeOriginal;
-        CaminhoArquivo = documento.Caminho;
-        TamanhoBytes = documento.TamanhoBytes;
-        TextoExtraido = documento.TextoExtraido;
+        _arquivos.Clear();
+        long tamanhoTotal = 0;
+        var textosAgregados = new System.Text.StringBuilder();
+
+        for (var i = 0; i < documentos.Count; i++)
+        {
+            var doc = documentos[i];
+            var extensao = Path.GetExtension(doc.NomeOriginal).ToLowerInvariant();
+            var item = new ArquivoProjetoItem(
+                id: Guid.NewGuid(),
+                projetoId: Id,
+                nomeOriginal: doc.NomeOriginal,
+                caminho: doc.Caminho,
+                tamanhoBytes: doc.TamanhoBytes,
+                extensao: extensao,
+                criadoEm: agora);
+
+            _arquivos.Add(item);
+            tamanhoTotal += doc.TamanhoBytes;
+
+            textosAgregados.AppendLine($"\n=== ARQUIVO [{i + 1}/{documentos.Count}]: {doc.NomeOriginal} ({extensao.ToUpperInvariant().TrimStart('.')}) ===");
+            textosAgregados.AppendLine(doc.TextoExtraido);
+        }
+
+        var primeiro = documentos[0];
+        NomeArquivoOriginal = documentos.Count == 1 
+            ? primeiro.NomeOriginal 
+            : $"{primeiro.NomeOriginal} (+{documentos.Count - 1} arquivo(s))";
+        CaminhoArquivo = primeiro.Caminho;
+        TamanhoBytes = tamanhoTotal;
+        TextoExtraido = textosAgregados.ToString().Trim();
     }
 }
 
-/// <summary>Metadados e texto do PDF já armazenado.</summary>
+/// <summary>Metadados e texto do arquivo já processado e armazenado.</summary>
 public sealed record DocumentoProposta
 {
     public string NomeOriginal { get; }

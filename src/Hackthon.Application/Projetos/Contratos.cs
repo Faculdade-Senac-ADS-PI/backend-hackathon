@@ -4,24 +4,33 @@ namespace Hackthon.Application.Projetos;
 
 public static class RegrasDocumento
 {
-    public const long TamanhoMaximoBytes = 10 * 1024 * 1024;
-    public const int MinimoCaracteresTexto = 200;
+    public const long TamanhoMaximoBytesPorArquivo = 15 * 1024 * 1024; // 15 MB por arquivo
+    public const long TamanhoMaximoBytesTotal = 30 * 1024 * 1024; // 30 MB total
+    public const int MinimoCaracteresTexto = 100;
 }
+
+public sealed record ArquivoEntradaComando(
+    string NomeArquivo,
+    long TamanhoBytes,
+    Stream Conteudo);
+
+public sealed record ArquivoItemResposta(
+    Guid Id,
+    string Nome,
+    long TamanhoBytes,
+    string Extensao,
+    DateTimeOffset CriadoEm);
 
 public sealed record EnviarPropostaComando(
     Guid ProponenteId,
     string? Titulo,
     string? Setor,
-    string? NomeArquivo,
-    long TamanhoBytes,
-    Stream? Conteudo);
+    IReadOnlyList<ArquivoEntradaComando> Arquivos);
 
 public sealed record ReenviarPropostaComando(
     Guid ProjetoId,
     Guid ProponenteId,
-    string? NomeArquivo,
-    long TamanhoBytes,
-    Stream? Conteudo);
+    IReadOnlyList<ArquivoEntradaComando> Arquivos);
 
 public sealed record DeliberarProjetoComando(
     Guid ProjetoId,
@@ -29,13 +38,14 @@ public sealed record DeliberarProjetoComando(
     string? Decisao,
     string? Justificativa);
 
-/// <summary>Visão do proponente: confirmação de envio, status e resultado. Não expõe notas internas da IA.</summary>
+/// <summary>Visão do proponente: confirmação de envio, status e arquivos.</summary>
 public sealed record ProjetoProponenteResposta(
     Guid Id,
     string Protocolo,
     string Titulo,
     string Setor,
     string NomeArquivo,
+    IReadOnlyList<ArquivoItemResposta> Arquivos,
     int VersaoEnvio,
     StatusProjeto Status,
     string? JustificativaAnalista,
@@ -51,7 +61,7 @@ public sealed record CriterioAvaliadoResposta(
     int NotaMaxima,
     string? Justificativa);
 
-/// <summary>Visão do analista: dossiê completo com resumo, nota e critérios avaliados pela IA.</summary>
+/// <summary>Visão do analista: dossiê completo com resumo, nota, critérios avaliados pela IA e lista de arquivos.</summary>
 public sealed record ProjetoAnaliseResposta(
     Guid Id,
     string Protocolo,
@@ -64,6 +74,7 @@ public sealed record ProjetoAnaliseResposta(
     string ProponenteEmail,
     string NomeArquivo,
     long TamanhoBytes,
+    IReadOnlyList<ArquivoItemResposta> Arquivos,
     int? NotaIa,
     string? RecomendacaoIa,
     string? ResumoIa,
@@ -77,4 +88,4 @@ public sealed record ProjetoAnaliseResposta(
     DateTimeOffset CriadoEm,
     DateTimeOffset AtualizadoEm);
 
-public sealed record ArquivoProjeto(Stream Conteudo, string NomeArquivo);
+public sealed record ArquivoProjeto(Stream Conteudo, string NomeArquivo, string TipoMime);

@@ -49,5 +49,13 @@ public sealed class ProjetoConfiguracao : IEntityTypeConfiguration<Projeto>
 
         builder.Property(projeto => projeto.CriadoEm).IsRequired();
         builder.Property(projeto => projeto.AtualizadoEm).IsRequired();
+
+        builder.HasMany(projeto => projeto.Arquivos)
+            .WithOne()
+            .HasForeignKey(a => a.ProjetoId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.Navigation(projeto => projeto.Arquivos)
+            .UsePropertyAccessMode(PropertyAccessMode.Field);
     }
 }

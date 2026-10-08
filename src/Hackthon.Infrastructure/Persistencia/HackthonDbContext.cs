@@ -15,6 +15,7 @@ public sealed class HackthonDbContext : DbContext
     public DbSet<Usuario> Usuarios => Set<Usuario>();
     public DbSet<RegistroAcesso> RegistrosAcesso => Set<RegistroAcesso>();
     public DbSet<Projeto> Projetos => Set<Projeto>();
+    public DbSet<ArquivoProjetoItem> ArquivosProjeto => Set<ArquivoProjetoItem>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

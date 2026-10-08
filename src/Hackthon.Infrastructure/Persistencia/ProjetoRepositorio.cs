@@ -14,18 +14,19 @@ public sealed class ProjetoRepositorio : IProjetoRepositorio
     }
 
     public Task<Projeto?> ObterPorIdAsync(Guid id, CancellationToken ct) =>
-        _db.Projetos.FirstOrDefaultAsync(projeto => projeto.Id == id, ct);
+        _db.Projetos.Include(projeto => projeto.Arquivos).FirstOrDefaultAsync(projeto => projeto.Id == id, ct);
 
     public async Task<IReadOnlyList<Projeto>> ListarPorProponenteAsync(Guid proponenteId, CancellationToken ct) =>
         await _db.Projetos
             .AsNoTracking()
+            .Include(projeto => projeto.Arquivos)
             .Where(projeto => projeto.ProponenteId == proponenteId)
             .OrderByDescending(projeto => projeto.CriadoEm)
             .ToListAsync(ct);
 
     public async Task<IReadOnlyList<Projeto>> ListarAsync(StatusProjeto? status, CancellationToken ct)
     {
-        var consulta = _db.Projetos.AsNoTracking();
+        var consulta = _db.Projetos.AsNoTracking().Include(projeto => projeto.Arquivos).AsQueryable();
         if (status is not null)
             consulta = consulta.Where(projeto => projeto.Status == status);
 

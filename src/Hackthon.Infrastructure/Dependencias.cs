@@ -36,9 +36,10 @@ public static class Dependencias
         services.AddSingleton<IRelogio, RelogioSistema>();
         services.AddSingleton<IEmissorToken, EmissorToken>();
 
-        // Armazenamento de arquivos e extração de PDF
+        // Armazenamento de arquivos e extração de PDF e CSV
         services.AddSingleton<IArmazenamentoArquivos, ArmazenamentoLocalArquivos>();
         services.AddSingleton<IExtratorTextoPdf, ExtratorTextoPdfPig>();
+        services.AddSingleton<IExtratorTextoArquivo, ExtratorTextoComposto>();
 
         // Agente de IA para avaliação dos 5 critérios Frascati / Lei do Bem
         services.AddHttpClient();

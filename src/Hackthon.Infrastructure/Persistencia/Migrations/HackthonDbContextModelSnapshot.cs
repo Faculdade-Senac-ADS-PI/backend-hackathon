@@ -53,6 +53,43 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                     b.ToTable("registros_acesso", (string)null);
                 });
 
+            modelBuilder.Entity("Hackthon.Domain.Projetos.ArquivoProjetoItem", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Caminho")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<DateTimeOffset>("CriadoEm")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Extensao")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("character varying(10)");
+
+                    b.Property<string>("NomeOriginal")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<Guid>("ProjetoId")
+                        .HasColumnType("uuid");
+
+                    b.Property<long>("TamanhoBytes")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjetoId");
+
+                    b.ToTable("projeto_arquivos", (string)null);
+                });
+
             modelBuilder.Entity("Hackthon.Domain.Projetos.Projeto", b =>
                 {
                     b.Property<Guid>("Id")
@@ -231,6 +268,15 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 
+            modelBuilder.Entity("Hackthon.Domain.Projetos.ArquivoProjetoItem", b =>
+                {
+                    b.HasOne("Hackthon.Domain.Projetos.Projeto", null)
+                        .WithMany("Arquivos")
+                        .HasForeignKey("ProjetoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Hackthon.Domain.Projetos.Projeto", b =>
                 {
                     b.HasOne("Hackthon.Domain.Usuarios.Usuario", null)
@@ -243,6 +289,11 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                         .HasForeignKey("ProponenteId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Hackthon.Domain.Projetos.Projeto", b =>
+                {
+                    b.Navigation("Arquivos");
                 });
 #pragma warning restore 612, 618
         }

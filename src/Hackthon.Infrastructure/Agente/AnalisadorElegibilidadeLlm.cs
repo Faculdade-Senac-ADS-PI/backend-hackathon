@@ -73,7 +73,8 @@ public sealed class AnalisadorElegibilidadeLlm : IAnalisadorElegibilidade
         if (_opcoes.ExigirRespostaJson)
             corpo["response_format"] = new { type = "json_object" };
 
-        using var requisicao = new HttpRequestMessage(HttpMethod.Post, "chat/completions")
+        var urlFinal = new Uri(new Uri(_opcoes.UrlBase), "chat/completions");
+        using var requisicao = new HttpRequestMessage(HttpMethod.Post, urlFinal)
         {
             Content = JsonContent.Create(corpo)
         };

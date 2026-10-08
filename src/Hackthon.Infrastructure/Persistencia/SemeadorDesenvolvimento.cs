@@ -52,7 +52,7 @@ public static class SemeadorDesenvolvimento
                     titulo: "Algoritmo Heurístico de Otimização Termodinâmica para Cargas Perecíveis",
                     setor: "Engenharia de Operações",
                     proponenteId: proponente.Id,
-                    documento: documento,
+                    documentos: new[] { documento },
                     agora: agora);
 
                 var avaliacao = new AvaliacaoFrascati(
