@@ -81,6 +81,7 @@ builder.Services.AddScoped<IAlterarAtivacao, AlterarAtivacaoServico>();
 builder.Services.AddScoped<IEnviarProposta, EnviarPropostaServico>();
 builder.Services.AddScoped<IConsultarProjetos, ConsultarProjetosServico>();
 builder.Services.AddScoped<IDeliberarProjeto, DeliberarProjetoServico>();
+builder.Services.AddScoped<IGerarParecer, GerarParecerServico>();
 
 var jwt = builder.Configuration.GetSection(JwtOpcoes.Secao).Get<JwtOpcoes>() ?? new JwtOpcoes();
 if (string.IsNullOrWhiteSpace(jwt.Secret) || jwt.Secret.Length < 32)

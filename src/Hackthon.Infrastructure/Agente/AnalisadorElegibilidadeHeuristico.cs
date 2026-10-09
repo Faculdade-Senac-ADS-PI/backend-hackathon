@@ -99,6 +99,12 @@ public sealed partial class AnalisadorElegibilidadeHeuristico : IAnalisadorElegi
             parecer.Append($"Critérios que merecem atenção do analista: {string.Join(", ", fracos)}. ");
         parecer.Append("A decisão final sobre a elegibilidade na Lei do Bem cabe ao analista.");
 
+        // Sem material para concluir: o motor heurístico recomenda "Evidência insuficiente"
+        // (elo ausente), em vez de classificar por nota com base em documento quase vazio.
+        var recomendacao = total == 0 || proposta.Texto.Trim().Length < 400
+            ? "Evidência insuficiente"
+            : AvaliacaoFrascati.ClassificarPorNota(total);
+
         return new AvaliacaoFrascati(
             notas[CriteriosFrascati.Novidade],
             notas[CriteriosFrascati.Criatividade],
@@ -107,7 +113,7 @@ public sealed partial class AnalisadorElegibilidadeHeuristico : IAnalisadorElegi
             notas[CriteriosFrascati.Incerteza],
             GerarResumo(proposta),
             parecer.ToString(),
-            AvaliacaoFrascati.ClassificarPorNota(total),
+            recomendacao,
             JsonSerializer.Serialize(justificativas),
             origem);
     }
