@@ -71,14 +71,22 @@ public sealed class GeradorEmbeddingGemini : IGeradorEmbedding
         };
 
         var url = new Uri(new Uri(_ia.UrlBase), "embeddings");
-        using var requisicao = new HttpRequestMessage(HttpMethod.Post, url)
-        {
-            Content = JsonContent.Create(corpo)
-        };
-        if (!string.IsNullOrWhiteSpace(_ia.ApiKey))
-            requisicao.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _ia.ApiKey);
-
-        using var resposta = await _http.SendAsync(requisicao, ct);
+        using var resposta = await RetentativaHttp.EnviarAsync(
+            _http,
+            () =>
+            {
+                var requisicao = new HttpRequestMessage(HttpMethod.Post, url)
+                {
+                    Content = JsonContent.Create(corpo)
+                };
+                if (!string.IsNullOrWhiteSpace(_ia.ApiKey))
+                    requisicao.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _ia.ApiKey);
+                return requisicao;
+            },
+            _ia.Tentativas,
+            _logger,
+            "Geração de embeddings",
+            ct);
         var bruto = await resposta.Content.ReadAsStringAsync(ct);
         if (!resposta.IsSuccessStatusCode)
             throw new HttpRequestException($"Embeddings responderam {(int)resposta.StatusCode}: {Recortar(bruto, 300)}");

@@ -36,6 +36,9 @@ public sealed class AgenteIaOpcoes
     public int TimeoutSegundos { get; set; } = 90;
     public int MaxCaracteresDocumento { get; set; } = 60000;
 
+    /// <summary>Tentativas para falhas transitórias do provedor (429/5xx) antes de recuar.</summary>
+    public int Tentativas { get; set; } = 3;
+
     /// <summary>Envia response_format=json_object. Desligue se o provedor não suportar.</summary>
     public bool ExigirRespostaJson { get; set; } = true;
 

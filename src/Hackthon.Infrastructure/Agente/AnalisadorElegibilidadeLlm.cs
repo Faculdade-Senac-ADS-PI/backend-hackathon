@@ -3,6 +3,7 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using Hackthon.Application.Normas;
 using Hackthon.Application.Projetos;
 using Hackthon.Domain.Projetos;
@@ -67,8 +68,10 @@ public sealed class AnalisadorElegibilidadeLlm : IAnalisadorElegibilidade
             : proposta.Texto;
 
         // 1) Recupera as normas ANTES de pontuar (uma consulta por critério). Falha aqui não derruba a avaliação.
-        var (blocoNormas, normasPorCriterio, totalTrechos) = await RecuperarNormasAsync(proposta, ct);
+        var (blocoNormas, normasPorCriterio, rotulos, totalTrechos) = await RecuperarNormasAsync(proposta, ct);
         var usouRag = totalTrechos > 0;
+        if (usouRag)
+            _logger.LogInformation("RAG: {Total} trecho(s) de norma recuperados para a avaliação:\n{Bloco}", totalTrechos, blocoNormas);
 
         var mensagemUsuario = new StringBuilder();
         mensagemUsuario.AppendLine($"Título: {proposta.Titulo}");
@@ -104,14 +107,22 @@ public sealed class AnalisadorElegibilidadeLlm : IAnalisadorElegibilidade
             corpo["response_format"] = new { type = "json_object" };
 
         var urlFinal = new Uri(new Uri(_opcoes.UrlBase), "chat/completions");
-        using var requisicao = new HttpRequestMessage(HttpMethod.Post, urlFinal)
-        {
-            Content = JsonContent.Create(corpo)
-        };
-        if (!string.IsNullOrWhiteSpace(_opcoes.ApiKey))
-            requisicao.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _opcoes.ApiKey);
-
-        using var resposta = await _http.SendAsync(requisicao, ct);
+        using var resposta = await RetentativaHttp.EnviarAsync(
+            _http,
+            () =>
+            {
+                var requisicao = new HttpRequestMessage(HttpMethod.Post, urlFinal)
+                {
+                    Content = JsonContent.Create(corpo)
+                };
+                if (!string.IsNullOrWhiteSpace(_opcoes.ApiKey))
+                    requisicao.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _opcoes.ApiKey);
+                return requisicao;
+            },
+            _opcoes.Tentativas,
+            _logger,
+            "Avaliação da proposta",
+            ct);
         var bruto = await resposta.Content.ReadAsStringAsync(ct);
         if (!resposta.IsSuccessStatusCode)
             throw new HttpRequestException($"Provedor de IA respondeu {(int)resposta.StatusCode}: {Recortar(bruto, 300)}");
@@ -120,26 +131,27 @@ public sealed class AnalisadorElegibilidadeLlm : IAnalisadorElegibilidade
         var conteudo = envelope.RootElement.GetProperty("choices")[0].GetProperty("message").GetProperty("content").GetString()
             ?? throw new FormatException("O provedor de IA não devolveu conteúdo.");
 
-        return Interpretar(conteudo, normasPorCriterio, usouRag, totalTrechos);
+        return Interpretar(conteudo, normasPorCriterio, rotulos, usouRag, totalTrechos);
     }
 
     /// <summary>Uma recuperação por critério, combinando título, setor, conteúdo do projeto e a definição do critério.</summary>
-    private async Task<(string Bloco, Dictionary<string, string> Normas, int Total)> RecuperarNormasAsync(
+    private async Task<(string Bloco, Dictionary<string, string> Normas, Dictionary<int, string> Rotulos, int Total)> RecuperarNormasAsync(
         PropostaParaAvaliacao proposta, CancellationToken ct)
     {
         var normas = new Dictionary<string, string>();
+        var rotulos = new Dictionary<int, string>();
         if (!_rag.Habilitado)
-            return (string.Empty, normas, 0);
+            return (string.Empty, normas, rotulos, 0);
 
         try
         {
             if (!await _recuperador.BaseDisponivelAsync(ct))
-                return (string.Empty, normas, 0);
+                return (string.Empty, normas, rotulos, 0);
         }
         catch (Exception ex) when (!ct.IsCancellationRequested)
         {
             _logger.LogWarning(ex, "Base de normas indisponível; avaliando sem RAG.");
-            return (string.Empty, normas, 0);
+            return (string.Empty, normas, rotulos, 0);
         }
 
         var excerto = proposta.Texto.Length > 1500 ? proposta.Texto[..1500] : proposta.Texto;
@@ -170,6 +182,7 @@ public sealed class AnalisadorElegibilidadeLlm : IAnalisadorElegibilidade
                 {
                     numero = numeros.Count + 1;
                     numeros[chave] = numero;
+                    rotulos[numero] = Rotulo(trecho);
                     linhas.Add($"[{numero}] ({Rotulo(trecho)}): {Recortar(trecho.Texto, 700)}");
                 }
 
@@ -180,12 +193,13 @@ public sealed class AnalisadorElegibilidadeLlm : IAnalisadorElegibilidade
                 normas[criterio.Chave] = string.Join("; ", citados);
         }
 
-        return (string.Join("\n", linhas), normas, numeros.Count);
+        return (string.Join("\n", linhas), normas, rotulos, numeros.Count);
     }
 
     private AvaliacaoFrascati Interpretar(
         string conteudo,
         IReadOnlyDictionary<string, string> normasRecuperadas,
+        IReadOnlyDictionary<int, string> rotulos,
         bool usouRag,
         int totalTrechos)
     {
@@ -214,7 +228,7 @@ public sealed class AnalisadorElegibilidadeLlm : IAnalisadorElegibilidade
 
             var citadas = Propriedade(item, "normasCitadas")?.GetString()?.Trim();
             if (!string.IsNullOrWhiteSpace(citadas))
-                normas[criterio.Chave] = citadas;
+                normas[criterio.Chave] = EnriquecerCitacoes(citadas, rotulos);
             else if (normasRecuperadas.TryGetValue(criterio.Chave, out var recuperadas))
                 normas[criterio.Chave] = recuperadas;
         }
@@ -299,6 +313,21 @@ public sealed class AnalisadorElegibilidadeLlm : IAnalisadorElegibilidade
               "lacunas": "O que falta para afirmar a elegibilidade (ou vazio)."
             }
             """;
+    }
+
+    /// <summary>
+    /// Traduz os números citados pelo modelo ("[4]") no rótulo legível do trecho correspondente
+    /// ("[4] Lei 11.196/2005 — Art. 2º, p. 3"), para o parecer ficar rastreável.
+    /// </summary>
+    private static string EnriquecerCitacoes(string citadas, IReadOnlyDictionary<int, string> rotulos)
+    {
+        if (rotulos.Count == 0)
+            return citadas;
+
+        return Regex.Replace(citadas, @"\[(\d+)\]", m =>
+            int.TryParse(m.Groups[1].Value, out var n) && rotulos.TryGetValue(n, out var rotulo)
+                ? $"[{n}] {rotulo}"
+                : m.Value);
     }
 
     private static string Rotulo(TrechoRecuperado trecho)
