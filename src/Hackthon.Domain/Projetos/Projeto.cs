@@ -39,6 +39,31 @@ public sealed class Projeto
     public string? OrigemAnaliseIa { get; private set; }
     public DateTimeOffset? AnalisadoEm { get; private set; }
 
+    // Recomendação do agente com apoio da base de normas (RAG) — elementos de rastreabilidade.
+    /// <summary>Classe recomendada canônica (4 classes do desafio).</summary>
+    public string? ClasseRecomendadaIa { get; private set; }
+
+    /// <summary>Motivo qualitativo da classe (não é a soma das notas).</summary>
+    public string? MotivoClasseIa { get; private set; }
+
+    /// <summary>JSON { critério: trechos de norma citados } usados na avaliação.</summary>
+    public string? NormasCitadasIaJson { get; private set; }
+
+    /// <summary>Evidências do dossiê citadas pelo agente (arquivo + trecho).</summary>
+    public string? EvidenciasDossieIa { get; private set; }
+
+    /// <summary>Contradições/divergências apontadas pelo agente.</summary>
+    public string? ContradicoesIa { get; private set; }
+
+    /// <summary>Lacunas do dossiê apontadas pelo agente.</summary>
+    public string? LacunasIa { get; private set; }
+
+    /// <summary>Se a base de normas foi consultada com sucesso na avaliação automática.</summary>
+    public bool UsouRag { get; private set; }
+
+    /// <summary>Quantidade de trechos de norma usados na avaliação automática.</summary>
+    public int TrechosConsultadosIa { get; private set; }
+
     // Deliberação do analista (classificação + rastreabilidade — 4 classes do desafio)
     public string? JustificativaAnalista { get; private set; }
     public Guid? AnalistaId { get; private set; }
@@ -131,6 +156,14 @@ public sealed class Projeto
         RecomendacaoIa = avaliacao.Recomendacao;
         JustificativasIaJson = avaliacao.JustificativasJson;
         OrigemAnaliseIa = avaliacao.Origem;
+        ClasseRecomendadaIa = avaliacao.ClasseRecomendada;
+        MotivoClasseIa = avaliacao.MotivoClasse;
+        NormasCitadasIaJson = avaliacao.NormasCitadasJson;
+        EvidenciasDossieIa = avaliacao.EvidenciasDossie;
+        ContradicoesIa = avaliacao.Contradicoes;
+        LacunasIa = avaliacao.Lacunas;
+        UsouRag = avaliacao.UsouRag;
+        TrechosConsultadosIa = avaliacao.TrechosConsultados;
         AnalisadoEm = agora;
         Status = StatusProjeto.AguardandoAnalista;
         AtualizadoEm = agora;
@@ -231,6 +264,9 @@ public sealed class Projeto
         VersaoEnvio++;
         NotaIa = NotaNovidade = NotaCriatividade = NotaSistematico = NotaTransferibilidade = NotaIncerteza = null;
         ResumoIa = ParecerIa = RecomendacaoIa = JustificativasIaJson = OrigemAnaliseIa = null;
+        ClasseRecomendadaIa = MotivoClasseIa = NormasCitadasIaJson = EvidenciasDossieIa = ContradicoesIa = LacunasIa = null;
+        UsouRag = false;
+        TrechosConsultadosIa = 0;
         AnalisadoEm = null;
         Status = StatusProjeto.ProcessandoIa;
         AtualizadoEm = agora;

@@ -33,6 +33,16 @@ public sealed class ProjetoConfiguracao : IEntityTypeConfiguration<Projeto>
         builder.Property(projeto => projeto.JustificativasIaJson).HasColumnType("jsonb");
         builder.Property(projeto => projeto.OrigemAnaliseIa).HasMaxLength(120);
 
+        // Recomendação do agente com apoio da base de normas (RAG)
+        builder.Property(projeto => projeto.ClasseRecomendadaIa).HasMaxLength(60);
+        builder.Property(projeto => projeto.MotivoClasseIa).HasColumnType("text");
+        builder.Property(projeto => projeto.NormasCitadasIaJson).HasColumnType("jsonb");
+        builder.Property(projeto => projeto.EvidenciasDossieIa).HasColumnType("text");
+        builder.Property(projeto => projeto.ContradicoesIa).HasColumnType("text");
+        builder.Property(projeto => projeto.LacunasIa).HasColumnType("text");
+        builder.Property(projeto => projeto.UsouRag).IsRequired().HasDefaultValue(false);
+        builder.Property(projeto => projeto.TrechosConsultadosIa).IsRequired().HasDefaultValue(0);
+
         // Deliberação do analista
         builder.Property(projeto => projeto.JustificativaAnalista).HasMaxLength(4000);
 

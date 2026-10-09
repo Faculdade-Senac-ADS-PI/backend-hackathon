@@ -30,6 +30,7 @@ internal static class MapeadorProjetos
     public static ProjetoAnaliseResposta ParaAnalise(Projeto projeto, Usuario? proponente, Usuario? analista)
     {
         var justificativas = LerJustificativas(projeto.JustificativasIaJson);
+        var normas = LerJustificativas(projeto.NormasCitadasIaJson);
         var notas = new Dictionary<string, int?>
         {
             [CriteriosFrascati.Novidade] = projeto.NotaNovidade,
@@ -46,7 +47,8 @@ internal static class MapeadorProjetos
                 c.Descricao,
                 notas[c.Chave],
                 CriteriosFrascati.NotaMaximaPorCriterio,
-                justificativas.GetValueOrDefault(c.Chave)))
+                justificativas.GetValueOrDefault(c.Chave),
+                normas.GetValueOrDefault(c.Chave)))
             .ToList();
 
         var arquivos = projeto.Arquivos
@@ -71,6 +73,13 @@ internal static class MapeadorProjetos
             projeto.ResumoIa,
             projeto.ParecerIa,
             projeto.OrigemAnaliseIa,
+            projeto.ClasseRecomendadaIa ?? projeto.RecomendacaoIa,
+            projeto.MotivoClasseIa,
+            projeto.EvidenciasDossieIa,
+            projeto.ContradicoesIa,
+            projeto.LacunasIa,
+            projeto.UsouRag,
+            projeto.TrechosConsultadosIa,
             projeto.AnalisadoEm,
             criterios,
             projeto.JustificativaAnalista,

@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+using Pgvector;
 
 #nullable disable
 
@@ -20,6 +21,7 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                 .HasAnnotation("ProductVersion", "8.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
+            NpgsqlModelBuilderExtensions.HasPostgresExtension(modelBuilder, "vector");
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("Hackthon.Domain.Acesso.RegistroAcesso", b =>
@@ -110,6 +112,13 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("character varying(500)");
 
+                    b.Property<string>("ClasseRecomendadaIa")
+                        .HasMaxLength(60)
+                        .HasColumnType("character varying(60)");
+
+                    b.Property<string>("ContradicoesIa")
+                        .HasColumnType("text");
+
                     b.Property<DateTimeOffset>("CriadoEm")
                         .HasColumnType("timestamp with time zone");
 
@@ -128,6 +137,9 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                     b.Property<string>("EvidenciasContrarias")
                         .HasColumnType("text");
 
+                    b.Property<string>("EvidenciasDossieIa")
+                        .HasColumnType("text");
+
                     b.Property<string>("EvidenciasUtilizadas")
                         .HasColumnType("text");
 
@@ -141,13 +153,22 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                     b.Property<string>("Lacunas")
                         .HasColumnType("text");
 
+                    b.Property<string>("LacunasIa")
+                        .HasColumnType("text");
+
                     b.Property<string>("LimitacaoTecnica")
+                        .HasColumnType("text");
+
+                    b.Property<string>("MotivoClasseIa")
                         .HasColumnType("text");
 
                     b.Property<string>("NomeArquivoOriginal")
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
+
+                    b.Property<string>("NormasCitadasIaJson")
+                        .HasColumnType("jsonb");
 
                     b.Property<int?>("NotaCriatividade")
                         .HasColumnType("integer");
@@ -216,6 +237,16 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("character varying(200)");
+
+                    b.Property<int>("TrechosConsultadosIa")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasDefaultValue(0);
+
+                    b.Property<bool>("UsouRag")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
 
                     b.Property<int>("VersaoEnvio")
                         .ValueGeneratedOnAdd()
@@ -287,6 +318,95 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                     b.ToTable("usuarios", (string)null);
                 });
 
+            modelBuilder.Entity("Hackthon.Infrastructure.Normas.DocumentoNormativo", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Arquivo")
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<DateTimeOffset>("AtualizadoEm")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTimeOffset>("CriadoEm")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Hash")
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("character varying(300)");
+
+                    b.Property<int>("Trechos")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Nome")
+                        .IsUnique();
+
+                    b.ToTable("documentos_normativos", (string)null);
+                });
+
+            modelBuilder.Entity("Hackthon.Infrastructure.Normas.TrechoNormativo", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTimeOffset>("CriadoEm")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<Guid>("DocumentoId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("DocumentoNome")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("character varying(300)");
+
+                    b.Property<Vector>("Embedding")
+                        .IsRequired()
+                        .HasColumnType("vector(768)");
+
+                    b.Property<string>("Hash")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)");
+
+                    b.Property<int>("Ordem")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("Pagina")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Referencia")
+                        .HasMaxLength(120)
+                        .HasColumnType("character varying(120)");
+
+                    b.Property<string>("Texto")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Embedding")
+                        .HasDatabaseName("ix_trechos_normativos_embedding");
+
+                    NpgsqlIndexBuilderExtensions.HasMethod(b.HasIndex("Embedding"), "hnsw");
+                    NpgsqlIndexBuilderExtensions.HasOperators(b.HasIndex("Embedding"), new[] { "vector_cosine_ops" });
+
+                    b.HasIndex("DocumentoId", "Ordem");
+
+                    b.ToTable("trechos_normativos", (string)null);
+                });
+
             modelBuilder.Entity("Hackthon.Domain.Acesso.RegistroAcesso", b =>
                 {
                     b.HasOne("Hackthon.Domain.Usuarios.Usuario", null)
@@ -318,9 +438,25 @@ namespace Hackthon.Infrastructure.Persistencia.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Hackthon.Infrastructure.Normas.TrechoNormativo", b =>
+                {
+                    b.HasOne("Hackthon.Infrastructure.Normas.DocumentoNormativo", "Documento")
+                        .WithMany("Itens")
+                        .HasForeignKey("DocumentoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Documento");
+                });
+
             modelBuilder.Entity("Hackthon.Domain.Projetos.Projeto", b =>
                 {
                     b.Navigation("Arquivos");
+                });
+
+            modelBuilder.Entity("Hackthon.Infrastructure.Normas.DocumentoNormativo", b =>
+                {
+                    b.Navigation("Itens");
                 });
 #pragma warning restore 612, 618
         }

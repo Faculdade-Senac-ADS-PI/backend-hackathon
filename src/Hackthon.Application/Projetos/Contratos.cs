@@ -69,7 +69,8 @@ public sealed record CriterioAvaliadoResposta(
     string Descricao,
     int? Nota,
     int NotaMaxima,
-    string? Justificativa);
+    string? Justificativa,
+    string? NormasCitadas = null);
 
 /// <summary>Visão do analista: dossiê completo com resumo, nota, critérios avaliados pela IA e lista de arquivos.</summary>
 public sealed record ProjetoAnaliseResposta(
@@ -90,6 +91,13 @@ public sealed record ProjetoAnaliseResposta(
     string? ResumoIa,
     string? ParecerIa,
     string? OrigemAnaliseIa,
+    string? ClasseRecomendadaIa,
+    string? MotivoClasseIa,
+    string? EvidenciasDossieIa,
+    string? ContradicoesIa,
+    string? LacunasIa,
+    bool UsouRag,
+    int TrechosConsultadosIa,
     DateTimeOffset? AnalisadoEm,
     IReadOnlyList<CriterioAvaliadoResposta> Criterios,
     string? JustificativaAnalista,

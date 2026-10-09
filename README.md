@@ -150,7 +150,16 @@ A API estará disponível em:
 | Método | Endpoint | Autorização | Descrição |
 | :--- | :--- | :--- | :--- |
 | `GET` | `/api/agente/contrato` | `AnalistaOuAdm` | Descreve os dados de entrada, saída e o estado do RAG |
-| `POST` | `/api/agente/consulta` | `AnalistaOuAdm` | Ponto de extensão para consulta às normas (hoje retorna HTTP 501) |
+| `POST` | `/api/agente/consulta` | `AnalistaOuAdm` | Consulta em linguagem natural às normas, com citações recuperadas da base |
+
+### Base de normas — RAG (`/api/normas`)
+| Método | Endpoint | Autorização | Descrição |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/api/normas/reindexar` | `SomenteAdm` | Prepara/reindexa a base a partir da pasta `base-conhecimento/normas` (idempotente) |
+| `GET` | `/api/normas/estado` | `AnalistaOuAdm` | Estado da base: documentos e trechos indexados |
+
+A preparação da base (`reindexar`) retorna **HTTP 409** quando a pasta não contém documentos —
+a base é alimentada apenas com documentos oficiais fornecidos pelo usuário.
 
 ### Saúde (`/api/saude`)
 | Método | Endpoint | Autorização | Descrição |
@@ -165,4 +174,4 @@ Consulte a pasta [`docs/`](docs/) para detalhes aprofundados:
 
 - [Arquitetura do Backend](docs/arquitetura-backend.md) — Diagrama de camadas, padrões SOLID, ciclo transacional e segurança.
 - [Banco de Dados e Migrations](docs/banco-de-dados-e-migrations.md) — Modelagem relacional, histórico de migrações e comandos do EF Core.
-- [Guia de Extensão do Agente RAG](docs/guia-extensao-agente-rag.md) — Passo a passo para plugar embeddings, pgvector e LLM na porta `IAgenteElegibilidade`.
+- [Guia da Base de Normas (RAG)](docs/RAG-BASE-NORMAS.md) — Como preparar a pasta `base-conhecimento`, indexar, configurar e verificar o RAG passo a passo.

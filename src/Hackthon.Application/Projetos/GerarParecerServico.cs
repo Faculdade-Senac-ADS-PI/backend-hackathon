@@ -151,12 +151,52 @@ public sealed class GerarParecerServico : IGerarParecer
             if (!string.IsNullOrWhiteSpace(projeto.RecomendacaoIa))
                 md.AppendLine($"- **Recomendação técnica da IA:** {projeto.RecomendacaoIa}" +
                               (projeto.NotaIa is null ? "" : $" (nota {projeto.NotaIa}/100)"));
+            if (!string.IsNullOrWhiteSpace(projeto.MotivoClasseIa))
+                md.AppendLine($"- **Motivo da recomendação:** {projeto.MotivoClasseIa}");
             if (!string.IsNullOrWhiteSpace(projeto.OrigemAnaliseIa))
-                md.AppendLine($"- **Origem:** {projeto.OrigemAnaliseIa}");
+                md.AppendLine($"- **Origem:** {projeto.OrigemAnaliseIa}" +
+                              (projeto.UsouRag ? $" (com base de normas: {projeto.TrechosConsultadosIa} trecho(s) consultado(s))" : string.Empty));
             if (!string.IsNullOrWhiteSpace(projeto.ParecerIa))
             {
                 md.AppendLine();
                 md.AppendLine($"> {projeto.ParecerIa}");
+            }
+
+            var normasPorCriterio = LerJustificativas(projeto.NormasCitadasIaJson);
+            if (normasPorCriterio.Count > 0)
+            {
+                md.AppendLine();
+                md.AppendLine("### Normas citadas na avaliação automática");
+                md.AppendLine();
+                foreach (var criterio in CriteriosFrascati.Todos)
+                {
+                    if (normasPorCriterio.TryGetValue(criterio.Chave, out var citadas) && !string.IsNullOrWhiteSpace(citadas))
+                        md.AppendLine($"- **{criterio.Nome}:** {citadas}");
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(projeto.EvidenciasDossieIa))
+            {
+                md.AppendLine();
+                md.AppendLine("### Evidências do dossiê apontadas pela IA");
+                md.AppendLine();
+                md.AppendLine(Lista(projeto.EvidenciasDossieIa));
+            }
+
+            if (!string.IsNullOrWhiteSpace(projeto.ContradicoesIa))
+            {
+                md.AppendLine();
+                md.AppendLine("### Divergências apontadas pela IA");
+                md.AppendLine();
+                md.AppendLine(Lista(projeto.ContradicoesIa));
+            }
+
+            if (!string.IsNullOrWhiteSpace(projeto.LacunasIa))
+            {
+                md.AppendLine();
+                md.AppendLine("### Lacunas apontadas pela IA");
+                md.AppendLine();
+                md.AppendLine(Lista(projeto.LacunasIa));
             }
 
             md.AppendLine();

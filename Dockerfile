@@ -30,6 +30,10 @@ WORKDIR /app
 # Diretório dos uploads (recebe volume nomeado no compose)
 RUN mkdir -p /app/scratch/uploads
 
+# Base de conhecimento das normas (RAG). A pasta é copiada para o container e,
+# no compose, recebe um bind mount para o usuário adicionar documentos sem rebuildar.
+COPY base-conhecimento/ /app/base-conhecimento/
+
 COPY --from=build /app/publish .
 
 ENV ASPNETCORE_URLS=http://+:5088 \
