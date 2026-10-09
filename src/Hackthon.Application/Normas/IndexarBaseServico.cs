@@ -67,10 +67,32 @@ public sealed class IndexarBaseServico : IIndexarBase
                 continue;
             }
 
-            var vetores = await _embedding.GerarLoteAsync(brutos.Select(t => t.Texto).ToList(), ct);
+            IReadOnlyList<float[]> vetores;
+            try
+            {
+                vetores = await _embedding.GerarLoteAsync(brutos.Select(t => t.Texto).ToList(), ct);
+            }
+            catch (OperationCanceledException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Falha ao gerar embeddings de {Documento}.", documento.Nome);
+                return Resultado<EstadoBaseResposta>.Falha(
+                    503,
+                    "Provedor de IA indisponível",
+                    $"Não foi possível gerar os vetores de '{documento.Nome}'. Confira a chave/provedor de IA " +
+                    $"(AgenteIa__ApiKey) e tente novamente. Detalhe: {ex.Message}");
+            }
+
             if (vetores.Count != brutos.Count)
-                throw new InvalidOperationException(
+            {
+                return Resultado<EstadoBaseResposta>.Falha(
+                    502,
+                    "Resposta inválida do provedor de IA",
                     $"O provedor devolveu {vetores.Count} vetores para {brutos.Count} trechos de '{documento.Nome}'.");
+            }
 
             var trechos = new List<TrechoParaIndexar>(brutos.Count);
             for (var i = 0; i < brutos.Count; i++)

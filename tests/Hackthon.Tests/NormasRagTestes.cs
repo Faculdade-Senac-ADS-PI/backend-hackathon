@@ -161,6 +161,21 @@ public class NormasRagTestes
         Assert.True(resultado.Valor!.Configurada);
     }
 
+    [Fact]
+    public async Task IndexarBaseServico_FalhaDeEmbedding_Retorna503SemLancar()
+    {
+        var servico = new IndexarBaseServico(
+            new FonteFixa(),
+            new EmbeddingQuebrado(),
+            new RepositorioCaptura(),
+            NullLogger<IndexarBaseServico>.Instance);
+
+        var resultado = await servico.ExecutarAsync(CancellationToken.None);
+
+        Assert.False(resultado.Sucesso);
+        Assert.Equal(503, resultado.Status);
+    }
+
     // ---------- Dublês ----------
 
     private sealed class EmbeddingFalso : IGeradorEmbedding
@@ -170,6 +185,15 @@ public class NormasRagTestes
 
         public Task<IReadOnlyList<float[]>> GerarLoteAsync(IReadOnlyList<string> textos, CancellationToken ct) =>
             Task.FromResult<IReadOnlyList<float[]>>(textos.Select(_ => new float[3]).ToList());
+    }
+
+    private sealed class EmbeddingQuebrado : IGeradorEmbedding
+    {
+        public Task<float[]> GerarAsync(string texto, CancellationToken ct) =>
+            Task.FromException<float[]>(new InvalidOperationException("provedor não configurado"));
+
+        public Task<IReadOnlyList<float[]>> GerarLoteAsync(IReadOnlyList<string> textos, CancellationToken ct) =>
+            Task.FromException<IReadOnlyList<float[]>>(new InvalidOperationException("provedor não configurado"));
     }
 
     private sealed class FonteVazia : IFonteConhecimento
