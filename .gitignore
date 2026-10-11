@@ -1,0 +1,4 @@
+# Chaves de acesso / variáveis locais (nunca versionar)
+.env
+.env.local
+.env.*.local
