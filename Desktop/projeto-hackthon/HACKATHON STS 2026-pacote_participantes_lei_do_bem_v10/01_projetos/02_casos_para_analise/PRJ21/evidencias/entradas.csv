@@ -1,0 +1,3 @@
+﻿entrada_id;conteudo_json
+PRJ21-IN001;"{""entrada"": ""S2; três falhas transitórias em dez chamadas"", ""referencia"": ""não interromper antes de cinco falhas""}"
+PRJ21-IN002;"{""entrada"": ""S1; cinco falhas consecutivas"", ""referencia"": ""abrir e testar após 30 s""}"

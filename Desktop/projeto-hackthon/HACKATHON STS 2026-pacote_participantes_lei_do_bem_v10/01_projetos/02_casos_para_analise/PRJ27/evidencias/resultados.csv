@@ -1,0 +1,2 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ27-S01;busca-B2-v1;consultas com trecho relevante recuperado;contagem;38;46;"Consultas do teste de recuperação de trechos; não são as 50 respostas alegadas no memorando.";82.608696;casos;evidencias/medicoes.csv#PRJ27-S01;desempenho

@@ -1,0 +1,3 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ30-OBS01;"OTP recebido em 45 s; validade configurada 30 s";usar validade contratada de 60 s para o canal;"mfa-v1 expirou; mfa-v2 validou";"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ30-OBS02;certificado simbólico expirado no conector;renovar credencial de teste;mfa-v2 restabeleceu conexão sem alteração do SDK;"recorte ilustrativo identificado; não representa a totalidade das medições"

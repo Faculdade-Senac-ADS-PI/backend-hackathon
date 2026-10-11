@@ -1,0 +1,4 @@
+﻿entrada_id;conteudo_json
+PRJ22-IN001;"{""entrada"": ""intenção I44 confirmada no financeiro; tela ainda pendente; usuário reabre"", ""referencia"": ""reconciliar sem nova intenção""}"
+PRJ22-IN002;"{""entrada"": ""intenção I87; prova inacessível; marcador local presente"", ""referencia"": ""não afirmar recuperação concluída""}"
+PRJ22-IN003;"{""entrada"": ""marcador local perdido e prova inacessível"", ""referencia"": ""reconstruir época sem duplicar intenção""}"

@@ -1,0 +1,4 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ23-OBS01;"cache=(d8,c8); chega evento débito d7 atrasado";não invalidar cache mais novo;vetorial-v3 descartou componente dominada;"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ23-OBS02;"cache=(d8,c8); intenção I9 entrega d9 antes de c9; cem leitores";aguardar confirmação de ambas sem cem consultas;vetorial-v3 compartilhou uma consulta da intenção I9;"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ23-OBS03;confirmação chega após leitura já iniciada nos perfis de 90 s e 180 s;contabilizar defasagem residual;60 leituras mantiveram versão anterior: 12 no perfil de 90 s e 48 no de 180 s, dentro da janela de confirmação;"recorte ilustrativo identificado; não representa a totalidade das medições"

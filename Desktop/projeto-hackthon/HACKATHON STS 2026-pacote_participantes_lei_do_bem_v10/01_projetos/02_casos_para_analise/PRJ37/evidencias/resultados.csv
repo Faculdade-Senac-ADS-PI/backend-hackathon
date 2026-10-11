@@ -1,0 +1,6 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ37-S01;baseline-v1;Amplitude de FNR entre grupos;diferenca_maior_menor;8.4;4;"Quatro taxas dos grupos A–D. A diferença é maior taxa menos menor taxa; não se divide por quatro.";;pontos percentuais;evidencias/medicoes.csv#PRJ37-S01;desempenho
+PRJ37-S02;H3-peso4-v2;Amplitude de FNR entre grupos;diferenca_maior_menor;3.7;4;"Quatro taxas dos grupos A–D. A diferença é maior taxa menos menor taxa; não se divide por quatro.";;pontos percentuais;evidencias/medicoes.csv#PRJ37-S02;desempenho
+PRJ37-S03;H3-peso4-v2;Amplitude de FNR entre grupos no estresse;diferenca_maior_menor;5.1;4;"Quatro taxas dos grupos A–D. A diferença é maior taxa menos menor taxa; não se divide por quatro.";;pontos percentuais;evidencias/medicoes.csv#PRJ37-S03;desempenho
+PRJ37-S04;baseline-v1;AUC;indicador_precalculado;0.812;1;"Um indicador AUC previamente calculado e registrado para a versão; não é quantidade de propostas nem de repetições.";;0-1;evidencias/medicoes.csv#PRJ37-S04;desempenho
+PRJ37-S05;H3-peso4-v2;AUC;indicador_precalculado;0.8;1;"Um indicador AUC previamente calculado e registrado para a versão; não é quantidade de propostas nem de repetições.";;0-1;evidencias/medicoes.csv#PRJ37-S05;desempenho

@@ -1,0 +1,8 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ22-S01;tela-v1;jornadas retomadas automaticamente;contagem;98;120;Jornadas com interrupção antes, durante ou depois da confirmação, 40 em cada grupo.;81.666667;casos;evidencias/medicoes.csv#PRJ22-S01;desempenho
+PRJ22-S02;tela-v1;transferências duplicadas;contagem;3;120;Jornadas com interrupção antes, durante ou depois da confirmação, 40 em cada grupo.;2.5;casos;evidencias/medicoes.csv#PRJ22-S02;desempenho
+PRJ22-S03;saga-v2;jornadas retomadas automaticamente;contagem;108;120;Jornadas com interrupção antes, durante ou depois da confirmação, 40 em cada grupo.;90.0;casos;evidencias/medicoes.csv#PRJ22-S03;desempenho
+PRJ22-S04;saga-v2;transferências duplicadas;contagem;1;120;Jornadas com interrupção antes, durante ou depois da confirmação, 40 em cada grupo.;0.833333;casos;evidencias/medicoes.csv#PRJ22-S04;desempenho
+PRJ22-S05;barreira-v3;jornadas retomadas automaticamente;contagem;116;120;Jornadas com interrupção antes, durante ou depois da confirmação, 40 em cada grupo.;96.666667;casos;evidencias/medicoes.csv#PRJ22-S05;desempenho
+PRJ22-S06;barreira-v3;transferências duplicadas;contagem;0;120;Jornadas com interrupção antes, durante ou depois da confirmação, 40 em cada grupo.;0.0;casos;evidencias/medicoes.csv#PRJ22-S06;desempenho
+PRJ22-S07;barreira-v3;jornadas bloqueadas para confirmação;contagem;4;120;Jornadas com interrupção antes, durante ou depois da confirmação, 40 em cada grupo.;3.333333;casos;evidencias/medicoes.csv#PRJ22-S07;desempenho

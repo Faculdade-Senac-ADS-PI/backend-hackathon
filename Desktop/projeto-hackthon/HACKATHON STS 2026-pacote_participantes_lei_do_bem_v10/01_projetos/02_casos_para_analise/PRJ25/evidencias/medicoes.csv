@@ -1,0 +1,3 @@
+﻿registro_id;ensaio_id;versao;cenario;tipo;metrica;valor;numerador;denominador;peso;unidade
+PRJ25-S01-M001;PRJ25-S01;config-v1;C001;contador;itens funcionais aprovados;;86;86;;casos
+PRJ25-S02-M001;PRJ25-S02;config-v1;C001;contador;cenários de permissão aprovados;;24;24;;casos

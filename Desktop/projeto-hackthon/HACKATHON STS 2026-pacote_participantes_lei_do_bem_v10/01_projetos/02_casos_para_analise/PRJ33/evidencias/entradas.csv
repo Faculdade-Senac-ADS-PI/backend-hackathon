@@ -1,0 +1,13 @@
+﻿entrada_id;conteudo_json
+PRJ33-IN001;"{""id"": ""PRJ33-IN001"", ""origem"": ""A"", ""timestamp"": ""2025-03-10T10:00:03"", ""correlation_id"": ""X1"", ""timestamp_corrigido"": null}"
+PRJ33-IN002;"{""id"": ""PRJ33-IN002"", ""origem"": ""B"", ""timestamp"": ""2025-03-10T10:00:18"", ""correlation_id"": ""X1"", ""timestamp_corrigido"": null}"
+PRJ33-IN003;"{""id"": ""PRJ33-IN003"", ""origem"": ""A"", ""timestamp"": ""2025-03-10T10:00:09"", ""correlation_id"": ""X2"", ""timestamp_corrigido"": null}"
+PRJ33-IN004;"{""id"": ""PRJ33-IN004"", ""origem"": ""B"", ""timestamp"": ""2025-03-10T10:00:24"", ""correlation_id"": ""X2"", ""timestamp_corrigido"": null}"
+PRJ33-IN005;"{""id"": ""PRJ33-IN005"", ""origem"": ""A"", ""timestamp"": ""2025-03-10T10:00:15"", ""correlation_id"": null, ""timestamp_corrigido"": null}"
+PRJ33-IN006;"{""id"": ""PRJ33-IN006"", ""origem"": ""B"", ""timestamp"": ""2025-03-10T10:01:30"", ""correlation_id"": null, ""timestamp_corrigido"": null}"
+PRJ33-IN007;"{""id"": ""PRJ33-IN007"", ""origem"": ""A"", ""timestamp"": ""2025-03-10T10:01:21"", ""correlation_id"": null, ""timestamp_corrigido"": null}"
+PRJ33-IN008;"{""id"": ""PRJ33-IN008"", ""origem"": ""B"", ""timestamp"": ""2025-03-10T10:01:36"", ""correlation_id"": null, ""timestamp_corrigido"": null}"
+PRJ33-IN009;"{""id"": ""PRJ33-IN009"", ""origem"": ""A"", ""timestamp"": ""2025-03-10T10:01:27"", ""correlation_id"": null, ""timestamp_corrigido"": null}"
+PRJ33-IN010;"{""id"": ""PRJ33-IN010"", ""origem"": ""B"", ""timestamp"": ""2025-03-10T10:01:42"", ""correlation_id"": null, ""timestamp_corrigido"": null}"
+PRJ33-IN011;"{""id"": ""PRJ33-IN011"", ""origem"": ""A"", ""timestamp"": ""2025-03-10T10:01:33"", ""correlation_id"": null, ""timestamp_corrigido"": null}"
+PRJ33-IN012;"{""id"": ""PRJ33-IN012"", ""origem"": ""B"", ""timestamp"": ""2025-03-10T10:02:48"", ""correlation_id"": null, ""timestamp_corrigido"": null}"

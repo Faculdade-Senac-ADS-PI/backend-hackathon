@@ -1,0 +1,4 @@
+﻿entrada_id;conteudo_json
+PRJ38-IN001;"{""entrada"": ""R010 aprova chega 20 ms; R002 prioritária nega chega 80 ms; mesma época"", ""referencia"": ""negar e citar R002""}"
+PRJ38-IN002;"{""entrada"": ""proposta usa cadastro época 2; resposta atrasada retorna época 3"", ""referencia"": ""não misturar snapshots""}"
+PRJ38-IN003;"{""entrada"": ""dependência obrigatória timeout; regra sequencial-v4 manda revisão"", ""referencia"": ""mesma decisão e motivo""}"

@@ -1,0 +1,4 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ35-S01;previsao-v1;erro absoluto das 12 anotações;media;18;12;"Anotações com previsão e duração real disponíveis para calcular erro; sem comprovação da antecedência das previsões.";;min;evidencias/medicoes.csv#PRJ35-S01;desempenho
+PRJ35-S02;serie-v2;noites com duração real recuperada (contagem de entrega, não desempenho);contagem;41;41;"Noites da série recuperada; não é a série original completa de 18 meses.";;casos;evidencias/medicoes.csv#PRJ35-S02;entrega
+PRJ35-S03;serie-v2;noites com previsão sem proveniência (contagem de entrega, não desempenho);contagem;12;41;"Noites da série recuperada; não é a série original completa de 18 meses.";;casos;evidencias/medicoes.csv#PRJ35-S03;entrega

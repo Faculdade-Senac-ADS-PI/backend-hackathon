@@ -1,0 +1,4 @@
+﻿entrada_id;conteudo_json
+PRJ37-IN001;"{""entrada"": ""grupo C no teste: 147 falsos negativos / 1.000 positivos"", ""referencia"": ""FNR = 14,7%""}"
+PRJ37-IN002;"{""entrada"": ""estresse: grupo C = 171/1.000; grupo A = 120/1.000"", ""referencia"": ""amplitude de 5,1 pontos percentuais""}"
+PRJ37-IN003;"{""entrada"": ""H3-peso4-v2 selecionado em validação; teste final separado"", ""referencia"": ""não escolher peso pela melhor métrica final""}"

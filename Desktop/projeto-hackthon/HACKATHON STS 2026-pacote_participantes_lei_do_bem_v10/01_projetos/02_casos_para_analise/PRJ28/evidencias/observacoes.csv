@@ -1,0 +1,3 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ28-OBS01;"convênio SYN01; campo vigencia_fim=2025-08-31";mapear para end_date conforme minuta;saída de conversão ausente;"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ28-OBS02;"convênio SYN02; emissão concorrente ao lote";critério de continuidade não especificado;sem log de emissão e sem versão do conversor;"recorte ilustrativo identificado; não representa a totalidade das medições"

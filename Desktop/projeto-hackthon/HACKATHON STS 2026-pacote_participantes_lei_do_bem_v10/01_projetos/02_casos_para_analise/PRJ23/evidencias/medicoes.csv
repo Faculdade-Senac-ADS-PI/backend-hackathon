@@ -1,0 +1,21 @@
+﻿registro_id;ensaio_id;versao;cenario;tipo;metrica;valor;numerador;denominador;peso;unidade
+PRJ23-S01-M001;PRJ23-S01;ttl-v1;atraso_0s;contador;leituras defasadas;;0;7500;;casos
+PRJ23-S01-M002;PRJ23-S01;ttl-v1;atraso_30s;contador;leituras defasadas;;60;7500;;casos
+PRJ23-S01-M003;PRJ23-S01;ttl-v1;atraso_90s;contador;leituras defasadas;;240;7500;;casos
+PRJ23-S01-M004;PRJ23-S01;ttl-v1;atraso_180s;contador;leituras defasadas;;420;7500;;casos
+PRJ23-S02-M001;PRJ23-S02;escalar-v2;atraso_0s;contador;leituras defasadas;;0;7500;;casos
+PRJ23-S02-M002;PRJ23-S02;escalar-v2;atraso_30s;contador;leituras defasadas;;30;7500;;casos
+PRJ23-S02-M003;PRJ23-S02;escalar-v2;atraso_90s;contador;leituras defasadas;;60;7500;;casos
+PRJ23-S02-M004;PRJ23-S02;escalar-v2;atraso_180s;contador;leituras defasadas;;150;7500;;casos
+PRJ23-S03-M001;PRJ23-S03;vetorial-v3;atraso_0s;contador;leituras defasadas;;0;7500;;casos
+PRJ23-S03-M002;PRJ23-S03;vetorial-v3;atraso_30s;contador;leituras defasadas;;0;7500;;casos
+PRJ23-S03-M003;PRJ23-S03;vetorial-v3;atraso_90s;contador;leituras defasadas;;12;7500;;casos
+PRJ23-S03-M004;PRJ23-S03;vetorial-v3;atraso_180s;contador;leituras defasadas;;48;7500;;casos
+PRJ23-S04-M001;PRJ23-S04;vetorial-v3;atraso_0s;contador;consultas extras ao núcleo;;150;7500;;casos
+PRJ23-S04-M002;PRJ23-S04;vetorial-v3;atraso_30s;contador;consultas extras ao núcleo;;200;7500;;casos
+PRJ23-S04-M003;PRJ23-S04;vetorial-v3;atraso_90s;contador;consultas extras ao núcleo;;250;7500;;casos
+PRJ23-S04-M004;PRJ23-S04;vetorial-v3;atraso_180s;contador;consultas extras ao núcleo;;300;7500;;casos
+PRJ23-S05-M001;PRJ23-S05;entrada-v4;atraso_0s;contador;alterações submetidas;;1000;1000;;casos
+PRJ23-S05-M002;PRJ23-S05;entrada-v4;atraso_30s;contador;alterações submetidas;;1000;1000;;casos
+PRJ23-S05-M003;PRJ23-S05;entrada-v4;atraso_90s;contador;alterações submetidas;;1000;1000;;casos
+PRJ23-S05-M004;PRJ23-S05;entrada-v4;atraso_180s;contador;alterações submetidas;;1000;1000;;casos

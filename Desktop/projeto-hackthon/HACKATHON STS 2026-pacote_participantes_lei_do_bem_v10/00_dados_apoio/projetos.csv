@@ -1,0 +1,41 @@
+﻿projeto_id;titulo;grupo;equipe;duracao_semanas;quantidade_atividades;quantidade_evidencias;pasta
+PRJ01;Reprocessamento seguro de mensagens duplicadas;Histórico;Engenharia de Mensageria;13;8;14;01_projetos/01_historico/PRJ01
+PRJ02;Detecção de divergências entre razão e extrato;Histórico;Conciliação e Dados;18;8;14;01_projetos/01_historico/PRJ02
+PRJ03;Reexecução controlada após falhas intermitentes;Histórico;Plataforma de Pagamentos;23;8;14;01_projetos/01_historico/PRJ03
+PRJ04;Painel de rastreabilidade da conciliação;Histórico;Observabilidade Financeira;28;8;14;01_projetos/01_historico/PRJ04
+PRJ05;Aplicativo de proposta com trabalho offline;Histórico;Canais de Crédito;33;8;14;01_projetos/01_historico/PRJ05
+PRJ06;Sincronização de propostas após reconexão;Histórico;Integração de Propostas;11;8;14;01_projetos/01_historico/PRJ06
+PRJ07;Autenticação em aparelhos simples;Histórico;Segurança de Canais;16;8;14;01_projetos/01_historico/PRJ07
+PRJ08;Monitoramento de canais em agências remotas;Histórico;Operações de Agência;21;8;14;01_projetos/01_historico/PRJ08
+PRJ09;Gateway adaptativo para versões de API;Histórico;Arquitetura de APIs;26;8;14;01_projetos/01_historico/PRJ09
+PRJ10;Gestão de consentimentos em múltiplos canais;Histórico;Open Finance;31;8;14;01_projetos/01_historico/PRJ10
+PRJ11;Normalização de dados de contas;Histórico;Governança de Dados;9;8;14;01_projetos/01_historico/PRJ11
+PRJ12;Cofre de chaves para integrações externas;Histórico;Segurança de Integrações;14;8;14;01_projetos/01_historico/PRJ12
+PRJ13;Modelo de comportamento transacional;Histórico;Prevenção a Fraude;19;8;14;01_projetos/01_historico/PRJ13
+PRJ14;Detecção de novos padrões de golpe;Histórico;Inteligência Antifraude;24;8;14;01_projetos/01_historico/PRJ14
+PRJ15;Explicação de alertas para revisão humana;Histórico;Operações de Alertas;29;8;14;01_projetos/01_historico/PRJ15
+PRJ16;Simulador de ataques ao fluxo de pagamento;Histórico;Laboratório de Segurança;34;8;14;01_projetos/01_historico/PRJ16
+PRJ17;Simulação de políticas de crédito;Histórico;Risco de Crédito;12;8;14;01_projetos/01_historico/PRJ17
+PRJ18;Motor de regras auditável;Histórico;Motores de Decisão;17;8;14;01_projetos/01_historico/PRJ18
+PRJ19;Leitura de documentos de produtores;Histórico;Automação Documental;22;8;14;01_projetos/01_historico/PRJ19
+PRJ20;Coexistência entre motor antigo e novo;Histórico;Crédito Rural;27;8;14;01_projetos/01_historico/PRJ20
+PRJ21;Isolamento dinâmico de serviços lentos;Análise;Plataforma de Serviços;32;8;14;01_projetos/02_casos_para_analise/PRJ21
+PRJ22;Recuperação de sessão após interrupção;Análise;Canais Digitais;10;8;14;01_projetos/02_casos_para_analise/PRJ22
+PRJ23;Consistência do cache de saldos;Análise;Core e Saldos;15;8;14;01_projetos/02_casos_para_analise/PRJ23
+PRJ24;Simulador reprodutível de falhas encadeadas em pagamentos;Análise;Resiliência de Pagamentos;20;8;14;01_projetos/02_casos_para_analise/PRJ24
+PRJ25;Parametrização de jornadas de cobrança em plataforma adquirida;Análise;Cobrança;25;8;14;01_projetos/02_casos_para_analise/PRJ25
+PRJ26;Relatórios gerenciais do portal;Análise;Portal Empresas;30;8;14;01_projetos/02_casos_para_analise/PRJ26
+PRJ27;Assistente para dúvidas sobre cobrança e boletos;Análise;Atendimento de Cobrança;8;8;14;01_projetos/02_casos_para_analise/PRJ27
+PRJ28;Migração em lote de convênios;Análise;Convênios;13;8;14;01_projetos/02_casos_para_analise/PRJ28
+PRJ29;Prova de vida em celulares de entrada;Análise;Identidade Digital;18;8;14;01_projetos/02_casos_para_analise/PRJ29
+PRJ30;Implantação de autenticação multifator com produto de mercado;Análise;Segurança de Acesso;23;8;14;01_projetos/02_casos_para_analise/PRJ30
+PRJ31;Recuperação remota de identidade em conexão limitada;Análise;Recuperação de Identidade;28;8;14;01_projetos/02_casos_para_analise/PRJ31
+PRJ32;Reputação de dispositivo;Análise;Autenticação Adaptativa;33;8;14;01_projetos/02_casos_para_analise/PRJ32
+PRJ33;Coleta de sinais de anomalia;Análise;Observabilidade;11;8;14;01_projetos/02_casos_para_analise/PRJ33
+PRJ34;Mapa dinâmico de dependências;Análise;Arquitetura Corporativa;16;8;14;01_projetos/02_casos_para_analise/PRJ34
+PRJ35;Previsão da capacidade do processamento bancário noturno;Análise;Processamento Noturno;21;8;14;01_projetos/02_casos_para_analise/PRJ35
+PRJ36;Migração de painéis operacionais;Análise;Operações de Tecnologia;26;8;14;01_projetos/02_casos_para_analise/PRJ36
+PRJ37;Controle de disparidade em modelo de risco de crédito;Análise;Modelos de Crédito;31;8;14;01_projetos/02_casos_para_analise/PRJ37
+PRJ38;Motor distribuído e determinístico para decisão de crédito;Análise;Decisão de Crédito;9;8;14;01_projetos/02_casos_para_analise/PRJ38
+PRJ39;Migração das regras antigas;Análise;Modernização de Regras;14;8;14;01_projetos/02_casos_para_analise/PRJ39
+PRJ40;Pontuação com dados incompletos;Análise;Dados Externos de Crédito;19;8;14;01_projetos/02_casos_para_analise/PRJ40

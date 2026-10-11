@@ -1,0 +1,3 @@
+﻿entrada_id;conteudo_json
+PRJ29-IN001;"{""entrada"": ""replay R60; brilho oscilante; nonce ausente da verificação seletor-S2-v3"", ""referencia"": ""rejeitar vídeo gravado""}"
+PRJ29-IN002;"{""entrada"": ""legítima L099; aparelho P1; variação suficiente no quadro 3"", ""referencia"": ""concluir dentro de seis quadros""}"

@@ -1,0 +1,3 @@
+﻿entrada_id;conteudo_json
+PRJ25-IN001;"{""entrada"": ""perfil operador; ação aprovar desconto acima do limite"", ""referencia"": ""negar conforme matriz""}"
+PRJ25-IN002;"{""entrada"": ""prazo=5 dias; canal=mensagem; modelo=M03"", ""referencia"": ""enviar template configurado""}"

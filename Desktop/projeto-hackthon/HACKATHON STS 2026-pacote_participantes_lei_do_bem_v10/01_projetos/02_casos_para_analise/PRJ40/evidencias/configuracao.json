@@ -1,0 +1,191 @@
+{
+  "projeto_id": "PRJ40",
+  "natureza": "registros integralmente sintéticos de um exercício documental",
+  "versao_documental": "9.0",
+  "escopo": "30 mil propostas em 16 padrões de ausência definidos na matriz. A referência completa fica reservada para avaliação. O intervalo sinaliza 412 casos que zero/mediana tratavam como confiantes; 228 desses mudam de lado quando a referência completa é revelada. Há 184 sinalizações conservadoras sem mudança de decisão. Métodos usam o mesmo conjunto.",
+  "parametros": {
+    "semente": 202540,
+    "padroes": 16,
+    "limiar": 0.6,
+    "tripla_rara_executada": false
+  },
+  "versoes_registradas": [
+    "intervalo-v1"
+  ],
+  "dicionario_medicoes": {
+    "contador": "numerador é a quantidade da ocorrência nomeada, denominador é a exposição desse contador; contadores da mesma população podem se sobrepor",
+    "medicao": "valor observado com unidade; cada linha é uma medição",
+    "histograma": "valor é latência observada exata na massa discreta; peso é sua frequência, não faixa interpolada"
+  },
+  "ensaios": [
+    {
+      "ensaio_id": "PRJ40-S01",
+      "versao": "intervalo-v1",
+      "metrica": "decisões sinalizadas para revisão",
+      "tipo": "count",
+      "operacao": "contagem"
+    },
+    {
+      "ensaio_id": "PRJ40-S02",
+      "versao": "intervalo-v1",
+      "metrica": "sinalizações com mudança de decisão na referência completa",
+      "tipo": "count",
+      "operacao": "contagem"
+    },
+    {
+      "ensaio_id": "PRJ40-S03",
+      "versao": "intervalo-v1",
+      "metrica": "sinalizações sem mudança na referência completa",
+      "tipo": "count",
+      "operacao": "contagem"
+    }
+  ],
+  "matriz_ausencias": [
+    {
+      "cenario": "padrao_01",
+      "fontes_ausentes": [],
+      "propostas": 1875
+    },
+    {
+      "cenario": "padrao_02",
+      "fontes_ausentes": [
+        "F1"
+      ],
+      "propostas": 1875
+    },
+    {
+      "cenario": "padrao_03",
+      "fontes_ausentes": [
+        "F2"
+      ],
+      "propostas": 1875
+    },
+    {
+      "cenario": "padrao_04",
+      "fontes_ausentes": [
+        "F3"
+      ],
+      "propostas": 1875
+    },
+    {
+      "cenario": "padrao_05",
+      "fontes_ausentes": [
+        "F4"
+      ],
+      "propostas": 1875
+    },
+    {
+      "cenario": "padrao_06",
+      "fontes_ausentes": [
+        "F1",
+        "F2"
+      ],
+      "propostas": 1875
+    },
+    {
+      "cenario": "padrao_07",
+      "fontes_ausentes": [
+        "F1",
+        "F3"
+      ],
+      "propostas": 1875
+    },
+    {
+      "cenario": "padrao_08",
+      "fontes_ausentes": [
+        "F1",
+        "F4"
+      ],
+      "propostas": 1875
+    },
+    {
+      "cenario": "padrao_09",
+      "fontes_ausentes": [
+        "F2",
+        "F3"
+      ],
+      "propostas": 1875
+    },
+    {
+      "cenario": "padrao_10",
+      "fontes_ausentes": [
+        "F2",
+        "F4"
+      ],
+      "propostas": 1875
+    },
+    {
+      "cenario": "padrao_11",
+      "fontes_ausentes": [
+        "F3",
+        "F4"
+      ],
+      "propostas": 1875
+    },
+    {
+      "cenario": "padrao_12",
+      "fontes_ausentes": [
+        "R1"
+      ],
+      "propostas": 1875
+    },
+    {
+      "cenario": "padrao_13",
+      "fontes_ausentes": [
+        "R2"
+      ],
+      "propostas": 1875
+    },
+    {
+      "cenario": "padrao_14",
+      "fontes_ausentes": [
+        "R3"
+      ],
+      "propostas": 1875
+    },
+    {
+      "cenario": "padrao_15",
+      "fontes_ausentes": [
+        "R1",
+        "R2"
+      ],
+      "propostas": 1875
+    },
+    {
+      "cenario": "padrao_16",
+      "fontes_ausentes": [
+        "R2",
+        "R3"
+      ],
+      "propostas": 1875
+    }
+  ],
+  "padrao_pendente": [
+    "R1",
+    "R2",
+    "R3"
+  ],
+  "dicionario_resultados": {
+    "ensaio_id": "Identificador do ensaio. Liga o resultado às medições e à configuração.",
+    "versao": "Versão de entrega avaliada nesse ensaio.",
+    "metrica": "O que foi contado ou medido; indica se o valor se refere a acerto, falha, tempo ou outro indicador.",
+    "operacao": "Como o valor foi obtido: contagem, media, mediana, diferenca_maior_menor, percentil_95, valor_observado ou indicador_precalculado.",
+    "valor": "Resultado expresso na unidade indicada. Um valor maior pode representar melhora ou piora, conforme a métrica.",
+    "base_de_calculo": "Total de referência das contagens; quantidade de valores nas médias, medianas e diferenças; soma das frequências no percentil; 1 para um valor observado ou indicador transcrito. Só funciona como divisor da taxa nas contagens.",
+    "descricao_base": "Explica o que a base representa neste ensaio: propostas, ataques, grupos, observações ou indicadores registrados.",
+    "taxa_percentual": "Em contagem de desempenho: 100 × valor / base_de_calculo. Vazia nas demais operações e nas contagens de entrega. Vazio não significa zero.",
+    "unidade": "Unidade do valor: casos, s (segundos), ms (milissegundos), min (minutos), pontos percentuais ou escala 0-1. Pontos percentuais medem diferença entre percentuais.",
+    "fonte": "Arquivo relativo à pasta do projeto e identificador do ensaio após #. O identificador seleciona as linhas desse ensaio no arquivo de medições do próprio projeto.",
+    "natureza": "desempenho = indicador observado no ensaio, inclusive falhas; entrega = quantidade de material disponível. Não equivale à classificação do projeto."
+  },
+  "versao_esquema_resultados": "10.0",
+  "operacoes_resultados": {
+    "contagem": "Somar as ocorrências registradas no numerador das medições do mesmo ensaio. Somar seus denominadores para obter a base de cálculo.",
+    "media": "Somar os valores registrados e dividir pela quantidade de observações.",
+    "mediana": "Ordenar os valores e obter o valor central; se houver quantidade par, usar a média dos dois valores centrais.",
+    "diferenca_maior_menor": "Subtrair o menor valor do maior. A base informa quantos valores foram comparados; não é um divisor.",
+    "percentil_95": "Ordenar os valores do histograma e acumular suas frequências até atingir o posto teto(0,95 × total de observações). Pelo menos 95% das observações ficam até esse valor.",
+    "valor_observado": "Reproduzir uma única medição registrada, sem calcular média nem presumir repetições.",
+    "indicador_precalculado": "Transcrever um indicador previamente calculado e registrado. A conferência valida a transcrição; não refaz o cálculo original do indicador sem os dados necessários."
+  }
+}

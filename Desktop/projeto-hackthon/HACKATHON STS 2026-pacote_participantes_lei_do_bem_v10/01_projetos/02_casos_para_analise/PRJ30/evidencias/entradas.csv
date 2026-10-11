@@ -1,0 +1,3 @@
+﻿entrada_id;conteudo_json
+PRJ30-IN001;"{""entrada"": ""OTP recebido em 45 s; validade configurada 30 s"", ""referencia"": ""usar validade contratada de 60 s para o canal""}"
+PRJ30-IN002;"{""entrada"": ""certificado simbólico expirado no conector"", ""referencia"": ""renovar credencial de teste""}"

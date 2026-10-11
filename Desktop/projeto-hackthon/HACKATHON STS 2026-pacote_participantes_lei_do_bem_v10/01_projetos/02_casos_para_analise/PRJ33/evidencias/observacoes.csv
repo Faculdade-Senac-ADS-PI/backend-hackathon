@@ -1,0 +1,3 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ33-OBS01;"origem A; ts=10:00:00; correlation=X1; origem B ts=10:00:12; correlation=X1";desvio real não preservado;timestamp corrigido ausente;"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ33-OBS02;"origem A; correlation vazio";associação requer regra adicional;não há vínculo produzido;"recorte ilustrativo identificado; não representa a totalidade das medições"

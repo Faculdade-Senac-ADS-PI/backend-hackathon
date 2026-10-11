@@ -1,0 +1,561 @@
+﻿documento_id;projeto_id;id_evidencia;arquivo;caminho_no_pacote;tipo
+PRJ01-DOC01;PRJ01;PRJ01-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ01/dossie_projeto.pdf;Dossiê
+PRJ01-DOC02;PRJ01;PRJ01-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ01/registro_tecnico.pdf;Registro técnico
+PRJ01-DOC03;PRJ01;PRJ01-EV03;atividades.xlsx;01_projetos/01_historico/PRJ01/atividades.xlsx;Atividades
+PRJ01-DOC04;PRJ01;PRJ01-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ01/inventario_evidencias.csv;Inventário
+PRJ01-DOC05;PRJ01;PRJ01-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ01/evidencias/configuracao.json;Configuração
+PRJ01-DOC06;PRJ01;PRJ01-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ01/evidencias/metodo.md;Método
+PRJ01-DOC07;PRJ01;PRJ01-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ01/evidencias/cronologia.csv;Cronologia
+PRJ01-DOC08;PRJ01;PRJ01-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ01/evidencias/medicoes.csv;Medições
+PRJ01-DOC09;PRJ01;PRJ01-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ01/evidencias/resultados.csv;Resultados
+PRJ01-DOC10;PRJ01;PRJ01-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ01/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ01-DOC11;PRJ01;PRJ01-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ01/evidencias/observacoes.csv;Observações
+PRJ01-DOC12;PRJ01;PRJ01-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ01/evidencias/entradas.csv;Entradas
+PRJ01-DOC13;PRJ01;PRJ01-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ01/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ01-DOC14;PRJ01;PRJ01-EV14;atividades.csv;01_projetos/01_historico/PRJ01/atividades.csv;Atividades CSV
+PRJ02-DOC01;PRJ02;PRJ02-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ02/dossie_projeto.pdf;Dossiê
+PRJ02-DOC02;PRJ02;PRJ02-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ02/registro_tecnico.pdf;Registro técnico
+PRJ02-DOC03;PRJ02;PRJ02-EV03;atividades.xlsx;01_projetos/01_historico/PRJ02/atividades.xlsx;Atividades
+PRJ02-DOC04;PRJ02;PRJ02-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ02/inventario_evidencias.csv;Inventário
+PRJ02-DOC05;PRJ02;PRJ02-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ02/evidencias/configuracao.json;Configuração
+PRJ02-DOC06;PRJ02;PRJ02-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ02/evidencias/metodo.md;Método
+PRJ02-DOC07;PRJ02;PRJ02-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ02/evidencias/cronologia.csv;Cronologia
+PRJ02-DOC08;PRJ02;PRJ02-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ02/evidencias/medicoes.csv;Medições
+PRJ02-DOC09;PRJ02;PRJ02-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ02/evidencias/resultados.csv;Resultados
+PRJ02-DOC10;PRJ02;PRJ02-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ02/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ02-DOC11;PRJ02;PRJ02-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ02/evidencias/observacoes.csv;Observações
+PRJ02-DOC12;PRJ02;PRJ02-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ02/evidencias/entradas.csv;Entradas
+PRJ02-DOC13;PRJ02;PRJ02-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ02/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ02-DOC14;PRJ02;PRJ02-EV14;atividades.csv;01_projetos/01_historico/PRJ02/atividades.csv;Atividades CSV
+PRJ03-DOC01;PRJ03;PRJ03-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ03/dossie_projeto.pdf;Dossiê
+PRJ03-DOC02;PRJ03;PRJ03-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ03/registro_tecnico.pdf;Registro técnico
+PRJ03-DOC03;PRJ03;PRJ03-EV03;atividades.xlsx;01_projetos/01_historico/PRJ03/atividades.xlsx;Atividades
+PRJ03-DOC04;PRJ03;PRJ03-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ03/inventario_evidencias.csv;Inventário
+PRJ03-DOC05;PRJ03;PRJ03-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ03/evidencias/configuracao.json;Configuração
+PRJ03-DOC06;PRJ03;PRJ03-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ03/evidencias/metodo.md;Método
+PRJ03-DOC07;PRJ03;PRJ03-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ03/evidencias/cronologia.csv;Cronologia
+PRJ03-DOC08;PRJ03;PRJ03-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ03/evidencias/medicoes.csv;Medições
+PRJ03-DOC09;PRJ03;PRJ03-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ03/evidencias/resultados.csv;Resultados
+PRJ03-DOC10;PRJ03;PRJ03-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ03/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ03-DOC11;PRJ03;PRJ03-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ03/evidencias/observacoes.csv;Observações
+PRJ03-DOC12;PRJ03;PRJ03-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ03/evidencias/entradas.csv;Entradas
+PRJ03-DOC13;PRJ03;PRJ03-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ03/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ03-DOC14;PRJ03;PRJ03-EV14;atividades.csv;01_projetos/01_historico/PRJ03/atividades.csv;Atividades CSV
+PRJ04-DOC01;PRJ04;PRJ04-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ04/dossie_projeto.pdf;Dossiê
+PRJ04-DOC02;PRJ04;PRJ04-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ04/registro_tecnico.pdf;Registro técnico
+PRJ04-DOC03;PRJ04;PRJ04-EV03;atividades.xlsx;01_projetos/01_historico/PRJ04/atividades.xlsx;Atividades
+PRJ04-DOC04;PRJ04;PRJ04-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ04/inventario_evidencias.csv;Inventário
+PRJ04-DOC05;PRJ04;PRJ04-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ04/evidencias/configuracao.json;Configuração
+PRJ04-DOC06;PRJ04;PRJ04-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ04/evidencias/metodo.md;Método
+PRJ04-DOC07;PRJ04;PRJ04-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ04/evidencias/cronologia.csv;Cronologia
+PRJ04-DOC08;PRJ04;PRJ04-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ04/evidencias/medicoes.csv;Medições
+PRJ04-DOC09;PRJ04;PRJ04-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ04/evidencias/resultados.csv;Resultados
+PRJ04-DOC10;PRJ04;PRJ04-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ04/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ04-DOC11;PRJ04;PRJ04-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ04/evidencias/observacoes.csv;Observações
+PRJ04-DOC12;PRJ04;PRJ04-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ04/evidencias/entradas.csv;Entradas
+PRJ04-DOC13;PRJ04;PRJ04-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ04/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ04-DOC14;PRJ04;PRJ04-EV14;atividades.csv;01_projetos/01_historico/PRJ04/atividades.csv;Atividades CSV
+PRJ05-DOC01;PRJ05;PRJ05-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ05/dossie_projeto.pdf;Dossiê
+PRJ05-DOC02;PRJ05;PRJ05-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ05/registro_tecnico.pdf;Registro técnico
+PRJ05-DOC03;PRJ05;PRJ05-EV03;atividades.xlsx;01_projetos/01_historico/PRJ05/atividades.xlsx;Atividades
+PRJ05-DOC04;PRJ05;PRJ05-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ05/inventario_evidencias.csv;Inventário
+PRJ05-DOC05;PRJ05;PRJ05-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ05/evidencias/configuracao.json;Configuração
+PRJ05-DOC06;PRJ05;PRJ05-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ05/evidencias/metodo.md;Método
+PRJ05-DOC07;PRJ05;PRJ05-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ05/evidencias/cronologia.csv;Cronologia
+PRJ05-DOC08;PRJ05;PRJ05-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ05/evidencias/medicoes.csv;Medições
+PRJ05-DOC09;PRJ05;PRJ05-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ05/evidencias/resultados.csv;Resultados
+PRJ05-DOC10;PRJ05;PRJ05-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ05/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ05-DOC11;PRJ05;PRJ05-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ05/evidencias/observacoes.csv;Observações
+PRJ05-DOC12;PRJ05;PRJ05-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ05/evidencias/entradas.csv;Entradas
+PRJ05-DOC13;PRJ05;PRJ05-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ05/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ05-DOC14;PRJ05;PRJ05-EV14;atividades.csv;01_projetos/01_historico/PRJ05/atividades.csv;Atividades CSV
+PRJ06-DOC01;PRJ06;PRJ06-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ06/dossie_projeto.pdf;Dossiê
+PRJ06-DOC02;PRJ06;PRJ06-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ06/registro_tecnico.pdf;Registro técnico
+PRJ06-DOC03;PRJ06;PRJ06-EV03;atividades.xlsx;01_projetos/01_historico/PRJ06/atividades.xlsx;Atividades
+PRJ06-DOC04;PRJ06;PRJ06-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ06/inventario_evidencias.csv;Inventário
+PRJ06-DOC05;PRJ06;PRJ06-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ06/evidencias/configuracao.json;Configuração
+PRJ06-DOC06;PRJ06;PRJ06-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ06/evidencias/metodo.md;Método
+PRJ06-DOC07;PRJ06;PRJ06-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ06/evidencias/cronologia.csv;Cronologia
+PRJ06-DOC08;PRJ06;PRJ06-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ06/evidencias/medicoes.csv;Medições
+PRJ06-DOC09;PRJ06;PRJ06-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ06/evidencias/resultados.csv;Resultados
+PRJ06-DOC10;PRJ06;PRJ06-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ06/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ06-DOC11;PRJ06;PRJ06-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ06/evidencias/observacoes.csv;Observações
+PRJ06-DOC12;PRJ06;PRJ06-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ06/evidencias/entradas.csv;Entradas
+PRJ06-DOC13;PRJ06;PRJ06-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ06/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ06-DOC14;PRJ06;PRJ06-EV14;atividades.csv;01_projetos/01_historico/PRJ06/atividades.csv;Atividades CSV
+PRJ07-DOC01;PRJ07;PRJ07-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ07/dossie_projeto.pdf;Dossiê
+PRJ07-DOC02;PRJ07;PRJ07-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ07/registro_tecnico.pdf;Registro técnico
+PRJ07-DOC03;PRJ07;PRJ07-EV03;atividades.xlsx;01_projetos/01_historico/PRJ07/atividades.xlsx;Atividades
+PRJ07-DOC04;PRJ07;PRJ07-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ07/inventario_evidencias.csv;Inventário
+PRJ07-DOC05;PRJ07;PRJ07-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ07/evidencias/configuracao.json;Configuração
+PRJ07-DOC06;PRJ07;PRJ07-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ07/evidencias/metodo.md;Método
+PRJ07-DOC07;PRJ07;PRJ07-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ07/evidencias/cronologia.csv;Cronologia
+PRJ07-DOC08;PRJ07;PRJ07-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ07/evidencias/medicoes.csv;Medições
+PRJ07-DOC09;PRJ07;PRJ07-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ07/evidencias/resultados.csv;Resultados
+PRJ07-DOC10;PRJ07;PRJ07-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ07/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ07-DOC11;PRJ07;PRJ07-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ07/evidencias/observacoes.csv;Observações
+PRJ07-DOC12;PRJ07;PRJ07-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ07/evidencias/entradas.csv;Entradas
+PRJ07-DOC13;PRJ07;PRJ07-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ07/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ07-DOC14;PRJ07;PRJ07-EV14;atividades.csv;01_projetos/01_historico/PRJ07/atividades.csv;Atividades CSV
+PRJ08-DOC01;PRJ08;PRJ08-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ08/dossie_projeto.pdf;Dossiê
+PRJ08-DOC02;PRJ08;PRJ08-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ08/registro_tecnico.pdf;Registro técnico
+PRJ08-DOC03;PRJ08;PRJ08-EV03;atividades.xlsx;01_projetos/01_historico/PRJ08/atividades.xlsx;Atividades
+PRJ08-DOC04;PRJ08;PRJ08-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ08/inventario_evidencias.csv;Inventário
+PRJ08-DOC05;PRJ08;PRJ08-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ08/evidencias/configuracao.json;Configuração
+PRJ08-DOC06;PRJ08;PRJ08-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ08/evidencias/metodo.md;Método
+PRJ08-DOC07;PRJ08;PRJ08-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ08/evidencias/cronologia.csv;Cronologia
+PRJ08-DOC08;PRJ08;PRJ08-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ08/evidencias/medicoes.csv;Medições
+PRJ08-DOC09;PRJ08;PRJ08-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ08/evidencias/resultados.csv;Resultados
+PRJ08-DOC10;PRJ08;PRJ08-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ08/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ08-DOC11;PRJ08;PRJ08-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ08/evidencias/observacoes.csv;Observações
+PRJ08-DOC12;PRJ08;PRJ08-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ08/evidencias/entradas.csv;Entradas
+PRJ08-DOC13;PRJ08;PRJ08-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ08/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ08-DOC14;PRJ08;PRJ08-EV14;atividades.csv;01_projetos/01_historico/PRJ08/atividades.csv;Atividades CSV
+PRJ09-DOC01;PRJ09;PRJ09-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ09/dossie_projeto.pdf;Dossiê
+PRJ09-DOC02;PRJ09;PRJ09-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ09/registro_tecnico.pdf;Registro técnico
+PRJ09-DOC03;PRJ09;PRJ09-EV03;atividades.xlsx;01_projetos/01_historico/PRJ09/atividades.xlsx;Atividades
+PRJ09-DOC04;PRJ09;PRJ09-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ09/inventario_evidencias.csv;Inventário
+PRJ09-DOC05;PRJ09;PRJ09-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ09/evidencias/configuracao.json;Configuração
+PRJ09-DOC06;PRJ09;PRJ09-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ09/evidencias/metodo.md;Método
+PRJ09-DOC07;PRJ09;PRJ09-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ09/evidencias/cronologia.csv;Cronologia
+PRJ09-DOC08;PRJ09;PRJ09-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ09/evidencias/medicoes.csv;Medições
+PRJ09-DOC09;PRJ09;PRJ09-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ09/evidencias/resultados.csv;Resultados
+PRJ09-DOC10;PRJ09;PRJ09-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ09/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ09-DOC11;PRJ09;PRJ09-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ09/evidencias/observacoes.csv;Observações
+PRJ09-DOC12;PRJ09;PRJ09-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ09/evidencias/entradas.csv;Entradas
+PRJ09-DOC13;PRJ09;PRJ09-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ09/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ09-DOC14;PRJ09;PRJ09-EV14;atividades.csv;01_projetos/01_historico/PRJ09/atividades.csv;Atividades CSV
+PRJ10-DOC01;PRJ10;PRJ10-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ10/dossie_projeto.pdf;Dossiê
+PRJ10-DOC02;PRJ10;PRJ10-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ10/registro_tecnico.pdf;Registro técnico
+PRJ10-DOC03;PRJ10;PRJ10-EV03;atividades.xlsx;01_projetos/01_historico/PRJ10/atividades.xlsx;Atividades
+PRJ10-DOC04;PRJ10;PRJ10-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ10/inventario_evidencias.csv;Inventário
+PRJ10-DOC05;PRJ10;PRJ10-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ10/evidencias/configuracao.json;Configuração
+PRJ10-DOC06;PRJ10;PRJ10-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ10/evidencias/metodo.md;Método
+PRJ10-DOC07;PRJ10;PRJ10-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ10/evidencias/cronologia.csv;Cronologia
+PRJ10-DOC08;PRJ10;PRJ10-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ10/evidencias/medicoes.csv;Medições
+PRJ10-DOC09;PRJ10;PRJ10-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ10/evidencias/resultados.csv;Resultados
+PRJ10-DOC10;PRJ10;PRJ10-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ10/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ10-DOC11;PRJ10;PRJ10-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ10/evidencias/observacoes.csv;Observações
+PRJ10-DOC12;PRJ10;PRJ10-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ10/evidencias/entradas.csv;Entradas
+PRJ10-DOC13;PRJ10;PRJ10-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ10/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ10-DOC14;PRJ10;PRJ10-EV14;atividades.csv;01_projetos/01_historico/PRJ10/atividades.csv;Atividades CSV
+PRJ11-DOC01;PRJ11;PRJ11-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ11/dossie_projeto.pdf;Dossiê
+PRJ11-DOC02;PRJ11;PRJ11-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ11/registro_tecnico.pdf;Registro técnico
+PRJ11-DOC03;PRJ11;PRJ11-EV03;atividades.xlsx;01_projetos/01_historico/PRJ11/atividades.xlsx;Atividades
+PRJ11-DOC04;PRJ11;PRJ11-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ11/inventario_evidencias.csv;Inventário
+PRJ11-DOC05;PRJ11;PRJ11-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ11/evidencias/configuracao.json;Configuração
+PRJ11-DOC06;PRJ11;PRJ11-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ11/evidencias/metodo.md;Método
+PRJ11-DOC07;PRJ11;PRJ11-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ11/evidencias/cronologia.csv;Cronologia
+PRJ11-DOC08;PRJ11;PRJ11-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ11/evidencias/medicoes.csv;Medições
+PRJ11-DOC09;PRJ11;PRJ11-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ11/evidencias/resultados.csv;Resultados
+PRJ11-DOC10;PRJ11;PRJ11-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ11/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ11-DOC11;PRJ11;PRJ11-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ11/evidencias/observacoes.csv;Observações
+PRJ11-DOC12;PRJ11;PRJ11-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ11/evidencias/entradas.csv;Entradas
+PRJ11-DOC13;PRJ11;PRJ11-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ11/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ11-DOC14;PRJ11;PRJ11-EV14;atividades.csv;01_projetos/01_historico/PRJ11/atividades.csv;Atividades CSV
+PRJ12-DOC01;PRJ12;PRJ12-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ12/dossie_projeto.pdf;Dossiê
+PRJ12-DOC02;PRJ12;PRJ12-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ12/registro_tecnico.pdf;Registro técnico
+PRJ12-DOC03;PRJ12;PRJ12-EV03;atividades.xlsx;01_projetos/01_historico/PRJ12/atividades.xlsx;Atividades
+PRJ12-DOC04;PRJ12;PRJ12-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ12/inventario_evidencias.csv;Inventário
+PRJ12-DOC05;PRJ12;PRJ12-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ12/evidencias/configuracao.json;Configuração
+PRJ12-DOC06;PRJ12;PRJ12-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ12/evidencias/metodo.md;Método
+PRJ12-DOC07;PRJ12;PRJ12-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ12/evidencias/cronologia.csv;Cronologia
+PRJ12-DOC08;PRJ12;PRJ12-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ12/evidencias/medicoes.csv;Medições
+PRJ12-DOC09;PRJ12;PRJ12-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ12/evidencias/resultados.csv;Resultados
+PRJ12-DOC10;PRJ12;PRJ12-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ12/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ12-DOC11;PRJ12;PRJ12-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ12/evidencias/observacoes.csv;Observações
+PRJ12-DOC12;PRJ12;PRJ12-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ12/evidencias/entradas.csv;Entradas
+PRJ12-DOC13;PRJ12;PRJ12-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ12/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ12-DOC14;PRJ12;PRJ12-EV14;atividades.csv;01_projetos/01_historico/PRJ12/atividades.csv;Atividades CSV
+PRJ13-DOC01;PRJ13;PRJ13-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ13/dossie_projeto.pdf;Dossiê
+PRJ13-DOC02;PRJ13;PRJ13-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ13/registro_tecnico.pdf;Registro técnico
+PRJ13-DOC03;PRJ13;PRJ13-EV03;atividades.xlsx;01_projetos/01_historico/PRJ13/atividades.xlsx;Atividades
+PRJ13-DOC04;PRJ13;PRJ13-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ13/inventario_evidencias.csv;Inventário
+PRJ13-DOC05;PRJ13;PRJ13-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ13/evidencias/configuracao.json;Configuração
+PRJ13-DOC06;PRJ13;PRJ13-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ13/evidencias/metodo.md;Método
+PRJ13-DOC07;PRJ13;PRJ13-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ13/evidencias/cronologia.csv;Cronologia
+PRJ13-DOC08;PRJ13;PRJ13-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ13/evidencias/medicoes.csv;Medições
+PRJ13-DOC09;PRJ13;PRJ13-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ13/evidencias/resultados.csv;Resultados
+PRJ13-DOC10;PRJ13;PRJ13-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ13/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ13-DOC11;PRJ13;PRJ13-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ13/evidencias/observacoes.csv;Observações
+PRJ13-DOC12;PRJ13;PRJ13-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ13/evidencias/entradas.csv;Entradas
+PRJ13-DOC13;PRJ13;PRJ13-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ13/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ13-DOC14;PRJ13;PRJ13-EV14;atividades.csv;01_projetos/01_historico/PRJ13/atividades.csv;Atividades CSV
+PRJ14-DOC01;PRJ14;PRJ14-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ14/dossie_projeto.pdf;Dossiê
+PRJ14-DOC02;PRJ14;PRJ14-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ14/registro_tecnico.pdf;Registro técnico
+PRJ14-DOC03;PRJ14;PRJ14-EV03;atividades.xlsx;01_projetos/01_historico/PRJ14/atividades.xlsx;Atividades
+PRJ14-DOC04;PRJ14;PRJ14-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ14/inventario_evidencias.csv;Inventário
+PRJ14-DOC05;PRJ14;PRJ14-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ14/evidencias/configuracao.json;Configuração
+PRJ14-DOC06;PRJ14;PRJ14-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ14/evidencias/metodo.md;Método
+PRJ14-DOC07;PRJ14;PRJ14-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ14/evidencias/cronologia.csv;Cronologia
+PRJ14-DOC08;PRJ14;PRJ14-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ14/evidencias/medicoes.csv;Medições
+PRJ14-DOC09;PRJ14;PRJ14-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ14/evidencias/resultados.csv;Resultados
+PRJ14-DOC10;PRJ14;PRJ14-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ14/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ14-DOC11;PRJ14;PRJ14-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ14/evidencias/observacoes.csv;Observações
+PRJ14-DOC12;PRJ14;PRJ14-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ14/evidencias/entradas.csv;Entradas
+PRJ14-DOC13;PRJ14;PRJ14-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ14/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ14-DOC14;PRJ14;PRJ14-EV14;atividades.csv;01_projetos/01_historico/PRJ14/atividades.csv;Atividades CSV
+PRJ15-DOC01;PRJ15;PRJ15-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ15/dossie_projeto.pdf;Dossiê
+PRJ15-DOC02;PRJ15;PRJ15-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ15/registro_tecnico.pdf;Registro técnico
+PRJ15-DOC03;PRJ15;PRJ15-EV03;atividades.xlsx;01_projetos/01_historico/PRJ15/atividades.xlsx;Atividades
+PRJ15-DOC04;PRJ15;PRJ15-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ15/inventario_evidencias.csv;Inventário
+PRJ15-DOC05;PRJ15;PRJ15-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ15/evidencias/configuracao.json;Configuração
+PRJ15-DOC06;PRJ15;PRJ15-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ15/evidencias/metodo.md;Método
+PRJ15-DOC07;PRJ15;PRJ15-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ15/evidencias/cronologia.csv;Cronologia
+PRJ15-DOC08;PRJ15;PRJ15-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ15/evidencias/medicoes.csv;Medições
+PRJ15-DOC09;PRJ15;PRJ15-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ15/evidencias/resultados.csv;Resultados
+PRJ15-DOC10;PRJ15;PRJ15-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ15/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ15-DOC11;PRJ15;PRJ15-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ15/evidencias/observacoes.csv;Observações
+PRJ15-DOC12;PRJ15;PRJ15-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ15/evidencias/entradas.csv;Entradas
+PRJ15-DOC13;PRJ15;PRJ15-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ15/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ15-DOC14;PRJ15;PRJ15-EV14;atividades.csv;01_projetos/01_historico/PRJ15/atividades.csv;Atividades CSV
+PRJ16-DOC01;PRJ16;PRJ16-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ16/dossie_projeto.pdf;Dossiê
+PRJ16-DOC02;PRJ16;PRJ16-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ16/registro_tecnico.pdf;Registro técnico
+PRJ16-DOC03;PRJ16;PRJ16-EV03;atividades.xlsx;01_projetos/01_historico/PRJ16/atividades.xlsx;Atividades
+PRJ16-DOC04;PRJ16;PRJ16-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ16/inventario_evidencias.csv;Inventário
+PRJ16-DOC05;PRJ16;PRJ16-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ16/evidencias/configuracao.json;Configuração
+PRJ16-DOC06;PRJ16;PRJ16-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ16/evidencias/metodo.md;Método
+PRJ16-DOC07;PRJ16;PRJ16-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ16/evidencias/cronologia.csv;Cronologia
+PRJ16-DOC08;PRJ16;PRJ16-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ16/evidencias/medicoes.csv;Medições
+PRJ16-DOC09;PRJ16;PRJ16-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ16/evidencias/resultados.csv;Resultados
+PRJ16-DOC10;PRJ16;PRJ16-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ16/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ16-DOC11;PRJ16;PRJ16-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ16/evidencias/observacoes.csv;Observações
+PRJ16-DOC12;PRJ16;PRJ16-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ16/evidencias/entradas.csv;Entradas
+PRJ16-DOC13;PRJ16;PRJ16-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ16/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ16-DOC14;PRJ16;PRJ16-EV14;atividades.csv;01_projetos/01_historico/PRJ16/atividades.csv;Atividades CSV
+PRJ17-DOC01;PRJ17;PRJ17-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ17/dossie_projeto.pdf;Dossiê
+PRJ17-DOC02;PRJ17;PRJ17-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ17/registro_tecnico.pdf;Registro técnico
+PRJ17-DOC03;PRJ17;PRJ17-EV03;atividades.xlsx;01_projetos/01_historico/PRJ17/atividades.xlsx;Atividades
+PRJ17-DOC04;PRJ17;PRJ17-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ17/inventario_evidencias.csv;Inventário
+PRJ17-DOC05;PRJ17;PRJ17-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ17/evidencias/configuracao.json;Configuração
+PRJ17-DOC06;PRJ17;PRJ17-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ17/evidencias/metodo.md;Método
+PRJ17-DOC07;PRJ17;PRJ17-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ17/evidencias/cronologia.csv;Cronologia
+PRJ17-DOC08;PRJ17;PRJ17-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ17/evidencias/medicoes.csv;Medições
+PRJ17-DOC09;PRJ17;PRJ17-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ17/evidencias/resultados.csv;Resultados
+PRJ17-DOC10;PRJ17;PRJ17-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ17/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ17-DOC11;PRJ17;PRJ17-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ17/evidencias/observacoes.csv;Observações
+PRJ17-DOC12;PRJ17;PRJ17-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ17/evidencias/entradas.csv;Entradas
+PRJ17-DOC13;PRJ17;PRJ17-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ17/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ17-DOC14;PRJ17;PRJ17-EV14;atividades.csv;01_projetos/01_historico/PRJ17/atividades.csv;Atividades CSV
+PRJ18-DOC01;PRJ18;PRJ18-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ18/dossie_projeto.pdf;Dossiê
+PRJ18-DOC02;PRJ18;PRJ18-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ18/registro_tecnico.pdf;Registro técnico
+PRJ18-DOC03;PRJ18;PRJ18-EV03;atividades.xlsx;01_projetos/01_historico/PRJ18/atividades.xlsx;Atividades
+PRJ18-DOC04;PRJ18;PRJ18-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ18/inventario_evidencias.csv;Inventário
+PRJ18-DOC05;PRJ18;PRJ18-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ18/evidencias/configuracao.json;Configuração
+PRJ18-DOC06;PRJ18;PRJ18-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ18/evidencias/metodo.md;Método
+PRJ18-DOC07;PRJ18;PRJ18-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ18/evidencias/cronologia.csv;Cronologia
+PRJ18-DOC08;PRJ18;PRJ18-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ18/evidencias/medicoes.csv;Medições
+PRJ18-DOC09;PRJ18;PRJ18-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ18/evidencias/resultados.csv;Resultados
+PRJ18-DOC10;PRJ18;PRJ18-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ18/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ18-DOC11;PRJ18;PRJ18-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ18/evidencias/observacoes.csv;Observações
+PRJ18-DOC12;PRJ18;PRJ18-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ18/evidencias/entradas.csv;Entradas
+PRJ18-DOC13;PRJ18;PRJ18-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ18/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ18-DOC14;PRJ18;PRJ18-EV14;atividades.csv;01_projetos/01_historico/PRJ18/atividades.csv;Atividades CSV
+PRJ19-DOC01;PRJ19;PRJ19-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ19/dossie_projeto.pdf;Dossiê
+PRJ19-DOC02;PRJ19;PRJ19-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ19/registro_tecnico.pdf;Registro técnico
+PRJ19-DOC03;PRJ19;PRJ19-EV03;atividades.xlsx;01_projetos/01_historico/PRJ19/atividades.xlsx;Atividades
+PRJ19-DOC04;PRJ19;PRJ19-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ19/inventario_evidencias.csv;Inventário
+PRJ19-DOC05;PRJ19;PRJ19-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ19/evidencias/configuracao.json;Configuração
+PRJ19-DOC06;PRJ19;PRJ19-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ19/evidencias/metodo.md;Método
+PRJ19-DOC07;PRJ19;PRJ19-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ19/evidencias/cronologia.csv;Cronologia
+PRJ19-DOC08;PRJ19;PRJ19-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ19/evidencias/medicoes.csv;Medições
+PRJ19-DOC09;PRJ19;PRJ19-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ19/evidencias/resultados.csv;Resultados
+PRJ19-DOC10;PRJ19;PRJ19-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ19/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ19-DOC11;PRJ19;PRJ19-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ19/evidencias/observacoes.csv;Observações
+PRJ19-DOC12;PRJ19;PRJ19-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ19/evidencias/entradas.csv;Entradas
+PRJ19-DOC13;PRJ19;PRJ19-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ19/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ19-DOC14;PRJ19;PRJ19-EV14;atividades.csv;01_projetos/01_historico/PRJ19/atividades.csv;Atividades CSV
+PRJ20-DOC01;PRJ20;PRJ20-EV01;dossie_projeto.pdf;01_projetos/01_historico/PRJ20/dossie_projeto.pdf;Dossiê
+PRJ20-DOC02;PRJ20;PRJ20-EV02;registro_tecnico.pdf;01_projetos/01_historico/PRJ20/registro_tecnico.pdf;Registro técnico
+PRJ20-DOC03;PRJ20;PRJ20-EV03;atividades.xlsx;01_projetos/01_historico/PRJ20/atividades.xlsx;Atividades
+PRJ20-DOC04;PRJ20;PRJ20-EV04;inventario_evidencias.csv;01_projetos/01_historico/PRJ20/inventario_evidencias.csv;Inventário
+PRJ20-DOC05;PRJ20;PRJ20-EV05;evidencias/configuracao.json;01_projetos/01_historico/PRJ20/evidencias/configuracao.json;Configuração
+PRJ20-DOC06;PRJ20;PRJ20-EV06;evidencias/metodo.md;01_projetos/01_historico/PRJ20/evidencias/metodo.md;Método
+PRJ20-DOC07;PRJ20;PRJ20-EV07;evidencias/cronologia.csv;01_projetos/01_historico/PRJ20/evidencias/cronologia.csv;Cronologia
+PRJ20-DOC08;PRJ20;PRJ20-EV08;evidencias/medicoes.csv;01_projetos/01_historico/PRJ20/evidencias/medicoes.csv;Medições
+PRJ20-DOC09;PRJ20;PRJ20-EV09;evidencias/resultados.csv;01_projetos/01_historico/PRJ20/evidencias/resultados.csv;Resultados
+PRJ20-DOC10;PRJ20;PRJ20-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/01_historico/PRJ20/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ20-DOC11;PRJ20;PRJ20-EV11;evidencias/observacoes.csv;01_projetos/01_historico/PRJ20/evidencias/observacoes.csv;Observações
+PRJ20-DOC12;PRJ20;PRJ20-EV12;evidencias/entradas.csv;01_projetos/01_historico/PRJ20/evidencias/entradas.csv;Entradas
+PRJ20-DOC13;PRJ20;PRJ20-EV13;evidencias/revisao_tecnica.md;01_projetos/01_historico/PRJ20/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ20-DOC14;PRJ20;PRJ20-EV14;atividades.csv;01_projetos/01_historico/PRJ20/atividades.csv;Atividades CSV
+PRJ21-DOC01;PRJ21;PRJ21-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ21/dossie_projeto.pdf;Dossiê
+PRJ21-DOC02;PRJ21;PRJ21-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ21/registro_tecnico.pdf;Registro técnico
+PRJ21-DOC03;PRJ21;PRJ21-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ21/atividades.xlsx;Atividades
+PRJ21-DOC04;PRJ21;PRJ21-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ21/inventario_evidencias.csv;Inventário
+PRJ21-DOC05;PRJ21;PRJ21-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ21/evidencias/configuracao.json;Configuração
+PRJ21-DOC06;PRJ21;PRJ21-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ21/evidencias/metodo.md;Método
+PRJ21-DOC07;PRJ21;PRJ21-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ21/evidencias/cronologia.csv;Cronologia
+PRJ21-DOC08;PRJ21;PRJ21-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ21/evidencias/medicoes.csv;Medições
+PRJ21-DOC09;PRJ21;PRJ21-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ21/evidencias/resultados.csv;Resultados
+PRJ21-DOC10;PRJ21;PRJ21-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ21/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ21-DOC11;PRJ21;PRJ21-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ21/evidencias/observacoes.csv;Observações
+PRJ21-DOC12;PRJ21;PRJ21-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ21/evidencias/entradas.csv;Entradas
+PRJ21-DOC13;PRJ21;PRJ21-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ21/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ21-DOC14;PRJ21;PRJ21-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ21/atividades.csv;Atividades CSV
+PRJ22-DOC01;PRJ22;PRJ22-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ22/dossie_projeto.pdf;Dossiê
+PRJ22-DOC02;PRJ22;PRJ22-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ22/registro_tecnico.pdf;Registro técnico
+PRJ22-DOC03;PRJ22;PRJ22-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ22/atividades.xlsx;Atividades
+PRJ22-DOC04;PRJ22;PRJ22-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ22/inventario_evidencias.csv;Inventário
+PRJ22-DOC05;PRJ22;PRJ22-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ22/evidencias/configuracao.json;Configuração
+PRJ22-DOC06;PRJ22;PRJ22-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ22/evidencias/metodo.md;Método
+PRJ22-DOC07;PRJ22;PRJ22-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ22/evidencias/cronologia.csv;Cronologia
+PRJ22-DOC08;PRJ22;PRJ22-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ22/evidencias/medicoes.csv;Medições
+PRJ22-DOC09;PRJ22;PRJ22-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ22/evidencias/resultados.csv;Resultados
+PRJ22-DOC10;PRJ22;PRJ22-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ22/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ22-DOC11;PRJ22;PRJ22-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ22/evidencias/observacoes.csv;Observações
+PRJ22-DOC12;PRJ22;PRJ22-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ22/evidencias/entradas.csv;Entradas
+PRJ22-DOC13;PRJ22;PRJ22-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ22/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ22-DOC14;PRJ22;PRJ22-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ22/atividades.csv;Atividades CSV
+PRJ23-DOC01;PRJ23;PRJ23-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ23/dossie_projeto.pdf;Dossiê
+PRJ23-DOC02;PRJ23;PRJ23-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ23/registro_tecnico.pdf;Registro técnico
+PRJ23-DOC03;PRJ23;PRJ23-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ23/atividades.xlsx;Atividades
+PRJ23-DOC04;PRJ23;PRJ23-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ23/inventario_evidencias.csv;Inventário
+PRJ23-DOC05;PRJ23;PRJ23-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ23/evidencias/configuracao.json;Configuração
+PRJ23-DOC06;PRJ23;PRJ23-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ23/evidencias/metodo.md;Método
+PRJ23-DOC07;PRJ23;PRJ23-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ23/evidencias/cronologia.csv;Cronologia
+PRJ23-DOC08;PRJ23;PRJ23-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ23/evidencias/medicoes.csv;Medições
+PRJ23-DOC09;PRJ23;PRJ23-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ23/evidencias/resultados.csv;Resultados
+PRJ23-DOC10;PRJ23;PRJ23-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ23/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ23-DOC11;PRJ23;PRJ23-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ23/evidencias/observacoes.csv;Observações
+PRJ23-DOC12;PRJ23;PRJ23-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ23/evidencias/entradas.csv;Entradas
+PRJ23-DOC13;PRJ23;PRJ23-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ23/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ23-DOC14;PRJ23;PRJ23-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ23/atividades.csv;Atividades CSV
+PRJ24-DOC01;PRJ24;PRJ24-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ24/dossie_projeto.pdf;Dossiê
+PRJ24-DOC02;PRJ24;PRJ24-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ24/registro_tecnico.pdf;Registro técnico
+PRJ24-DOC03;PRJ24;PRJ24-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ24/atividades.xlsx;Atividades
+PRJ24-DOC04;PRJ24;PRJ24-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ24/inventario_evidencias.csv;Inventário
+PRJ24-DOC05;PRJ24;PRJ24-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ24/evidencias/configuracao.json;Configuração
+PRJ24-DOC06;PRJ24;PRJ24-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ24/evidencias/metodo.md;Método
+PRJ24-DOC07;PRJ24;PRJ24-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ24/evidencias/cronologia.csv;Cronologia
+PRJ24-DOC08;PRJ24;PRJ24-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ24/evidencias/medicoes.csv;Medições
+PRJ24-DOC09;PRJ24;PRJ24-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ24/evidencias/resultados.csv;Resultados
+PRJ24-DOC10;PRJ24;PRJ24-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ24/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ24-DOC11;PRJ24;PRJ24-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ24/evidencias/observacoes.csv;Observações
+PRJ24-DOC12;PRJ24;PRJ24-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ24/evidencias/entradas.csv;Entradas
+PRJ24-DOC13;PRJ24;PRJ24-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ24/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ24-DOC14;PRJ24;PRJ24-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ24/atividades.csv;Atividades CSV
+PRJ25-DOC01;PRJ25;PRJ25-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ25/dossie_projeto.pdf;Dossiê
+PRJ25-DOC02;PRJ25;PRJ25-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ25/registro_tecnico.pdf;Registro técnico
+PRJ25-DOC03;PRJ25;PRJ25-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ25/atividades.xlsx;Atividades
+PRJ25-DOC04;PRJ25;PRJ25-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ25/inventario_evidencias.csv;Inventário
+PRJ25-DOC05;PRJ25;PRJ25-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ25/evidencias/configuracao.json;Configuração
+PRJ25-DOC06;PRJ25;PRJ25-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ25/evidencias/metodo.md;Método
+PRJ25-DOC07;PRJ25;PRJ25-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ25/evidencias/cronologia.csv;Cronologia
+PRJ25-DOC08;PRJ25;PRJ25-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ25/evidencias/medicoes.csv;Medições
+PRJ25-DOC09;PRJ25;PRJ25-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ25/evidencias/resultados.csv;Resultados
+PRJ25-DOC10;PRJ25;PRJ25-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ25/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ25-DOC11;PRJ25;PRJ25-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ25/evidencias/observacoes.csv;Observações
+PRJ25-DOC12;PRJ25;PRJ25-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ25/evidencias/entradas.csv;Entradas
+PRJ25-DOC13;PRJ25;PRJ25-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ25/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ25-DOC14;PRJ25;PRJ25-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ25/atividades.csv;Atividades CSV
+PRJ26-DOC01;PRJ26;PRJ26-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ26/dossie_projeto.pdf;Dossiê
+PRJ26-DOC02;PRJ26;PRJ26-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ26/registro_tecnico.pdf;Registro técnico
+PRJ26-DOC03;PRJ26;PRJ26-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ26/atividades.xlsx;Atividades
+PRJ26-DOC04;PRJ26;PRJ26-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ26/inventario_evidencias.csv;Inventário
+PRJ26-DOC05;PRJ26;PRJ26-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ26/evidencias/configuracao.json;Configuração
+PRJ26-DOC06;PRJ26;PRJ26-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ26/evidencias/metodo.md;Método
+PRJ26-DOC07;PRJ26;PRJ26-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ26/evidencias/cronologia.csv;Cronologia
+PRJ26-DOC08;PRJ26;PRJ26-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ26/evidencias/medicoes.csv;Medições
+PRJ26-DOC09;PRJ26;PRJ26-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ26/evidencias/resultados.csv;Resultados
+PRJ26-DOC10;PRJ26;PRJ26-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ26/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ26-DOC11;PRJ26;PRJ26-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ26/evidencias/observacoes.csv;Observações
+PRJ26-DOC12;PRJ26;PRJ26-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ26/evidencias/entradas.csv;Entradas
+PRJ26-DOC13;PRJ26;PRJ26-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ26/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ26-DOC14;PRJ26;PRJ26-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ26/atividades.csv;Atividades CSV
+PRJ27-DOC01;PRJ27;PRJ27-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ27/dossie_projeto.pdf;Dossiê
+PRJ27-DOC02;PRJ27;PRJ27-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ27/registro_tecnico.pdf;Registro técnico
+PRJ27-DOC03;PRJ27;PRJ27-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ27/atividades.xlsx;Atividades
+PRJ27-DOC04;PRJ27;PRJ27-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ27/inventario_evidencias.csv;Inventário
+PRJ27-DOC05;PRJ27;PRJ27-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ27/evidencias/configuracao.json;Configuração
+PRJ27-DOC06;PRJ27;PRJ27-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ27/evidencias/metodo.md;Método
+PRJ27-DOC07;PRJ27;PRJ27-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ27/evidencias/cronologia.csv;Cronologia
+PRJ27-DOC08;PRJ27;PRJ27-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ27/evidencias/medicoes.csv;Medições
+PRJ27-DOC09;PRJ27;PRJ27-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ27/evidencias/resultados.csv;Resultados
+PRJ27-DOC10;PRJ27;PRJ27-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ27/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ27-DOC11;PRJ27;PRJ27-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ27/evidencias/observacoes.csv;Observações
+PRJ27-DOC12;PRJ27;PRJ27-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ27/evidencias/entradas.csv;Entradas
+PRJ27-DOC13;PRJ27;PRJ27-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ27/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ27-DOC14;PRJ27;PRJ27-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ27/atividades.csv;Atividades CSV
+PRJ28-DOC01;PRJ28;PRJ28-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ28/dossie_projeto.pdf;Dossiê
+PRJ28-DOC02;PRJ28;PRJ28-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ28/registro_tecnico.pdf;Registro técnico
+PRJ28-DOC03;PRJ28;PRJ28-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ28/atividades.xlsx;Atividades
+PRJ28-DOC04;PRJ28;PRJ28-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ28/inventario_evidencias.csv;Inventário
+PRJ28-DOC05;PRJ28;PRJ28-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ28/evidencias/configuracao.json;Configuração
+PRJ28-DOC06;PRJ28;PRJ28-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ28/evidencias/metodo.md;Método
+PRJ28-DOC07;PRJ28;PRJ28-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ28/evidencias/cronologia.csv;Cronologia
+PRJ28-DOC08;PRJ28;PRJ28-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ28/evidencias/medicoes.csv;Medições
+PRJ28-DOC09;PRJ28;PRJ28-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ28/evidencias/resultados.csv;Resultados
+PRJ28-DOC10;PRJ28;PRJ28-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ28/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ28-DOC11;PRJ28;PRJ28-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ28/evidencias/observacoes.csv;Observações
+PRJ28-DOC12;PRJ28;PRJ28-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ28/evidencias/entradas.csv;Entradas
+PRJ28-DOC13;PRJ28;PRJ28-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ28/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ28-DOC14;PRJ28;PRJ28-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ28/atividades.csv;Atividades CSV
+PRJ29-DOC01;PRJ29;PRJ29-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ29/dossie_projeto.pdf;Dossiê
+PRJ29-DOC02;PRJ29;PRJ29-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ29/registro_tecnico.pdf;Registro técnico
+PRJ29-DOC03;PRJ29;PRJ29-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ29/atividades.xlsx;Atividades
+PRJ29-DOC04;PRJ29;PRJ29-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ29/inventario_evidencias.csv;Inventário
+PRJ29-DOC05;PRJ29;PRJ29-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ29/evidencias/configuracao.json;Configuração
+PRJ29-DOC06;PRJ29;PRJ29-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ29/evidencias/metodo.md;Método
+PRJ29-DOC07;PRJ29;PRJ29-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ29/evidencias/cronologia.csv;Cronologia
+PRJ29-DOC08;PRJ29;PRJ29-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ29/evidencias/medicoes.csv;Medições
+PRJ29-DOC09;PRJ29;PRJ29-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ29/evidencias/resultados.csv;Resultados
+PRJ29-DOC10;PRJ29;PRJ29-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ29/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ29-DOC11;PRJ29;PRJ29-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ29/evidencias/observacoes.csv;Observações
+PRJ29-DOC12;PRJ29;PRJ29-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ29/evidencias/entradas.csv;Entradas
+PRJ29-DOC13;PRJ29;PRJ29-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ29/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ29-DOC14;PRJ29;PRJ29-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ29/atividades.csv;Atividades CSV
+PRJ30-DOC01;PRJ30;PRJ30-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ30/dossie_projeto.pdf;Dossiê
+PRJ30-DOC02;PRJ30;PRJ30-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ30/registro_tecnico.pdf;Registro técnico
+PRJ30-DOC03;PRJ30;PRJ30-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ30/atividades.xlsx;Atividades
+PRJ30-DOC04;PRJ30;PRJ30-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ30/inventario_evidencias.csv;Inventário
+PRJ30-DOC05;PRJ30;PRJ30-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ30/evidencias/configuracao.json;Configuração
+PRJ30-DOC06;PRJ30;PRJ30-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ30/evidencias/metodo.md;Método
+PRJ30-DOC07;PRJ30;PRJ30-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ30/evidencias/cronologia.csv;Cronologia
+PRJ30-DOC08;PRJ30;PRJ30-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ30/evidencias/medicoes.csv;Medições
+PRJ30-DOC09;PRJ30;PRJ30-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ30/evidencias/resultados.csv;Resultados
+PRJ30-DOC10;PRJ30;PRJ30-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ30/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ30-DOC11;PRJ30;PRJ30-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ30/evidencias/observacoes.csv;Observações
+PRJ30-DOC12;PRJ30;PRJ30-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ30/evidencias/entradas.csv;Entradas
+PRJ30-DOC13;PRJ30;PRJ30-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ30/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ30-DOC14;PRJ30;PRJ30-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ30/atividades.csv;Atividades CSV
+PRJ31-DOC01;PRJ31;PRJ31-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ31/dossie_projeto.pdf;Dossiê
+PRJ31-DOC02;PRJ31;PRJ31-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ31/registro_tecnico.pdf;Registro técnico
+PRJ31-DOC03;PRJ31;PRJ31-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ31/atividades.xlsx;Atividades
+PRJ31-DOC04;PRJ31;PRJ31-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ31/inventario_evidencias.csv;Inventário
+PRJ31-DOC05;PRJ31;PRJ31-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ31/evidencias/configuracao.json;Configuração
+PRJ31-DOC06;PRJ31;PRJ31-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ31/evidencias/metodo.md;Método
+PRJ31-DOC07;PRJ31;PRJ31-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ31/evidencias/cronologia.csv;Cronologia
+PRJ31-DOC08;PRJ31;PRJ31-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ31/evidencias/medicoes.csv;Medições
+PRJ31-DOC09;PRJ31;PRJ31-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ31/evidencias/resultados.csv;Resultados
+PRJ31-DOC10;PRJ31;PRJ31-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ31/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ31-DOC11;PRJ31;PRJ31-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ31/evidencias/observacoes.csv;Observações
+PRJ31-DOC12;PRJ31;PRJ31-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ31/evidencias/entradas.csv;Entradas
+PRJ31-DOC13;PRJ31;PRJ31-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ31/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ31-DOC14;PRJ31;PRJ31-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ31/atividades.csv;Atividades CSV
+PRJ32-DOC01;PRJ32;PRJ32-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ32/dossie_projeto.pdf;Dossiê
+PRJ32-DOC02;PRJ32;PRJ32-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ32/registro_tecnico.pdf;Registro técnico
+PRJ32-DOC03;PRJ32;PRJ32-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ32/atividades.xlsx;Atividades
+PRJ32-DOC04;PRJ32;PRJ32-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ32/inventario_evidencias.csv;Inventário
+PRJ32-DOC05;PRJ32;PRJ32-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ32/evidencias/configuracao.json;Configuração
+PRJ32-DOC06;PRJ32;PRJ32-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ32/evidencias/metodo.md;Método
+PRJ32-DOC07;PRJ32;PRJ32-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ32/evidencias/cronologia.csv;Cronologia
+PRJ32-DOC08;PRJ32;PRJ32-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ32/evidencias/medicoes.csv;Medições
+PRJ32-DOC09;PRJ32;PRJ32-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ32/evidencias/resultados.csv;Resultados
+PRJ32-DOC10;PRJ32;PRJ32-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ32/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ32-DOC11;PRJ32;PRJ32-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ32/evidencias/observacoes.csv;Observações
+PRJ32-DOC12;PRJ32;PRJ32-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ32/evidencias/entradas.csv;Entradas
+PRJ32-DOC13;PRJ32;PRJ32-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ32/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ32-DOC14;PRJ32;PRJ32-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ32/atividades.csv;Atividades CSV
+PRJ33-DOC01;PRJ33;PRJ33-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ33/dossie_projeto.pdf;Dossiê
+PRJ33-DOC02;PRJ33;PRJ33-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ33/registro_tecnico.pdf;Registro técnico
+PRJ33-DOC03;PRJ33;PRJ33-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ33/atividades.xlsx;Atividades
+PRJ33-DOC04;PRJ33;PRJ33-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ33/inventario_evidencias.csv;Inventário
+PRJ33-DOC05;PRJ33;PRJ33-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ33/evidencias/configuracao.json;Configuração
+PRJ33-DOC06;PRJ33;PRJ33-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ33/evidencias/metodo.md;Método
+PRJ33-DOC07;PRJ33;PRJ33-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ33/evidencias/cronologia.csv;Cronologia
+PRJ33-DOC08;PRJ33;PRJ33-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ33/evidencias/medicoes.csv;Medições
+PRJ33-DOC09;PRJ33;PRJ33-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ33/evidencias/resultados.csv;Resultados
+PRJ33-DOC10;PRJ33;PRJ33-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ33/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ33-DOC11;PRJ33;PRJ33-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ33/evidencias/observacoes.csv;Observações
+PRJ33-DOC12;PRJ33;PRJ33-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ33/evidencias/entradas.csv;Entradas
+PRJ33-DOC13;PRJ33;PRJ33-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ33/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ33-DOC14;PRJ33;PRJ33-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ33/atividades.csv;Atividades CSV
+PRJ34-DOC01;PRJ34;PRJ34-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ34/dossie_projeto.pdf;Dossiê
+PRJ34-DOC02;PRJ34;PRJ34-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ34/registro_tecnico.pdf;Registro técnico
+PRJ34-DOC03;PRJ34;PRJ34-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ34/atividades.xlsx;Atividades
+PRJ34-DOC04;PRJ34;PRJ34-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ34/inventario_evidencias.csv;Inventário
+PRJ34-DOC05;PRJ34;PRJ34-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ34/evidencias/configuracao.json;Configuração
+PRJ34-DOC06;PRJ34;PRJ34-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ34/evidencias/metodo.md;Método
+PRJ34-DOC07;PRJ34;PRJ34-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ34/evidencias/cronologia.csv;Cronologia
+PRJ34-DOC08;PRJ34;PRJ34-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ34/evidencias/medicoes.csv;Medições
+PRJ34-DOC09;PRJ34;PRJ34-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ34/evidencias/resultados.csv;Resultados
+PRJ34-DOC10;PRJ34;PRJ34-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ34/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ34-DOC11;PRJ34;PRJ34-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ34/evidencias/observacoes.csv;Observações
+PRJ34-DOC12;PRJ34;PRJ34-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ34/evidencias/entradas.csv;Entradas
+PRJ34-DOC13;PRJ34;PRJ34-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ34/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ34-DOC14;PRJ34;PRJ34-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ34/atividades.csv;Atividades CSV
+PRJ35-DOC01;PRJ35;PRJ35-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ35/dossie_projeto.pdf;Dossiê
+PRJ35-DOC02;PRJ35;PRJ35-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ35/registro_tecnico.pdf;Registro técnico
+PRJ35-DOC03;PRJ35;PRJ35-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ35/atividades.xlsx;Atividades
+PRJ35-DOC04;PRJ35;PRJ35-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ35/inventario_evidencias.csv;Inventário
+PRJ35-DOC05;PRJ35;PRJ35-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ35/evidencias/configuracao.json;Configuração
+PRJ35-DOC06;PRJ35;PRJ35-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ35/evidencias/metodo.md;Método
+PRJ35-DOC07;PRJ35;PRJ35-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ35/evidencias/cronologia.csv;Cronologia
+PRJ35-DOC08;PRJ35;PRJ35-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ35/evidencias/medicoes.csv;Medições
+PRJ35-DOC09;PRJ35;PRJ35-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ35/evidencias/resultados.csv;Resultados
+PRJ35-DOC10;PRJ35;PRJ35-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ35/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ35-DOC11;PRJ35;PRJ35-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ35/evidencias/observacoes.csv;Observações
+PRJ35-DOC12;PRJ35;PRJ35-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ35/evidencias/entradas.csv;Entradas
+PRJ35-DOC13;PRJ35;PRJ35-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ35/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ35-DOC14;PRJ35;PRJ35-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ35/atividades.csv;Atividades CSV
+PRJ36-DOC01;PRJ36;PRJ36-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ36/dossie_projeto.pdf;Dossiê
+PRJ36-DOC02;PRJ36;PRJ36-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ36/registro_tecnico.pdf;Registro técnico
+PRJ36-DOC03;PRJ36;PRJ36-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ36/atividades.xlsx;Atividades
+PRJ36-DOC04;PRJ36;PRJ36-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ36/inventario_evidencias.csv;Inventário
+PRJ36-DOC05;PRJ36;PRJ36-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ36/evidencias/configuracao.json;Configuração
+PRJ36-DOC06;PRJ36;PRJ36-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ36/evidencias/metodo.md;Método
+PRJ36-DOC07;PRJ36;PRJ36-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ36/evidencias/cronologia.csv;Cronologia
+PRJ36-DOC08;PRJ36;PRJ36-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ36/evidencias/medicoes.csv;Medições
+PRJ36-DOC09;PRJ36;PRJ36-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ36/evidencias/resultados.csv;Resultados
+PRJ36-DOC10;PRJ36;PRJ36-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ36/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ36-DOC11;PRJ36;PRJ36-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ36/evidencias/observacoes.csv;Observações
+PRJ36-DOC12;PRJ36;PRJ36-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ36/evidencias/entradas.csv;Entradas
+PRJ36-DOC13;PRJ36;PRJ36-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ36/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ36-DOC14;PRJ36;PRJ36-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ36/atividades.csv;Atividades CSV
+PRJ37-DOC01;PRJ37;PRJ37-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ37/dossie_projeto.pdf;Dossiê
+PRJ37-DOC02;PRJ37;PRJ37-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ37/registro_tecnico.pdf;Registro técnico
+PRJ37-DOC03;PRJ37;PRJ37-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ37/atividades.xlsx;Atividades
+PRJ37-DOC04;PRJ37;PRJ37-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ37/inventario_evidencias.csv;Inventário
+PRJ37-DOC05;PRJ37;PRJ37-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ37/evidencias/configuracao.json;Configuração
+PRJ37-DOC06;PRJ37;PRJ37-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ37/evidencias/metodo.md;Método
+PRJ37-DOC07;PRJ37;PRJ37-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ37/evidencias/cronologia.csv;Cronologia
+PRJ37-DOC08;PRJ37;PRJ37-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ37/evidencias/medicoes.csv;Medições
+PRJ37-DOC09;PRJ37;PRJ37-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ37/evidencias/resultados.csv;Resultados
+PRJ37-DOC10;PRJ37;PRJ37-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ37/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ37-DOC11;PRJ37;PRJ37-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ37/evidencias/observacoes.csv;Observações
+PRJ37-DOC12;PRJ37;PRJ37-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ37/evidencias/entradas.csv;Entradas
+PRJ37-DOC13;PRJ37;PRJ37-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ37/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ37-DOC14;PRJ37;PRJ37-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ37/atividades.csv;Atividades CSV
+PRJ38-DOC01;PRJ38;PRJ38-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ38/dossie_projeto.pdf;Dossiê
+PRJ38-DOC02;PRJ38;PRJ38-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ38/registro_tecnico.pdf;Registro técnico
+PRJ38-DOC03;PRJ38;PRJ38-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ38/atividades.xlsx;Atividades
+PRJ38-DOC04;PRJ38;PRJ38-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ38/inventario_evidencias.csv;Inventário
+PRJ38-DOC05;PRJ38;PRJ38-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ38/evidencias/configuracao.json;Configuração
+PRJ38-DOC06;PRJ38;PRJ38-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ38/evidencias/metodo.md;Método
+PRJ38-DOC07;PRJ38;PRJ38-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ38/evidencias/cronologia.csv;Cronologia
+PRJ38-DOC08;PRJ38;PRJ38-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ38/evidencias/medicoes.csv;Medições
+PRJ38-DOC09;PRJ38;PRJ38-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ38/evidencias/resultados.csv;Resultados
+PRJ38-DOC10;PRJ38;PRJ38-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ38/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ38-DOC11;PRJ38;PRJ38-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ38/evidencias/observacoes.csv;Observações
+PRJ38-DOC12;PRJ38;PRJ38-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ38/evidencias/entradas.csv;Entradas
+PRJ38-DOC13;PRJ38;PRJ38-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ38/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ38-DOC14;PRJ38;PRJ38-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ38/atividades.csv;Atividades CSV
+PRJ39-DOC01;PRJ39;PRJ39-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ39/dossie_projeto.pdf;Dossiê
+PRJ39-DOC02;PRJ39;PRJ39-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ39/registro_tecnico.pdf;Registro técnico
+PRJ39-DOC03;PRJ39;PRJ39-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ39/atividades.xlsx;Atividades
+PRJ39-DOC04;PRJ39;PRJ39-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ39/inventario_evidencias.csv;Inventário
+PRJ39-DOC05;PRJ39;PRJ39-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ39/evidencias/configuracao.json;Configuração
+PRJ39-DOC06;PRJ39;PRJ39-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ39/evidencias/metodo.md;Método
+PRJ39-DOC07;PRJ39;PRJ39-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ39/evidencias/cronologia.csv;Cronologia
+PRJ39-DOC08;PRJ39;PRJ39-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ39/evidencias/medicoes.csv;Medições
+PRJ39-DOC09;PRJ39;PRJ39-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ39/evidencias/resultados.csv;Resultados
+PRJ39-DOC10;PRJ39;PRJ39-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ39/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ39-DOC11;PRJ39;PRJ39-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ39/evidencias/observacoes.csv;Observações
+PRJ39-DOC12;PRJ39;PRJ39-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ39/evidencias/entradas.csv;Entradas
+PRJ39-DOC13;PRJ39;PRJ39-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ39/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ39-DOC14;PRJ39;PRJ39-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ39/atividades.csv;Atividades CSV
+PRJ40-DOC01;PRJ40;PRJ40-EV01;dossie_projeto.pdf;01_projetos/02_casos_para_analise/PRJ40/dossie_projeto.pdf;Dossiê
+PRJ40-DOC02;PRJ40;PRJ40-EV02;registro_tecnico.pdf;01_projetos/02_casos_para_analise/PRJ40/registro_tecnico.pdf;Registro técnico
+PRJ40-DOC03;PRJ40;PRJ40-EV03;atividades.xlsx;01_projetos/02_casos_para_analise/PRJ40/atividades.xlsx;Atividades
+PRJ40-DOC04;PRJ40;PRJ40-EV04;inventario_evidencias.csv;01_projetos/02_casos_para_analise/PRJ40/inventario_evidencias.csv;Inventário
+PRJ40-DOC05;PRJ40;PRJ40-EV05;evidencias/configuracao.json;01_projetos/02_casos_para_analise/PRJ40/evidencias/configuracao.json;Configuração
+PRJ40-DOC06;PRJ40;PRJ40-EV06;evidencias/metodo.md;01_projetos/02_casos_para_analise/PRJ40/evidencias/metodo.md;Método
+PRJ40-DOC07;PRJ40;PRJ40-EV07;evidencias/cronologia.csv;01_projetos/02_casos_para_analise/PRJ40/evidencias/cronologia.csv;Cronologia
+PRJ40-DOC08;PRJ40;PRJ40-EV08;evidencias/medicoes.csv;01_projetos/02_casos_para_analise/PRJ40/evidencias/medicoes.csv;Medições
+PRJ40-DOC09;PRJ40;PRJ40-EV09;evidencias/resultados.csv;01_projetos/02_casos_para_analise/PRJ40/evidencias/resultados.csv;Resultados
+PRJ40-DOC10;PRJ40;PRJ40-EV10;transcricao_entrevista_tecnica.pdf;01_projetos/02_casos_para_analise/PRJ40/transcricao_entrevista_tecnica.pdf;Entrevista
+PRJ40-DOC11;PRJ40;PRJ40-EV11;evidencias/observacoes.csv;01_projetos/02_casos_para_analise/PRJ40/evidencias/observacoes.csv;Observações
+PRJ40-DOC12;PRJ40;PRJ40-EV12;evidencias/entradas.csv;01_projetos/02_casos_para_analise/PRJ40/evidencias/entradas.csv;Entradas
+PRJ40-DOC13;PRJ40;PRJ40-EV13;evidencias/revisao_tecnica.md;01_projetos/02_casos_para_analise/PRJ40/evidencias/revisao_tecnica.md;Revisão técnica
+PRJ40-DOC14;PRJ40;PRJ40-EV14;atividades.csv;01_projetos/02_casos_para_analise/PRJ40/atividades.csv;Atividades CSV

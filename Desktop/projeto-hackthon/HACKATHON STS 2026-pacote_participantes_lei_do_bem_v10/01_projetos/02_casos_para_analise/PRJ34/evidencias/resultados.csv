@@ -1,0 +1,5 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ34-S01;frequencia-F1-v1;mudanças detectadas;contagem;12;18;Mudanças reais confirmadas pela referência independente.;66.666667;casos;evidencias/medicoes.csv#PRJ34-S01;desempenho
+PRJ34-S02;ponderado-P2-v2;mudanças detectadas;contagem;16;18;Mudanças reais confirmadas pela referência independente.;88.888889;casos;evidencias/medicoes.csv#PRJ34-S02;desempenho
+PRJ34-S03;frequencia-F1-v1;relações indevidas criadas;contagem;14;500;"Pares candidatos a relação; não é o total de 140 serviços.";2.8;casos;evidencias/medicoes.csv#PRJ34-S03;desempenho
+PRJ34-S04;ponderado-P2-v2;relações indevidas criadas;contagem;5;500;"Pares candidatos a relação; não é o total de 140 serviços.";1.0;casos;evidencias/medicoes.csv#PRJ34-S04;desempenho

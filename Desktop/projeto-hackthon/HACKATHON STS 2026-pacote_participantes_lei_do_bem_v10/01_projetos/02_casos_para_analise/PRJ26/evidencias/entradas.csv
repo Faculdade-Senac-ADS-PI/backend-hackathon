@@ -1,0 +1,3 @@
+﻿entrada_id;conteudo_json
+PRJ26-IN001;"{""entrada"": ""R07: data_corte=20; vencimento=15"", ""referencia"": ""atraso=5""}"
+PRJ26-IN002;"{""entrada"": ""R12: perfil consulta; coluna restrita"", ""referencia"": ""ocultar conforme matriz""}"

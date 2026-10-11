@@ -1,0 +1,4 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ39-S01;conv-v1;testes equivalentes;contagem;1268;1280;Testes de equivalência: duas entradas de referência por regra.;99.0625;casos;evidencias/medicoes.csv#PRJ39-S01;desempenho
+PRJ39-S02;conv-v2;testes equivalentes;contagem;1280;1280;Testes de equivalência: duas entradas de referência por regra.;100.0;casos;evidencias/medicoes.csv#PRJ39-S02;desempenho
+PRJ39-S03;conv-v2;regras convertidas;contagem;640;640;Regras efetivamente convertidas, sem os dois modelos de exemplo do fornecedor.;100.0;casos;evidencias/medicoes.csv#PRJ39-S03;desempenho

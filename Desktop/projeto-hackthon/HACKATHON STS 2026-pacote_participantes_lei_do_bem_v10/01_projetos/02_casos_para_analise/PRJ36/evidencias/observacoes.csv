@@ -1,0 +1,3 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ36-OBS01;"P08; erros=5; chamadas=100; janela 5 min";taxa=5% em ambas as ferramentas;consulta traduzida preservou agregação;"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ36-OBS02;"P17; perfil leitura; campo restrito";ocultar campo;"paineis-v1 expôs; paineis-v2 corrigiu permissão existente";"recorte ilustrativo identificado; não representa a totalidade das medições"

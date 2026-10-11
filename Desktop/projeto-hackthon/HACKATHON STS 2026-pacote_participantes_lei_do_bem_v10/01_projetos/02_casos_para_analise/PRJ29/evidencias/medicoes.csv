@@ -1,0 +1,22 @@
+﻿registro_id;ensaio_id;versao;cenario;tipo;metrica;valor;numerador;denominador;peso;unidade
+PRJ29-S01-M001;PRJ29-S01;longo-v1;C001;contador;jornadas legítimas concluídas;;75;105;;casos
+PRJ29-S01-M002;PRJ29-S01;longo-v1;C002;contador;jornadas legítimas concluídas;;73;105;;casos
+PRJ29-S01-M003;PRJ29-S01;longo-v1;C003;contador;jornadas legítimas concluídas;;73;105;;casos
+PRJ29-S01-M004;PRJ29-S01;longo-v1;C004;contador;jornadas legítimas concluídas;;73;105;;casos
+PRJ29-S02-M001;PRJ29-S02;fixo4-v2;C001;contador;jornadas legítimas concluídas;;90;105;;casos
+PRJ29-S02-M002;PRJ29-S02;fixo4-v2;C002;contador;jornadas legítimas concluídas;;89;105;;casos
+PRJ29-S02-M003;PRJ29-S02;fixo4-v2;C003;contador;jornadas legítimas concluídas;;89;105;;casos
+PRJ29-S02-M004;PRJ29-S02;fixo4-v2;C004;contador;jornadas legítimas concluídas;;89;105;;casos
+PRJ29-S03-M001;PRJ29-S03;fixo4-v2;C001;contador;replays rejeitados;;15;15;;casos
+PRJ29-S03-M002;PRJ29-S03;fixo4-v2;C002;contador;replays rejeitados;;13;15;;casos
+PRJ29-S03-M003;PRJ29-S03;fixo4-v2;C003;contador;replays rejeitados;;13;15;;casos
+PRJ29-S03-M004;PRJ29-S03;fixo4-v2;C004;contador;replays rejeitados;;13;15;;casos
+PRJ29-S04-M001;PRJ29-S04;seletor-S2-v3;C001;contador;jornadas legítimas concluídas;;95;105;;casos
+PRJ29-S04-M002;PRJ29-S04;seletor-S2-v3;C002;contador;jornadas legítimas concluídas;;93;105;;casos
+PRJ29-S04-M003;PRJ29-S04;seletor-S2-v3;C003;contador;jornadas legítimas concluídas;;93;105;;casos
+PRJ29-S04-M004;PRJ29-S04;seletor-S2-v3;C004;contador;jornadas legítimas concluídas;;93;105;;casos
+PRJ29-S05-M001;PRJ29-S05;seletor-S2-v3;C001;contador;replays rejeitados;;15;15;;casos
+PRJ29-S05-M002;PRJ29-S05;seletor-S2-v3;C002;contador;replays rejeitados;;15;15;;casos
+PRJ29-S05-M003;PRJ29-S05;seletor-S2-v3;C003;contador;replays rejeitados;;15;15;;casos
+PRJ29-S05-M004;PRJ29-S05;seletor-S2-v3;C004;contador;replays rejeitados;;14;15;;casos
+PRJ29-S06-M001;PRJ29-S06;seletor-S3-v4;C001;contador;replay usado no ajuste rejeitado;;1;1;;casos

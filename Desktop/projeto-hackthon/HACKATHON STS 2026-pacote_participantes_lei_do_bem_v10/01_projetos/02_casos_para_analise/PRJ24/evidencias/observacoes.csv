@@ -1,0 +1,3 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ24-OBS01;"S12: F1 desconecta→R1 retoma→F2 indisponibiliza; expiração E e confirmação C concorrentes";manter relação causal, sem inventar ordem entre E e C;"causal-K1-v3 ordenou pela chegada; causal-K2-v4 preservou IDs e vínculo predecessor";"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ24-OBS02;"S29; repetição 20; L3 atraso 150 ms";mesmo estado terminal e ordem parcial da referência;causal-K2-v4 repetiu a corrida entre expiração e confirmação tardia;"recorte ilustrativo identificado; não representa a totalidade das medições"

@@ -1,0 +1,7 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ38-S01;motor-P1-v1;decisões divergentes do sequencial-v4;contagem;96;240000;"Propostas compartilhadas pelas versões no conjunto de teste; não somar populações entre versões.";0.04;casos;evidencias/medicoes.csv#PRJ38-S01;desempenho
+PRJ38-S02;motor-P2-v2;decisões divergentes do sequencial-v4;contagem;18;240000;"Propostas compartilhadas pelas versões no conjunto de teste; não somar populações entre versões.";0.0075;casos;evidencias/medicoes.csv#PRJ38-S02;desempenho
+PRJ38-S03;motor-P3-v3;decisões divergentes do sequencial-v4;contagem;0;240000;"Propostas compartilhadas pelas versões no conjunto de teste; não somar populações entre versões.";0.0;casos;evidencias/medicoes.csv#PRJ38-S03;desempenho
+PRJ38-S04;motor-P3-v3;trilhas equivalentes ao sequencial-v4;contagem;240000;240000;"Propostas compartilhadas pelas versões no conjunto de teste; não somar populações entre versões.";100.0;casos;evidencias/medicoes.csv#PRJ38-S04;desempenho
+PRJ38-S05;sequencial-v4;latência p95;percentil_95;2.84;240000;"Observações de tempo de resposta representadas no histograma; total obtido pela soma das frequências.";;s;evidencias/medicoes.csv#PRJ38-S05;desempenho
+PRJ38-S06;motor-P3-v3;latência p95;percentil_95;1.42;240000;"Observações de tempo de resposta representadas no histograma; total obtido pela soma das frequências.";;s;evidencias/medicoes.csv#PRJ38-S06;desempenho

@@ -1,0 +1,1866 @@
+{
+  "projeto_id": "PRJ38",
+  "natureza": "registros integralmente sintéticos de um exercício documental",
+  "versao_documental": "9.0",
+  "escopo": "148 regras e 240 mil propostas compartilhadas entre sequencial-v4 e motor-P1-v1/motor-P2-v2/motor-P3-v3. Matriz completa: 18 perfis de atraso × 5 falhas × 3 épocas = 270 células. São 888 propostas por célula e uma extra nas primeiras 240, totalizando 240.000. Cada proposta passa pelas quatro versões; não são 960.000 propostas distintas. motor-P1-v1 diverge em 96 decisões, motor-P2-v2 em 18 e motor-P3-v3 em zero. Os histogramas do sequencial-v4 e de motor-P3-v3 contêm 240 mil observações cada. Pelo posto teto(0,95 × n), o p95 passa de 2,84 para 1,42 segundo.",
+  "parametros": {
+    "semente": 202538,
+    "regras": 148,
+    "perfis_atraso": 18,
+    "falhas": [
+      "timeout",
+      "resposta_duplicada",
+      "fora_de_ordem",
+      "queda_origem",
+      "retorno_epoca_divergente"
+    ],
+    "epocas": [
+      1,
+      2,
+      3
+    ],
+    "celulas": 270,
+    "regra_quantile": "nearest rank"
+  },
+  "versoes_registradas": [
+    "motor-P1-v1",
+    "motor-P2-v2",
+    "motor-P3-v3",
+    "sequencial-v4"
+  ],
+  "dicionario_medicoes": {
+    "contador": "numerador é a quantidade da ocorrência nomeada, denominador é a exposição desse contador; contadores da mesma população podem se sobrepor",
+    "medicao": "valor observado com unidade; cada linha é uma medição",
+    "histograma": "valor é latência observada exata na massa discreta; peso é sua frequência, não faixa interpolada"
+  },
+  "ensaios": [
+    {
+      "ensaio_id": "PRJ38-S01",
+      "versao": "motor-P1-v1",
+      "metrica": "decisões divergentes do sequencial-v4",
+      "tipo": "count",
+      "operacao": "contagem"
+    },
+    {
+      "ensaio_id": "PRJ38-S02",
+      "versao": "motor-P2-v2",
+      "metrica": "decisões divergentes do sequencial-v4",
+      "tipo": "count",
+      "operacao": "contagem"
+    },
+    {
+      "ensaio_id": "PRJ38-S03",
+      "versao": "motor-P3-v3",
+      "metrica": "decisões divergentes do sequencial-v4",
+      "tipo": "count",
+      "operacao": "contagem"
+    },
+    {
+      "ensaio_id": "PRJ38-S04",
+      "versao": "motor-P3-v3",
+      "metrica": "trilhas equivalentes ao sequencial-v4",
+      "tipo": "count",
+      "operacao": "contagem"
+    },
+    {
+      "ensaio_id": "PRJ38-S05",
+      "versao": "sequencial-v4",
+      "metrica": "latência p95",
+      "tipo": "histogram",
+      "operacao": "percentil_95"
+    },
+    {
+      "ensaio_id": "PRJ38-S06",
+      "versao": "motor-P3-v3",
+      "metrica": "latência p95",
+      "tipo": "histogram",
+      "operacao": "percentil_95"
+    }
+  ],
+  "catalogo_148_regras": [
+    {
+      "regra_id": "R001",
+      "precedencia": 1,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.3",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": []
+    },
+    {
+      "regra_id": "R002",
+      "precedencia": 2,
+      "fonte": "FONTE2",
+      "predicado": "risco > 0.80",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": []
+    },
+    {
+      "regra_id": "R003",
+      "precedencia": 3,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.4",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": []
+    },
+    {
+      "regra_id": "R004",
+      "precedencia": 4,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.45",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": []
+    },
+    {
+      "regra_id": "R005",
+      "precedencia": 5,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.5",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": []
+    },
+    {
+      "regra_id": "R006",
+      "precedencia": 6,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.55",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": []
+    },
+    {
+      "regra_id": "R007",
+      "precedencia": 7,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.6",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R001"
+      ]
+    },
+    {
+      "regra_id": "R008",
+      "precedencia": 8,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.65",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R002"
+      ]
+    },
+    {
+      "regra_id": "R009",
+      "precedencia": 9,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.7",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R003"
+      ]
+    },
+    {
+      "regra_id": "R010",
+      "precedencia": 10,
+      "fonte": "FONTE4",
+      "predicado": "valor < 100",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": []
+    },
+    {
+      "regra_id": "R011",
+      "precedencia": 11,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.3",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R005"
+      ]
+    },
+    {
+      "regra_id": "R012",
+      "precedencia": 12,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.35",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R006"
+      ]
+    },
+    {
+      "regra_id": "R013",
+      "precedencia": 13,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.4",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R007"
+      ]
+    },
+    {
+      "regra_id": "R014",
+      "precedencia": 14,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.45",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R008"
+      ]
+    },
+    {
+      "regra_id": "R015",
+      "precedencia": 15,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.5",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R009"
+      ]
+    },
+    {
+      "regra_id": "R016",
+      "precedencia": 16,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.55",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R010"
+      ]
+    },
+    {
+      "regra_id": "R017",
+      "precedencia": 17,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.6",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R011"
+      ]
+    },
+    {
+      "regra_id": "R018",
+      "precedencia": 18,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.65",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R012"
+      ]
+    },
+    {
+      "regra_id": "R019",
+      "precedencia": 19,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.7",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R013"
+      ]
+    },
+    {
+      "regra_id": "R020",
+      "precedencia": 20,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.25",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R014"
+      ]
+    },
+    {
+      "regra_id": "R021",
+      "precedencia": 21,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.3",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R015"
+      ]
+    },
+    {
+      "regra_id": "R022",
+      "precedencia": 22,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.35",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R016"
+      ]
+    },
+    {
+      "regra_id": "R023",
+      "precedencia": 23,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.4",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R017"
+      ]
+    },
+    {
+      "regra_id": "R024",
+      "precedencia": 24,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.45",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R018"
+      ]
+    },
+    {
+      "regra_id": "R025",
+      "precedencia": 25,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.5",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R019"
+      ]
+    },
+    {
+      "regra_id": "R026",
+      "precedencia": 26,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.55",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R020"
+      ]
+    },
+    {
+      "regra_id": "R027",
+      "precedencia": 27,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.6",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R021"
+      ]
+    },
+    {
+      "regra_id": "R028",
+      "precedencia": 28,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.65",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R022"
+      ]
+    },
+    {
+      "regra_id": "R029",
+      "precedencia": 29,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.7",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R023"
+      ]
+    },
+    {
+      "regra_id": "R030",
+      "precedencia": 30,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.25",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R024"
+      ]
+    },
+    {
+      "regra_id": "R031",
+      "precedencia": 31,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.3",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R025"
+      ]
+    },
+    {
+      "regra_id": "R032",
+      "precedencia": 32,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.35",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R026"
+      ]
+    },
+    {
+      "regra_id": "R033",
+      "precedencia": 33,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.4",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R027"
+      ]
+    },
+    {
+      "regra_id": "R034",
+      "precedencia": 34,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.45",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R028"
+      ]
+    },
+    {
+      "regra_id": "R035",
+      "precedencia": 35,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.5",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R029"
+      ]
+    },
+    {
+      "regra_id": "R036",
+      "precedencia": 36,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.55",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R030"
+      ]
+    },
+    {
+      "regra_id": "R037",
+      "precedencia": 37,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.6",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R031"
+      ]
+    },
+    {
+      "regra_id": "R038",
+      "precedencia": 38,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.65",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R032"
+      ]
+    },
+    {
+      "regra_id": "R039",
+      "precedencia": 39,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.7",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R033"
+      ]
+    },
+    {
+      "regra_id": "R040",
+      "precedencia": 40,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.25",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R034"
+      ]
+    },
+    {
+      "regra_id": "R041",
+      "precedencia": 41,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.3",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R035"
+      ]
+    },
+    {
+      "regra_id": "R042",
+      "precedencia": 42,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.35",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R036"
+      ]
+    },
+    {
+      "regra_id": "R043",
+      "precedencia": 43,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.4",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R037"
+      ]
+    },
+    {
+      "regra_id": "R044",
+      "precedencia": 44,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.45",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R038"
+      ]
+    },
+    {
+      "regra_id": "R045",
+      "precedencia": 45,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.5",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R039"
+      ]
+    },
+    {
+      "regra_id": "R046",
+      "precedencia": 46,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.55",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R040"
+      ]
+    },
+    {
+      "regra_id": "R047",
+      "precedencia": 47,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.6",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R041"
+      ]
+    },
+    {
+      "regra_id": "R048",
+      "precedencia": 48,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.65",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R042"
+      ]
+    },
+    {
+      "regra_id": "R049",
+      "precedencia": 49,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.7",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R043"
+      ]
+    },
+    {
+      "regra_id": "R050",
+      "precedencia": 50,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.25",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R044"
+      ]
+    },
+    {
+      "regra_id": "R051",
+      "precedencia": 51,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.3",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R045"
+      ]
+    },
+    {
+      "regra_id": "R052",
+      "precedencia": 52,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.35",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R046"
+      ]
+    },
+    {
+      "regra_id": "R053",
+      "precedencia": 53,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.4",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R047"
+      ]
+    },
+    {
+      "regra_id": "R054",
+      "precedencia": 54,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.45",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R048"
+      ]
+    },
+    {
+      "regra_id": "R055",
+      "precedencia": 55,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.5",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R049"
+      ]
+    },
+    {
+      "regra_id": "R056",
+      "precedencia": 56,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.55",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R050"
+      ]
+    },
+    {
+      "regra_id": "R057",
+      "precedencia": 57,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.6",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R051"
+      ]
+    },
+    {
+      "regra_id": "R058",
+      "precedencia": 58,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.65",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R052"
+      ]
+    },
+    {
+      "regra_id": "R059",
+      "precedencia": 59,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.7",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R053"
+      ]
+    },
+    {
+      "regra_id": "R060",
+      "precedencia": 60,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.25",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R054"
+      ]
+    },
+    {
+      "regra_id": "R061",
+      "precedencia": 61,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.3",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R055"
+      ]
+    },
+    {
+      "regra_id": "R062",
+      "precedencia": 62,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.35",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R056"
+      ]
+    },
+    {
+      "regra_id": "R063",
+      "precedencia": 63,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.4",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R057"
+      ]
+    },
+    {
+      "regra_id": "R064",
+      "precedencia": 64,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.45",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R058"
+      ]
+    },
+    {
+      "regra_id": "R065",
+      "precedencia": 65,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.5",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R059"
+      ]
+    },
+    {
+      "regra_id": "R066",
+      "precedencia": 66,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.55",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R060"
+      ]
+    },
+    {
+      "regra_id": "R067",
+      "precedencia": 67,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.6",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R061"
+      ]
+    },
+    {
+      "regra_id": "R068",
+      "precedencia": 68,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.65",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R062"
+      ]
+    },
+    {
+      "regra_id": "R069",
+      "precedencia": 69,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.7",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R063"
+      ]
+    },
+    {
+      "regra_id": "R070",
+      "precedencia": 70,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.25",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R064"
+      ]
+    },
+    {
+      "regra_id": "R071",
+      "precedencia": 71,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.3",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R065"
+      ]
+    },
+    {
+      "regra_id": "R072",
+      "precedencia": 72,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.35",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R066"
+      ]
+    },
+    {
+      "regra_id": "R073",
+      "precedencia": 73,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.4",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R067"
+      ]
+    },
+    {
+      "regra_id": "R074",
+      "precedencia": 74,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.45",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R068"
+      ]
+    },
+    {
+      "regra_id": "R075",
+      "precedencia": 75,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.5",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R069"
+      ]
+    },
+    {
+      "regra_id": "R076",
+      "precedencia": 76,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.55",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R070"
+      ]
+    },
+    {
+      "regra_id": "R077",
+      "precedencia": 77,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.6",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R071"
+      ]
+    },
+    {
+      "regra_id": "R078",
+      "precedencia": 78,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.65",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R072"
+      ]
+    },
+    {
+      "regra_id": "R079",
+      "precedencia": 79,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.7",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R073"
+      ]
+    },
+    {
+      "regra_id": "R080",
+      "precedencia": 80,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.25",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R074"
+      ]
+    },
+    {
+      "regra_id": "R081",
+      "precedencia": 81,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.3",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R075"
+      ]
+    },
+    {
+      "regra_id": "R082",
+      "precedencia": 82,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.35",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R076"
+      ]
+    },
+    {
+      "regra_id": "R083",
+      "precedencia": 83,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.4",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R077"
+      ]
+    },
+    {
+      "regra_id": "R084",
+      "precedencia": 84,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.45",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R078"
+      ]
+    },
+    {
+      "regra_id": "R085",
+      "precedencia": 85,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.5",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R079"
+      ]
+    },
+    {
+      "regra_id": "R086",
+      "precedencia": 86,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.55",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R080"
+      ]
+    },
+    {
+      "regra_id": "R087",
+      "precedencia": 87,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.6",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R081"
+      ]
+    },
+    {
+      "regra_id": "R088",
+      "precedencia": 88,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.65",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R082"
+      ]
+    },
+    {
+      "regra_id": "R089",
+      "precedencia": 89,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.7",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R083"
+      ]
+    },
+    {
+      "regra_id": "R090",
+      "precedencia": 90,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.25",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R084"
+      ]
+    },
+    {
+      "regra_id": "R091",
+      "precedencia": 91,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.3",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R085"
+      ]
+    },
+    {
+      "regra_id": "R092",
+      "precedencia": 92,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.35",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R086"
+      ]
+    },
+    {
+      "regra_id": "R093",
+      "precedencia": 93,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.4",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R087"
+      ]
+    },
+    {
+      "regra_id": "R094",
+      "precedencia": 94,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.45",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R088"
+      ]
+    },
+    {
+      "regra_id": "R095",
+      "precedencia": 95,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.5",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R089"
+      ]
+    },
+    {
+      "regra_id": "R096",
+      "precedencia": 96,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.55",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R090"
+      ]
+    },
+    {
+      "regra_id": "R097",
+      "precedencia": 97,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.6",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R091"
+      ]
+    },
+    {
+      "regra_id": "R098",
+      "precedencia": 98,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.65",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R092"
+      ]
+    },
+    {
+      "regra_id": "R099",
+      "precedencia": 99,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.7",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R093"
+      ]
+    },
+    {
+      "regra_id": "R100",
+      "precedencia": 100,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.25",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R094"
+      ]
+    },
+    {
+      "regra_id": "R101",
+      "precedencia": 101,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.3",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R095"
+      ]
+    },
+    {
+      "regra_id": "R102",
+      "precedencia": 102,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.35",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R096"
+      ]
+    },
+    {
+      "regra_id": "R103",
+      "precedencia": 103,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.4",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R097"
+      ]
+    },
+    {
+      "regra_id": "R104",
+      "precedencia": 104,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.45",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R098"
+      ]
+    },
+    {
+      "regra_id": "R105",
+      "precedencia": 105,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.5",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R099"
+      ]
+    },
+    {
+      "regra_id": "R106",
+      "precedencia": 106,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.55",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R100"
+      ]
+    },
+    {
+      "regra_id": "R107",
+      "precedencia": 107,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.6",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R101"
+      ]
+    },
+    {
+      "regra_id": "R108",
+      "precedencia": 108,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.65",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R102"
+      ]
+    },
+    {
+      "regra_id": "R109",
+      "precedencia": 109,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.7",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R103"
+      ]
+    },
+    {
+      "regra_id": "R110",
+      "precedencia": 110,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.25",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R104"
+      ]
+    },
+    {
+      "regra_id": "R111",
+      "precedencia": 111,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.3",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R105"
+      ]
+    },
+    {
+      "regra_id": "R112",
+      "precedencia": 112,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.35",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R106"
+      ]
+    },
+    {
+      "regra_id": "R113",
+      "precedencia": 113,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.4",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R107"
+      ]
+    },
+    {
+      "regra_id": "R114",
+      "precedencia": 114,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.45",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R108"
+      ]
+    },
+    {
+      "regra_id": "R115",
+      "precedencia": 115,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.5",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R109"
+      ]
+    },
+    {
+      "regra_id": "R116",
+      "precedencia": 116,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.55",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R110"
+      ]
+    },
+    {
+      "regra_id": "R117",
+      "precedencia": 117,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.6",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R111"
+      ]
+    },
+    {
+      "regra_id": "R118",
+      "precedencia": 118,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.65",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R112"
+      ]
+    },
+    {
+      "regra_id": "R119",
+      "precedencia": 119,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.7",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R113"
+      ]
+    },
+    {
+      "regra_id": "R120",
+      "precedencia": 120,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.25",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R114"
+      ]
+    },
+    {
+      "regra_id": "R121",
+      "precedencia": 121,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.3",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R115"
+      ]
+    },
+    {
+      "regra_id": "R122",
+      "precedencia": 122,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.35",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R116"
+      ]
+    },
+    {
+      "regra_id": "R123",
+      "precedencia": 123,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.4",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R117"
+      ]
+    },
+    {
+      "regra_id": "R124",
+      "precedencia": 124,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.45",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R118"
+      ]
+    },
+    {
+      "regra_id": "R125",
+      "precedencia": 125,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.5",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R119"
+      ]
+    },
+    {
+      "regra_id": "R126",
+      "precedencia": 126,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.55",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R120"
+      ]
+    },
+    {
+      "regra_id": "R127",
+      "precedencia": 127,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.6",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R121"
+      ]
+    },
+    {
+      "regra_id": "R128",
+      "precedencia": 128,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.65",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R122"
+      ]
+    },
+    {
+      "regra_id": "R129",
+      "precedencia": 129,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.7",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R123"
+      ]
+    },
+    {
+      "regra_id": "R130",
+      "precedencia": 130,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.25",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R124"
+      ]
+    },
+    {
+      "regra_id": "R131",
+      "precedencia": 131,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.3",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R125"
+      ]
+    },
+    {
+      "regra_id": "R132",
+      "precedencia": 132,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.35",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R126"
+      ]
+    },
+    {
+      "regra_id": "R133",
+      "precedencia": 133,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.4",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R127"
+      ]
+    },
+    {
+      "regra_id": "R134",
+      "precedencia": 134,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.45",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R128"
+      ]
+    },
+    {
+      "regra_id": "R135",
+      "precedencia": 135,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.5",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R129"
+      ]
+    },
+    {
+      "regra_id": "R136",
+      "precedencia": 136,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.55",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R130"
+      ]
+    },
+    {
+      "regra_id": "R137",
+      "precedencia": 137,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.6",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R131"
+      ]
+    },
+    {
+      "regra_id": "R138",
+      "precedencia": 138,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.65",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R132"
+      ]
+    },
+    {
+      "regra_id": "R139",
+      "precedencia": 139,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.7",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R133"
+      ]
+    },
+    {
+      "regra_id": "R140",
+      "precedencia": 140,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.25",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R134"
+      ]
+    },
+    {
+      "regra_id": "R141",
+      "precedencia": 141,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.3",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R135"
+      ]
+    },
+    {
+      "regra_id": "R142",
+      "precedencia": 142,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.35",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R136"
+      ]
+    },
+    {
+      "regra_id": "R143",
+      "precedencia": 143,
+      "fonte": "FONTE5",
+      "predicado": "x5 > 0.4",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R137"
+      ]
+    },
+    {
+      "regra_id": "R144",
+      "precedencia": 144,
+      "fonte": "FONTE6",
+      "predicado": "x6 > 0.45",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R138"
+      ]
+    },
+    {
+      "regra_id": "R145",
+      "precedencia": 145,
+      "fonte": "FONTE1",
+      "predicado": "x1 > 0.5",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R139"
+      ]
+    },
+    {
+      "regra_id": "R146",
+      "precedencia": 146,
+      "fonte": "FONTE2",
+      "predicado": "x2 > 0.55",
+      "se_verdadeiro": "negar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R140"
+      ]
+    },
+    {
+      "regra_id": "R147",
+      "precedencia": 147,
+      "fonte": "FONTE3",
+      "predicado": "x3 > 0.6",
+      "se_verdadeiro": "revisar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R141"
+      ]
+    },
+    {
+      "regra_id": "R148",
+      "precedencia": 148,
+      "fonte": "FONTE4",
+      "predicado": "x4 > 0.65",
+      "se_verdadeiro": "aprovar",
+      "snapshot": "época da proposta",
+      "dependencias": [
+        "R142"
+      ]
+    }
+  ],
+  "atrasos_ms_por_perfil": {
+    "L01": [
+      10,
+      20,
+      30,
+      40,
+      50,
+      60
+    ],
+    "L02": [
+      20,
+      40,
+      60,
+      80,
+      100,
+      120
+    ],
+    "L03": [
+      30,
+      60,
+      90,
+      120,
+      150,
+      180
+    ],
+    "L04": [
+      40,
+      80,
+      120,
+      160,
+      200,
+      240
+    ],
+    "L05": [
+      50,
+      100,
+      150,
+      200,
+      250,
+      300
+    ],
+    "L06": [
+      60,
+      120,
+      180,
+      240,
+      300,
+      360
+    ],
+    "L07": [
+      70,
+      140,
+      210,
+      280,
+      350,
+      420
+    ],
+    "L08": [
+      80,
+      160,
+      240,
+      320,
+      400,
+      480
+    ],
+    "L09": [
+      90,
+      180,
+      270,
+      360,
+      450,
+      540
+    ],
+    "L10": [
+      100,
+      200,
+      300,
+      400,
+      500,
+      600
+    ],
+    "L11": [
+      110,
+      220,
+      330,
+      440,
+      550,
+      660
+    ],
+    "L12": [
+      120,
+      240,
+      360,
+      480,
+      600,
+      720
+    ],
+    "L13": [
+      130,
+      260,
+      390,
+      520,
+      650,
+      780
+    ],
+    "L14": [
+      140,
+      280,
+      420,
+      560,
+      700,
+      840
+    ],
+    "L15": [
+      150,
+      300,
+      450,
+      600,
+      750,
+      900
+    ],
+    "L16": [
+      160,
+      320,
+      480,
+      640,
+      800,
+      960
+    ],
+    "L17": [
+      170,
+      340,
+      510,
+      680,
+      850,
+      1020
+    ],
+    "L18": [
+      180,
+      360,
+      540,
+      720,
+      900,
+      1080
+    ]
+  },
+  "agregacao": "A primeira regra verdadeira por precedência decide. Regra ainda pendente de precedência menor impede decisão. Timeout obrigatório produz revisão conforme regra sequencial-v4. Predicado falso não decide.",
+  "dicionario_resultados": {
+    "ensaio_id": "Identificador do ensaio. Liga o resultado às medições e à configuração.",
+    "versao": "Versão de entrega avaliada nesse ensaio.",
+    "metrica": "O que foi contado ou medido; indica se o valor se refere a acerto, falha, tempo ou outro indicador.",
+    "operacao": "Como o valor foi obtido: contagem, media, mediana, diferenca_maior_menor, percentil_95, valor_observado ou indicador_precalculado.",
+    "valor": "Resultado expresso na unidade indicada. Um valor maior pode representar melhora ou piora, conforme a métrica.",
+    "base_de_calculo": "Total de referência das contagens; quantidade de valores nas médias, medianas e diferenças; soma das frequências no percentil; 1 para um valor observado ou indicador transcrito. Só funciona como divisor da taxa nas contagens.",
+    "descricao_base": "Explica o que a base representa neste ensaio: propostas, ataques, grupos, observações ou indicadores registrados.",
+    "taxa_percentual": "Em contagem de desempenho: 100 × valor / base_de_calculo. Vazia nas demais operações e nas contagens de entrega. Vazio não significa zero.",
+    "unidade": "Unidade do valor: casos, s (segundos), ms (milissegundos), min (minutos), pontos percentuais ou escala 0-1. Pontos percentuais medem diferença entre percentuais.",
+    "fonte": "Arquivo relativo à pasta do projeto e identificador do ensaio após #. O identificador seleciona as linhas desse ensaio no arquivo de medições do próprio projeto.",
+    "natureza": "desempenho = indicador observado no ensaio, inclusive falhas; entrega = quantidade de material disponível. Não equivale à classificação do projeto."
+  },
+  "versao_esquema_resultados": "10.0",
+  "operacoes_resultados": {
+    "contagem": "Somar as ocorrências registradas no numerador das medições do mesmo ensaio. Somar seus denominadores para obter a base de cálculo.",
+    "media": "Somar os valores registrados e dividir pela quantidade de observações.",
+    "mediana": "Ordenar os valores e obter o valor central; se houver quantidade par, usar a média dos dois valores centrais.",
+    "diferenca_maior_menor": "Subtrair o menor valor do maior. A base informa quantos valores foram comparados; não é um divisor.",
+    "percentil_95": "Ordenar os valores do histograma e acumular suas frequências até atingir o posto teto(0,95 × total de observações). Pelo menos 95% das observações ficam até esse valor.",
+    "valor_observado": "Reproduzir uma única medição registrada, sem calcular média nem presumir repetições.",
+    "indicador_precalculado": "Transcrever um indicador previamente calculado e registrado. A conferência valida a transcrição; não refaz o cálculo original do indicador sem os dados necessários."
+  }
+}

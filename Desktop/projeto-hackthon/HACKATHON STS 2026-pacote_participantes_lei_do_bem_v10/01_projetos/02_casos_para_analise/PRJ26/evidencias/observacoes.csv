@@ -1,0 +1,3 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ26-OBS01;"R07: data_corte=20; vencimento=15";atraso=5;expressão MAX do catálogo retornou 5;"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ26-OBS02;"R12: perfil consulta; coluna restrita";ocultar conforme matriz;"rel-v1 mostrou; rel-v2 aplicou perfil existente";"recorte ilustrativo identificado; não representa a totalidade das medições"

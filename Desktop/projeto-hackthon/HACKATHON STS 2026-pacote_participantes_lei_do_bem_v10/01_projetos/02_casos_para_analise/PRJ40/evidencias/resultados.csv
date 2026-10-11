@@ -1,0 +1,4 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ40-S01;intervalo-v1;decisões sinalizadas para revisão;contagem;412;30000;Propostas avaliadas nos padrões de ausência de informação.;1.373333;casos;evidencias/medicoes.csv#PRJ40-S01;desempenho
+PRJ40-S02;intervalo-v1;sinalizações com mudança de decisão na referência completa;contagem;228;412;Decisões sinalizadas para revisão, subconjunto das 30 mil propostas.;55.339806;casos;evidencias/medicoes.csv#PRJ40-S02;desempenho
+PRJ40-S03;intervalo-v1;sinalizações sem mudança na referência completa;contagem;184;412;Decisões sinalizadas para revisão, subconjunto das 30 mil propostas.;44.660194;casos;evidencias/medicoes.csv#PRJ40-S03;desempenho

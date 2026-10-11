@@ -1,0 +1,4 @@
+﻿entrada_id;conteudo_json
+PRJ31-IN001;"{""entrada"": ""mesmo documento reapresentado em rede intermitente; sinal derivado já contado"", ""referencia"": ""não elevar confiança por repetição""}"
+PRJ31-IN002;"{""entrada"": ""ataque A117; documento+dispositivo comprometidos; terceira origem indisponível"", ""referencia"": ""não aprovar por sinais correlacionados""}"
+PRJ31-IN003;"{""entrada"": ""legítima L201; conexão retorna; sessão continuada, ainda em análise"", ""referencia"": ""retomada não equivale a aprovação""}"

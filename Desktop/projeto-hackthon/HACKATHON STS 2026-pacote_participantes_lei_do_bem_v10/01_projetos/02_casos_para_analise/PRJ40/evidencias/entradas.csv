@@ -1,0 +1,4 @@
+﻿entrada_id;conteudo_json
+PRJ40-IN001;"{""entrada"": ""fontes F1/F2 ausentes; zero gera 0,64; intervalo[0,48;0,70]"", ""referencia"": ""sinalizar porque cruza 0,60""}"
+PRJ40-IN002;"{""entrada"": ""mediana gera 0,66; intervalo[0,58;0,73]"", ""referencia"": ""sinalizar mesmo sem conhecer resposta completa""}"
+PRJ40-IN003;"{""entrada"": ""R1,R2,R3 simultaneamente ausentes"", ""referencia"": ""ramo originalmente previsto""}"

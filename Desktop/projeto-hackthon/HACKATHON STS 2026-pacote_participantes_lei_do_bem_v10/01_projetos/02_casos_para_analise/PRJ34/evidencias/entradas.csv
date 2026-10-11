@@ -1,0 +1,4 @@
+﻿entrada_id;conteudo_json
+PRJ34-IN001;"{""entrada"": ""serviços S03→S09; chamadas apenas na manutenção 02:00"", ""referencia"": ""não manter dependência funcional permanente""}"
+PRJ34-IN002;"{""entrada"": ""S17→S88; função rara a cada três janelas"", ""referencia"": ""preservar dependência real""}"
+PRJ34-IN003;"{""entrada"": ""S11→S12; coincidência residual"", ""referencia"": ""relação de referência ausente""}"

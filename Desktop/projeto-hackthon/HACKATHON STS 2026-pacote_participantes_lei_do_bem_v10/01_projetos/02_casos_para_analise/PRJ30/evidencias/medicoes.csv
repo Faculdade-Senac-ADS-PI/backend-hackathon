@@ -1,0 +1,7 @@
+﻿registro_id;ensaio_id;versao;cenario;tipo;metrica;valor;numerador;denominador;peso;unidade
+PRJ30-S01-M001;PRJ30-S01;mfa-v1;C001;contador;casos aprovados;;23;24;;casos
+PRJ30-S01-M002;PRJ30-S01;mfa-v1;C002;contador;casos aprovados;;22;24;;casos
+PRJ30-S01-M003;PRJ30-S01;mfa-v1;C003;contador;casos aprovados;;22;24;;casos
+PRJ30-S02-M001;PRJ30-S02;mfa-v2;C001;contador;casos aprovados;;24;24;;casos
+PRJ30-S02-M002;PRJ30-S02;mfa-v2;C002;contador;casos aprovados;;24;24;;casos
+PRJ30-S02-M003;PRJ30-S02;mfa-v2;C003;contador;casos aprovados;;24;24;;casos

@@ -1,0 +1,4 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ22-OBS01;"intenção I44 confirmada no financeiro; tela ainda pendente; usuário reabre";reconciliar sem nova intenção;"tela-v1 abriu I45; barreira-v3 manteve I44 e recuperou prova";"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ22-OBS02;"intenção I87; prova inacessível; marcador local presente";não afirmar recuperação concluída;barreira-v3 bloqueou e encaminhou confirmação;"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ22-OBS03;marcador local perdido e prova inacessível;reconstruir época sem duplicar intenção;ramo consta no protocolo, sem execução entregue;"recorte ilustrativo identificado; não representa a totalidade das medições"

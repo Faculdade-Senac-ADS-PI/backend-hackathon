@@ -1,0 +1,4 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ27-OBS01;"Q07: segunda via após vencimento; trechos D02#p1,D03#p1,D04#p1";trecho D02#p1 é pertinente;"recuperador localizou fonte; resposta gerada ausente";"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ27-OBS02;"Q04: orientação diante de fonte ausente; trecho D04#p1";verificar recusa da geração;"busca recuperou a instrução de recusa; decisão do gerador ausente";"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ27-OBS03;"memorando 82%/50; IDs da rodada ausentes";associar perguntas a respostas e julgamentos;não é possível unir ao teste busca-B2-v1 de 46 consultas;"recorte ilustrativo identificado; não representa a totalidade das medições"

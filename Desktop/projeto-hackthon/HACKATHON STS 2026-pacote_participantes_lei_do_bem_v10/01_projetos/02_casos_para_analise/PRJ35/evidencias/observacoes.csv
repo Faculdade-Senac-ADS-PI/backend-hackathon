@@ -1,0 +1,4 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ35-OBS01;"noite N04; real=162 min; anotação=149 min; hora de emissão ausente";previsão deveria anteceder início da noite;não há como comprovar antecedência;"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ35-OBS02;notebook usa volume_final da própria noite;entrada deveria estar disponível antes da previsão;ramo executado não identificado;"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ35-OBS03;12 erros absolutos somam 216 min;"MAE=18 min; máximo=29 min";número recuperável, mas validade temporal não demonstrada;"recorte ilustrativo identificado; não representa a totalidade das medições"

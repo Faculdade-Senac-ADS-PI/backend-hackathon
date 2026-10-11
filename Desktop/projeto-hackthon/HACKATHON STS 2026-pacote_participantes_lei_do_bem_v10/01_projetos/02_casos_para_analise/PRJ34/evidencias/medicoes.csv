@@ -1,0 +1,5 @@
+﻿registro_id;ensaio_id;versao;cenario;tipo;metrica;valor;numerador;denominador;peso;unidade
+PRJ34-S01-M001;PRJ34-S01;frequencia-F1-v1;C001;contador;mudanças detectadas;;12;18;;casos
+PRJ34-S02-M001;PRJ34-S02;ponderado-P2-v2;C001;contador;mudanças detectadas;;16;18;;casos
+PRJ34-S03-M001;PRJ34-S03;frequencia-F1-v1;C001;contador;relações indevidas criadas;;14;500;;casos
+PRJ34-S04-M001;PRJ34-S04;ponderado-P2-v2;C001;contador;relações indevidas criadas;;5;500;;casos

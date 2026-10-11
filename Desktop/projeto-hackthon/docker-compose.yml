@@ -1,0 +1,91 @@
+# ============================================================
+# Hackathon — orquestração completa (db + api + web)
+# Uso: docker compose up -d --build
+# ============================================================
+name: hackthon
+
+services:
+  # ---------- PostgreSQL 16 + pgvector ----------
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: hackthon-postgres
+    environment:
+      POSTGRES_USER: hackthon
+      POSTGRES_PASSWORD: hackthon_dev
+      POSTGRES_DB: hackthon
+    ports:
+      - "54329:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./backend-hackathon/docker/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hackthon -d hackthon"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    restart: unless-stopped
+
+  # ---------- API .NET 8 ----------
+  api:
+    build: ./backend-hackathon
+    container_name: hackthon-api
+    environment:
+      # Development habilita migração/seed (BancoInicial) e Swagger
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:5088
+      ConnectionStrings__Postgres: Host=db;Port=5432;Database=hackthon;Username=hackthon;Password=hackthon_dev
+      Jwt__Secret: dev-only-hackthon-sts-2026-chave-com-32-bytes-min
+      Armazenamento__DiretorioBase: scratch/uploads
+      # Chave da IA (RAG + avaliação): NUNCA versionada. Defina AGENTE_IA_API_KEY
+      # no arquivo .env (veja .env.example). Vazio => a API usa o analisador heurístico.
+      AgenteIa__ApiKey: ${AGENTE_IA_API_KEY:-}
+      AgenteIa__Modelo: ${AGENTE_IA_MODELO:-gemini-3.5-flash}
+      Cors__Origins__0: http://localhost:43123
+      Cors__Origins__1: http://127.0.0.1:43123
+      # Log de requests (caminho + status) para diagnosticar erros 401
+      Logging__LogLevel__Microsoft.AspNetCore: Information
+      Logging__LogLevel__Default: Information
+    ports:
+      - "5088:5088"
+    volumes:
+      - api_uploads:/app/scratch/uploads
+      # Base de conhecimento das normas (RAG): o ADM coloca os PDFs/MDs aqui e
+      # dispara POST /api/normas/reindexar. Somente leitura para a API.
+      - ./backend-hackathon/base-conhecimento:/app/base-conhecimento:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "bash", "-c", ": > /dev/tcp/127.0.0.1/5088"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+    restart: unless-stopped
+
+  # ---------- Frontend Next.js 15 ----------
+  web:
+    build:
+      context: ./frontend-hackathon
+      args:
+        API_INTERNA: http://api:5088
+    container_name: hackthon-web
+    environment:
+      API_INTERNA: http://api:5088
+      JWT_SECRET: dev-only-hackthon-sts-2026-chave-com-32-bytes-min
+    ports:
+      - "43123:43123"
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://127.0.0.1:43123/"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  api_uploads:

@@ -1,0 +1,15 @@
+﻿registro_id;ensaio_id;versao;cenario;tipo;metrica;valor;numerador;denominador;peso;unidade
+PRJ37-S01-M001;PRJ37-S01;baseline-v1;grupo_A;medicao;FNR por grupo;10;;;;%
+PRJ37-S01-M002;PRJ37-S01;baseline-v1;grupo_B;medicao;FNR por grupo;12;;;;%
+PRJ37-S01-M003;PRJ37-S01;baseline-v1;grupo_C;medicao;FNR por grupo;18.4;;;;%
+PRJ37-S01-M004;PRJ37-S01;baseline-v1;grupo_D;medicao;FNR por grupo;14;;;;%
+PRJ37-S02-M001;PRJ37-S02;H3-peso4-v2;grupo_A;medicao;FNR por grupo;11;;;;%
+PRJ37-S02-M002;PRJ37-S02;H3-peso4-v2;grupo_B;medicao;FNR por grupo;12.2;;;;%
+PRJ37-S02-M003;PRJ37-S02;H3-peso4-v2;grupo_C;medicao;FNR por grupo;14.7;;;;%
+PRJ37-S02-M004;PRJ37-S02;H3-peso4-v2;grupo_D;medicao;FNR por grupo;13;;;;%
+PRJ37-S03-M001;PRJ37-S03;H3-peso4-v2;grupo_A;medicao;FNR por grupo no estresse;12;;;;%
+PRJ37-S03-M002;PRJ37-S03;H3-peso4-v2;grupo_B;medicao;FNR por grupo no estresse;13.5;;;;%
+PRJ37-S03-M003;PRJ37-S03;H3-peso4-v2;grupo_C;medicao;FNR por grupo no estresse;17.1;;;;%
+PRJ37-S03-M004;PRJ37-S03;H3-peso4-v2;grupo_D;medicao;FNR por grupo no estresse;15;;;;%
+PRJ37-S04-M001;PRJ37-S04;baseline-v1;C001;medicao;AUC;0.812;;;;0-1
+PRJ37-S05-M001;PRJ37-S05;H3-peso4-v2;C001;medicao;AUC;0.8;;;;0-1

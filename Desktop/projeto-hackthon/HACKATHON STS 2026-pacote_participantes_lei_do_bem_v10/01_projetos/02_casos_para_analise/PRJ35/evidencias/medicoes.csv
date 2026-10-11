@@ -1,0 +1,15 @@
+﻿registro_id;ensaio_id;versao;cenario;tipo;metrica;valor;numerador;denominador;peso;unidade
+PRJ35-S01-M001;PRJ35-S01;previsao-v1;C001;medicao;erro absoluto das 12 anotações;7;;;;min
+PRJ35-S01-M002;PRJ35-S01;previsao-v1;C002;medicao;erro absoluto das 12 anotações;9;;;;min
+PRJ35-S01-M003;PRJ35-S01;previsao-v1;C003;medicao;erro absoluto das 12 anotações;11;;;;min
+PRJ35-S01-M004;PRJ35-S01;previsao-v1;C004;medicao;erro absoluto das 12 anotações;13;;;;min
+PRJ35-S01-M005;PRJ35-S01;previsao-v1;C005;medicao;erro absoluto das 12 anotações;15;;;;min
+PRJ35-S01-M006;PRJ35-S01;previsao-v1;C006;medicao;erro absoluto das 12 anotações;17;;;;min
+PRJ35-S01-M007;PRJ35-S01;previsao-v1;C007;medicao;erro absoluto das 12 anotações;19;;;;min
+PRJ35-S01-M008;PRJ35-S01;previsao-v1;C008;medicao;erro absoluto das 12 anotações;21;;;;min
+PRJ35-S01-M009;PRJ35-S01;previsao-v1;C009;medicao;erro absoluto das 12 anotações;23;;;;min
+PRJ35-S01-M010;PRJ35-S01;previsao-v1;C010;medicao;erro absoluto das 12 anotações;25;;;;min
+PRJ35-S01-M011;PRJ35-S01;previsao-v1;C011;medicao;erro absoluto das 12 anotações;27;;;;min
+PRJ35-S01-M012;PRJ35-S01;previsao-v1;C012;medicao;erro absoluto das 12 anotações;29;;;;min
+PRJ35-S02-M001;PRJ35-S02;serie-v2;C001;contador;noites com duração real recuperada (contagem de entrega, não desempenho);;41;41;;casos
+PRJ35-S03-M001;PRJ35-S03;serie-v2;C001;contador;noites com previsão sem proveniência (contagem de entrega, não desempenho);;12;41;;casos

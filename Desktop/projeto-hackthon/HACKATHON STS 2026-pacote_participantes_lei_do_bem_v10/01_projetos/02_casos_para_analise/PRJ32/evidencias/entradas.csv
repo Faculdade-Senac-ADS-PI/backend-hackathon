@@ -1,0 +1,9 @@
+﻿entrada_id;conteudo_json
+PRJ32-IN001;"{""id"": ""PRJ32-IN001"", ""dispositivo"": ""D01"", ""modelo"": ""M2"", ""sistema"": ""OS-SINT-2"", ""primeira_aparicao"": true, ""reputacao"": null, ""decisao"": null}"
+PRJ32-IN002;"{""id"": ""PRJ32-IN002"", ""dispositivo"": ""D02"", ""modelo"": ""M3"", ""sistema"": ""OS-SINT-1"", ""primeira_aparicao"": false, ""reputacao"": null, ""decisao"": null}"
+PRJ32-IN003;"{""id"": ""PRJ32-IN003"", ""dispositivo"": ""D03"", ""modelo"": ""M1"", ""sistema"": ""OS-SINT-2"", ""primeira_aparicao"": true, ""reputacao"": null, ""decisao"": null}"
+PRJ32-IN004;"{""id"": ""PRJ32-IN004"", ""dispositivo"": ""D04"", ""modelo"": ""M2"", ""sistema"": ""OS-SINT-1"", ""primeira_aparicao"": false, ""reputacao"": null, ""decisao"": null}"
+PRJ32-IN005;"{""id"": ""PRJ32-IN005"", ""dispositivo"": ""D05"", ""modelo"": ""M3"", ""sistema"": ""OS-SINT-2"", ""primeira_aparicao"": true, ""reputacao"": null, ""decisao"": null}"
+PRJ32-IN006;"{""id"": ""PRJ32-IN006"", ""dispositivo"": ""D06"", ""modelo"": ""M1"", ""sistema"": ""OS-SINT-1"", ""primeira_aparicao"": false, ""reputacao"": null, ""decisao"": null}"
+PRJ32-IN007;"{""id"": ""PRJ32-IN007"", ""dispositivo"": ""D07"", ""modelo"": ""M2"", ""sistema"": ""OS-SINT-2"", ""primeira_aparicao"": true, ""reputacao"": null, ""decisao"": null}"
+PRJ32-IN008;"{""id"": ""PRJ32-IN008"", ""dispositivo"": ""D08"", ""modelo"": ""M3"", ""sistema"": ""OS-SINT-1"", ""primeira_aparicao"": false, ""reputacao"": null, ""decisao"": null}"

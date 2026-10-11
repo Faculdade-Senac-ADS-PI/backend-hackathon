@@ -1,0 +1,5 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ24-S01;manual-v1;repetições com ordem e estado preservados;contagem;512;640;Execuções: 32 sequências com 20 repetições cada.;80.0;casos;evidencias/medicoes.csv#PRJ24-S01;desempenho
+PRJ24-S02;scripts-v2;repetições com ordem e estado preservados;contagem;590;640;Execuções: 32 sequências com 20 repetições cada.;92.1875;casos;evidencias/medicoes.csv#PRJ24-S02;desempenho
+PRJ24-S03;causal-K1-v3;repetições com ordem e estado preservados;contagem;629;640;Execuções: 32 sequências com 20 repetições cada.;98.28125;casos;evidencias/medicoes.csv#PRJ24-S03;desempenho
+PRJ24-S04;causal-K2-v4;repetições com ordem e estado preservados;contagem;640;640;Execuções: 32 sequências com 20 repetições cada.;100.0;casos;evidencias/medicoes.csv#PRJ24-S04;desempenho

@@ -1,0 +1,3 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ21-OBS01;"S2; três falhas transitórias em dez chamadas";não interromper antes de cinco falhas;"config-v1 abriu; config-v2 permaneceu disponível";"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ21-OBS02;"S1; cinco falhas consecutivas";abrir e testar após 30 s;config-v2 seguiu o runbook;"recorte ilustrativo identificado; não representa a totalidade das medições"

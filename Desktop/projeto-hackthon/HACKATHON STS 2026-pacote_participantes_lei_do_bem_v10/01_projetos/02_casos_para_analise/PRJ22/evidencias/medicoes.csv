@@ -1,0 +1,22 @@
+﻿registro_id;ensaio_id;versao;cenario;tipo;metrica;valor;numerador;denominador;peso;unidade
+PRJ22-S01-M001;PRJ22-S01;tela-v1;antes;contador;jornadas retomadas automaticamente;;34;40;;casos
+PRJ22-S01-M002;PRJ22-S01;tela-v1;durante;contador;jornadas retomadas automaticamente;;32;40;;casos
+PRJ22-S01-M003;PRJ22-S01;tela-v1;depois;contador;jornadas retomadas automaticamente;;32;40;;casos
+PRJ22-S02-M001;PRJ22-S02;tela-v1;antes;contador;transferências duplicadas;;1;40;;casos
+PRJ22-S02-M002;PRJ22-S02;tela-v1;durante;contador;transferências duplicadas;;1;40;;casos
+PRJ22-S02-M003;PRJ22-S02;tela-v1;depois;contador;transferências duplicadas;;1;40;;casos
+PRJ22-S03-M001;PRJ22-S03;saga-v2;antes;contador;jornadas retomadas automaticamente;;36;40;;casos
+PRJ22-S03-M002;PRJ22-S03;saga-v2;durante;contador;jornadas retomadas automaticamente;;36;40;;casos
+PRJ22-S03-M003;PRJ22-S03;saga-v2;depois;contador;jornadas retomadas automaticamente;;36;40;;casos
+PRJ22-S04-M001;PRJ22-S04;saga-v2;antes;contador;transferências duplicadas;;1;40;;casos
+PRJ22-S04-M002;PRJ22-S04;saga-v2;durante;contador;transferências duplicadas;;0;40;;casos
+PRJ22-S04-M003;PRJ22-S04;saga-v2;depois;contador;transferências duplicadas;;0;40;;casos
+PRJ22-S05-M001;PRJ22-S05;barreira-v3;antes;contador;jornadas retomadas automaticamente;;40;40;;casos
+PRJ22-S05-M002;PRJ22-S05;barreira-v3;durante;contador;jornadas retomadas automaticamente;;38;40;;casos
+PRJ22-S05-M003;PRJ22-S05;barreira-v3;depois;contador;jornadas retomadas automaticamente;;38;40;;casos
+PRJ22-S06-M001;PRJ22-S06;barreira-v3;antes;contador;transferências duplicadas;;0;40;;casos
+PRJ22-S06-M002;PRJ22-S06;barreira-v3;durante;contador;transferências duplicadas;;0;40;;casos
+PRJ22-S06-M003;PRJ22-S06;barreira-v3;depois;contador;transferências duplicadas;;0;40;;casos
+PRJ22-S07-M001;PRJ22-S07;barreira-v3;antes;contador;jornadas bloqueadas para confirmação;;0;40;;casos
+PRJ22-S07-M002;PRJ22-S07;barreira-v3;durante;contador;jornadas bloqueadas para confirmação;;2;40;;casos
+PRJ22-S07-M003;PRJ22-S07;barreira-v3;depois;contador;jornadas bloqueadas para confirmação;;2;40;;casos

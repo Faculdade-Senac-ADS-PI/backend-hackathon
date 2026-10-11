@@ -1,0 +1,4 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ26-S01;rel-v1;verificações conformes;contagem;51;54;Verificações de cálculo, filtro e permissão: três para cada um dos 18 relatórios.;94.444444;casos;evidencias/medicoes.csv#PRJ26-S01;desempenho
+PRJ26-S02;rel-v2;verificações conformes;contagem;54;54;Verificações de cálculo, filtro e permissão: três para cada um dos 18 relatórios.;100.0;casos;evidencias/medicoes.csv#PRJ26-S02;desempenho
+PRJ26-S03;rel-v2;relatórios aceitos;contagem;18;18;Relatórios distintos incluídos no aceite.;100.0;casos;evidencias/medicoes.csv#PRJ26-S03;desempenho

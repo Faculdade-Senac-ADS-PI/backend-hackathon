@@ -1,0 +1,4 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ34-OBS01;"serviços S03→S09; chamadas apenas na manutenção 02:00";não manter dependência funcional permanente;"frequencia-F1-v1 criou aresta; ponderado-P2-v2 rebaixou";"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ34-OBS02;"S17→S88; função rara a cada três janelas";preservar dependência real;remoção experimental em duas janelas apagou relação real;"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ34-OBS03;"S11→S12; coincidência residual";relação de referência ausente;ponderado-P2-v2 gerou um dos cinco vínculos indevidos;"recorte ilustrativo identificado; não representa a totalidade das medições"

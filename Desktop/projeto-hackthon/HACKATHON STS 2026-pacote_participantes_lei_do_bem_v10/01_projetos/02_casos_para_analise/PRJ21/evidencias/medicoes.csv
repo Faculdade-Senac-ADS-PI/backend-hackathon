@@ -1,0 +1,7 @@
+﻿registro_id;ensaio_id;versao;cenario;tipo;metrica;valor;numerador;denominador;peso;unidade
+PRJ21-S01-M001;PRJ21-S01;config-v1;C001;contador;roteiros conformes;;3;3;;casos
+PRJ21-S01-M002;PRJ21-S01;config-v1;C002;contador;roteiros conformes;;3;3;;casos
+PRJ21-S01-M003;PRJ21-S01;config-v1;C003;contador;roteiros conformes;;2;3;;casos
+PRJ21-S02-M001;PRJ21-S02;config-v2;C001;contador;roteiros conformes;;3;3;;casos
+PRJ21-S02-M002;PRJ21-S02;config-v2;C002;contador;roteiros conformes;;3;3;;casos
+PRJ21-S02-M003;PRJ21-S02;config-v2;C003;contador;roteiros conformes;;3;3;;casos

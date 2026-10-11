@@ -1,0 +1,3 @@
+﻿entrada_id;conteudo_json
+PRJ39-IN001;"{""entrada"": ""R012: campo ausente; operador legado IS_EMPTY"", ""referencia"": ""mapear para IS_NULL conforme tabela""}"
+PRJ39-IN002;"{""entrada"": ""R311: A AND B; motor novo executa em paralelo internamente"", ""referencia"": ""preservar resultado lógico""}"

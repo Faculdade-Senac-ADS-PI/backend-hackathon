@@ -1,0 +1,3 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ39-OBS01;"R012: campo ausente; operador legado IS_EMPTY";mapear para IS_NULL conforme tabela;"conv-v1 usou igualdade a zero; conv-v2 corrigiu";"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ39-OBS02;"R311: A AND B; motor novo executa em paralelo internamente";preservar resultado lógico;conversor não altera mecanismo interno do motor;"recorte ilustrativo identificado; não representa a totalidade das medições"

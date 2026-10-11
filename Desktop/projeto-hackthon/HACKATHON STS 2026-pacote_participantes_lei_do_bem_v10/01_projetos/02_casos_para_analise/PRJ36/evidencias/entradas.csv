@@ -1,0 +1,3 @@
+﻿entrada_id;conteudo_json
+PRJ36-IN001;"{""entrada"": ""P08; erros=5; chamadas=100; janela 5 min"", ""referencia"": ""taxa=5% em ambas as ferramentas""}"
+PRJ36-IN002;"{""entrada"": ""P17; perfil leitura; campo restrito"", ""referencia"": ""ocultar campo""}"

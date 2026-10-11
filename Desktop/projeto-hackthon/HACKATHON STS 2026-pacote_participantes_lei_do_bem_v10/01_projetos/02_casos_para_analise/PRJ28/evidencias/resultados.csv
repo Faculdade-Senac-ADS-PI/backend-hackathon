@@ -1,0 +1,2 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ28-S01;convenio-v1;linhas de entrada entregues (contagem de entrega, não desempenho);contagem;10;10;"Linhas de entrada entregues como exemplo; não é total de conversões executadas.";;casos;evidencias/medicoes.csv#PRJ28-S01;entrega

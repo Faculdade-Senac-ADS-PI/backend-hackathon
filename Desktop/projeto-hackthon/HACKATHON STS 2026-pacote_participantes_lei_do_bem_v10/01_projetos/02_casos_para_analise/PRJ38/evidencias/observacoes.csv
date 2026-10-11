@@ -1,0 +1,4 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ38-OBS01;"R010 aprova chega 20 ms; R002 prioritária nega chega 80 ms; mesma época";negar e citar R002;"motor-P1-v1 aprovou cedo; motor-P3-v3 aguardou fronteira de precedência";"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ38-OBS02;"proposta usa cadastro época 2; resposta atrasada retorna época 3";não misturar snapshots;"motor-P2-v2 misturou; motor-P3-v3 refez consulta vinculada à época 2";"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ38-OBS03;"dependência obrigatória timeout; regra sequencial-v4 manda revisão";mesma decisão e motivo;motor-P3-v3 retornou revisão e trilha da regra de timeout;"recorte ilustrativo identificado; não representa a totalidade das medições"

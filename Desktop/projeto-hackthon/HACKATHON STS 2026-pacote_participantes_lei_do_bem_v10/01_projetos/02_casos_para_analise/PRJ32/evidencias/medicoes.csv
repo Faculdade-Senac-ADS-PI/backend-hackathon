@@ -1,0 +1,2 @@
+﻿registro_id;ensaio_id;versao;cenario;tipo;metrica;valor;numerador;denominador;peso;unidade
+PRJ32-S01-M001;PRJ32-S01;dispositivo-v1;C001;contador;fichas de dispositivo entregues (contagem de entrega, não desempenho);;8;8;;casos

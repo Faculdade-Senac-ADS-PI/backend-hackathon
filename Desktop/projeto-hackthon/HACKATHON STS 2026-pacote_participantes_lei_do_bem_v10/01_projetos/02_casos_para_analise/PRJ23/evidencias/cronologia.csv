@@ -1,0 +1,8 @@
+﻿evento_id;data;versao;evento;estado;fonte
+PRJ23-CR01;2025-01-06;documento-inicial;Registro do problema e das referências anteriores;registrado;evidencias/metodo.md#1
+PRJ23-CR02;2025-01-24;protocolo-r1;Preparação do recorte e critérios descritos no método;registrado;evidencias/metodo.md#3
+PRJ23-CR03;2025-02-01;ttl-v1;Arquivamento dos registros desta versão;registrado;evidencias/medicoes.csv
+PRJ23-CR04;2025-02-15;escalar-v2;Arquivamento dos registros desta versão;registrado;evidencias/medicoes.csv
+PRJ23-CR05;2025-03-01;vetorial-v3;Arquivamento dos registros desta versão;registrado;evidencias/medicoes.csv
+PRJ23-CR06;2025-03-15;entrada-v4;Arquivamento dos registros desta versão;registrado;evidencias/medicoes.csv
+PRJ23-CR07;2025-04-21;revisao-final;Consolidação do limite de conclusão e pendências;registrado;evidencias/revisao_tecnica.md

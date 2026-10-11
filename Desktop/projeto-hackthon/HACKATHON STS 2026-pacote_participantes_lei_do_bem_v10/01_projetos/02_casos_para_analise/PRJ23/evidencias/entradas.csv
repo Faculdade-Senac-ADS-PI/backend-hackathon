@@ -1,0 +1,4 @@
+﻿entrada_id;conteudo_json
+PRJ23-IN001;"{""entrada"": ""cache=(d8,c8); chega evento débito d7 atrasado"", ""referencia"": ""não invalidar cache mais novo""}"
+PRJ23-IN002;"{""entrada"": ""cache=(d8,c8); intenção I9 entrega d9 antes de c9; cem leitores"", ""referencia"": ""aguardar confirmação de ambas sem cem consultas""}"
+PRJ23-IN003;"{""entrada"": ""confirmação chega após leitura já iniciada nos perfis de 90 s e 180 s"", ""referencia"": ""contabilizar defasagem residual""}"

@@ -1,0 +1,3 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ30-S01;mfa-v1;casos aprovados;contagem;67;72;Casos de aceite distribuídos pelos três canais.;93.055556;casos;evidencias/medicoes.csv#PRJ30-S01;desempenho
+PRJ30-S02;mfa-v2;casos aprovados;contagem;72;72;Casos de aceite distribuídos pelos três canais.;100.0;casos;evidencias/medicoes.csv#PRJ30-S02;desempenho

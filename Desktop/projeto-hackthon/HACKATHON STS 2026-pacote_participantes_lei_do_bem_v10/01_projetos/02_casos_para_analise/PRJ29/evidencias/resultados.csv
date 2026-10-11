@@ -1,0 +1,7 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ29-S01;longo-v1;jornadas legítimas concluídas;contagem;294;420;Tentativas legítimas, separadas das tentativas de ataque.;70.0;casos;evidencias/medicoes.csv#PRJ29-S01;desempenho
+PRJ29-S02;fixo4-v2;jornadas legítimas concluídas;contagem;357;420;Tentativas legítimas, separadas das tentativas de ataque.;85.0;casos;evidencias/medicoes.csv#PRJ29-S02;desempenho
+PRJ29-S03;fixo4-v2;replays rejeitados;contagem;54;60;Tentativas de replay da matriz de teste.;90.0;casos;evidencias/medicoes.csv#PRJ29-S03;desempenho
+PRJ29-S04;seletor-S2-v3;jornadas legítimas concluídas;contagem;374;420;Tentativas legítimas, separadas das tentativas de ataque.;89.047619;casos;evidencias/medicoes.csv#PRJ29-S04;desempenho
+PRJ29-S05;seletor-S2-v3;replays rejeitados;contagem;59;60;Tentativas de replay da matriz de teste.;98.333333;casos;evidencias/medicoes.csv#PRJ29-S05;desempenho
+PRJ29-S06;seletor-S3-v4;replay usado no ajuste rejeitado;contagem;1;1;"Um único replay usado no ajuste e no reteste; não representa repetição da matriz inteira.";100.0;casos;evidencias/medicoes.csv#PRJ29-S06;desempenho

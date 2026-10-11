@@ -1,0 +1,2 @@
+﻿registro_id;ensaio_id;versao;cenario;tipo;metrica;valor;numerador;denominador;peso;unidade
+PRJ33-S01-M001;PRJ33-S01;eventos-v1;C001;contador;eventos com correlation_id (contagem de entrega, não desempenho);;4;12;;casos

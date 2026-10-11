@@ -1,0 +1,4 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ36-S01;paineis-v1;verificações conformes;contagem;77;81;Verificações de valor, aparência e acesso: três para cada um dos 27 painéis.;95.061728;casos;evidencias/medicoes.csv#PRJ36-S01;desempenho
+PRJ36-S02;paineis-v2;verificações conformes;contagem;81;81;Verificações de valor, aparência e acesso: três para cada um dos 27 painéis.;100.0;casos;evidencias/medicoes.csv#PRJ36-S02;desempenho
+PRJ36-S03;paineis-v2;painéis aceitos;contagem;27;27;Painéis efetivamente migrados e aceitos.;100.0;casos;evidencias/medicoes.csv#PRJ36-S03;desempenho

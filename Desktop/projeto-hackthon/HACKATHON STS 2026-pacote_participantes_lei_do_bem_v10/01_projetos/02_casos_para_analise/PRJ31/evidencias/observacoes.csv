@@ -1,0 +1,4 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ31-OBS01;"mesmo documento reapresentado em rede intermitente; sinal derivado já contado";não elevar confiança por repetição;"fixo-C1-v1 somou novamente; condicionado-C3-v2 reconheceu origem e época";"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ31-OBS02;"ataque A117; documento+dispositivo comprometidos; terceira origem indisponível";não aprovar por sinais correlacionados;"condicionado-C3-v2 aprovou indevidamente; limitação registrada";"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ31-OBS03;"legítima L201; conexão retorna; sessão continuada, ainda em análise";retomada não equivale a aprovação;condicionado-C3-v2 contabilizou retomada, sem alterar automaticamente decisão de identidade;"recorte ilustrativo identificado; não representa a totalidade das medições"

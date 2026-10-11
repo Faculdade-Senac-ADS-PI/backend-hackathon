@@ -1,0 +1,3 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ21-S01;config-v1;roteiros conformes;contagem;8;9;Roteiros de carga normal, lentidão e recuperação dos três serviços.;88.888889;casos;evidencias/medicoes.csv#PRJ21-S01;desempenho
+PRJ21-S02;config-v2;roteiros conformes;contagem;9;9;Roteiros de carga normal, lentidão e recuperação dos três serviços.;100.0;casos;evidencias/medicoes.csv#PRJ21-S02;desempenho

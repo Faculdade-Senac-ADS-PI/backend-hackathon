@@ -1,0 +1,6 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ31-S01;fixo-C1-v1;recuperações legítimas aprovadas;contagem;430;520;Jornadas legítimas avaliadas quanto à aprovação de identidade.;82.692308;casos;evidencias/medicoes.csv#PRJ31-S01;desempenho
+PRJ31-S02;fixo-C1-v1;ataques bloqueados;contagem;108;120;Ataques considerados no teste de bloqueio.;90.0;casos;evidencias/medicoes.csv#PRJ31-S02;desempenho
+PRJ31-S03;condicionado-C3-v2;recuperações legítimas aprovadas;contagem;447;520;Jornadas legítimas avaliadas quanto à aprovação de identidade.;85.961538;casos;evidencias/medicoes.csv#PRJ31-S03;desempenho
+PRJ31-S04;condicionado-C3-v2;ataques bloqueados;contagem;116;120;Ataques considerados no teste de bloqueio.;96.666667;casos;evidencias/medicoes.csv#PRJ31-S04;desempenho
+PRJ31-S05;condicionado-C3-v2;jornadas interrompidas retomadas;contagem;182;200;"Jornadas legítimas interrompidas, subconjunto das 520; retomada não significa aprovação.";91.0;casos;evidencias/medicoes.csv#PRJ31-S05;desempenho

@@ -1,0 +1,3 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ32-OBS01;"dispositivo D01; modelo sintético M1; primeira aparição";regra para aparelho novo não definida;reputação e decisão vazias;"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ32-OBS02;"dispositivo D02; atualização de sistema";efeito sobre reputação não definido;sem fórmula ou saída;"recorte ilustrativo identificado; não representa a totalidade das medições"

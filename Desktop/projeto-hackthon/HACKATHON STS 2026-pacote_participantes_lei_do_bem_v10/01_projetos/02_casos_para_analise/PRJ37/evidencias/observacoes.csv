@@ -1,0 +1,4 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ37-OBS01;grupo C no teste: 147 falsos negativos / 1.000 positivos;FNR = 14,7%;"H3-peso4-v2; comparar ao grupo A = 11% resulta em 3,7 pontos percentuais";"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ37-OBS02;"estresse: grupo C = 171/1.000; grupo A = 120/1.000";amplitude de 5,1 pontos percentuais;critério de 4 pontos não atendido no estresse;"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ37-OBS03;"H3-peso4-v2 selecionado em validação; teste final separado";não escolher peso pela melhor métrica final;cronologia fixa seleção antes da leitura do teste;"recorte ilustrativo identificado; não representa a totalidade das medições"

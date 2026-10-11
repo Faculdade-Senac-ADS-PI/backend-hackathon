@@ -1,0 +1,3 @@
+﻿observacao_id;entrada;referencia;saida_ou_situacao;escopo
+PRJ25-OBS01;"perfil operador; ação aprovar desconto acima do limite";negar conforme matriz;produto negou;"recorte ilustrativo identificado; não representa a totalidade das medições"
+PRJ25-OBS02;"prazo=5 dias; canal=mensagem; modelo=M03";enviar template configurado;roteiro de aceite confirmou conteúdo;"recorte ilustrativo identificado; não representa a totalidade das medições"

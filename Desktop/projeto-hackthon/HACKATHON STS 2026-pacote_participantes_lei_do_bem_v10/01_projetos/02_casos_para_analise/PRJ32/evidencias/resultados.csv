@@ -1,0 +1,2 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ32-S01;dispositivo-v1;fichas de dispositivo entregues (contagem de entrega, não desempenho);contagem;8;8;"Fichas de dispositivo entregues; não é total de decisões de confiança.";;casos;evidencias/medicoes.csv#PRJ32-S01;entrega

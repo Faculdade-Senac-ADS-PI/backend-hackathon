@@ -1,0 +1,6 @@
+﻿ensaio_id;versao;metrica;operacao;valor;base_de_calculo;descricao_base;taxa_percentual;unidade;fonte;natureza
+PRJ23-S01;ttl-v1;leituras defasadas;contagem;720;30000;Leituras de saldo do teste. As consultas extras também usam essas leituras como base de referência.;2.4;casos;evidencias/medicoes.csv#PRJ23-S01;desempenho
+PRJ23-S02;escalar-v2;leituras defasadas;contagem;240;30000;Leituras de saldo do teste. As consultas extras também usam essas leituras como base de referência.;0.8;casos;evidencias/medicoes.csv#PRJ23-S02;desempenho
+PRJ23-S03;vetorial-v3;leituras defasadas;contagem;60;30000;Leituras de saldo do teste. As consultas extras também usam essas leituras como base de referência.;0.2;casos;evidencias/medicoes.csv#PRJ23-S03;desempenho
+PRJ23-S04;vetorial-v3;consultas extras ao núcleo;contagem;900;30000;Leituras de saldo do teste. As consultas extras também usam essas leituras como base de referência.;3.0;casos;evidencias/medicoes.csv#PRJ23-S04;desempenho
+PRJ23-S05;entrada-v4;alterações submetidas;contagem;4000;4000;Alterações de saldo submetidas durante o teste.;100.0;casos;evidencias/medicoes.csv#PRJ23-S05;desempenho
